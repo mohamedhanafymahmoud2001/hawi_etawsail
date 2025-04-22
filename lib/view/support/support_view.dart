@@ -5,6 +5,8 @@ import 'package:hawy_altawsil/componant/generated/assets.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class SupportView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -33,11 +35,11 @@ class _SupportView extends State<SupportView> {
                   maxLines: 1,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "هذا الحقل مطلوب";
+                      return "${langLocal.langLocal['requiredField']!['${val.languagebox.get("language")}']}";
                     }
                   },
                   decoration: InputDecoration(
-                    labelText: "ادخل رقم الطلب ",
+                    labelText: "${langLocal.langLocal['enter_order_number']!['${val.languagebox.get("language")}']}",
                     labelStyle: TextStyle(color: Colors.grey[700]),
                     hintStyle: const TextStyle(fontSize: 16),
                     filled: true,
@@ -65,12 +67,14 @@ class _SupportView extends State<SupportView> {
                   controller: val.api.message,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "هذا الحقل مطلوب";
+                      return "${langLocal.langLocal['requiredField']!['${val.languagebox.get("language")}']}";
+                    ;
                     }
                   },
                   maxLines: 5,
                   decoration: InputDecoration(
-                    labelText: "أكتب لنا شكوتك",
+                    labelText:"${langLocal.langLocal['send_complaint_text']!['${val.languagebox.get("language")}']}",
+
                     labelStyle: TextStyle(color: Colors.grey[700]),
                     hintStyle: const TextStyle(fontSize: 16),
                     filled: true,
@@ -111,7 +115,8 @@ class _SupportView extends State<SupportView> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100)),
                   child: Text(
-                    "إرسال الشكوي",
+                      "${langLocal.langLocal['send_complaint']!['${val.languagebox.get("language")}']}",
+
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 12,

@@ -34,6 +34,10 @@ class LangLocal {
       "en": "Back",
       "ar": "رجوع",
     },
+    "webPage": {
+      "en": "Web Page",
+      "ar": "الصفحة الرئيسية",
+    },
 
     "recipient": {
       "en": "Recipient",
@@ -274,16 +278,62 @@ class LangLocal {
     },
     "onBoardingTitle5": {"en": "Select Your Country", "ar": "حدد دولتك"},
     "onBoarding5": {"en": "Choose a country", "ar": "اختر الدولة"},
+     "current_balance": {"en": "Your Current Balance", "ar": "رصيدك الحالي"},
+    "add_wallet": {"en": "Add Wallet Balance", "ar": "إضافة رصيد للمحفظة"},
+    "add_amount": {"en": "Add Amount", "ar": "حدد المبلغ المضاف"},
+    "add_amount_first": {"en": "Add Amount First", "ar": "ضع مبلغا اولا"},
+    "recent_cash_transactions": {
+      "en": "Recent Cash Transactions",
+      "ar": "آخر معاملاتي النقدية"
+    },
+    "send_complaint": {
+      "en": "Send Complaint",
+      "ar": "إرسال الشكوي"
+    },
+    "send_complaint_text": {
+      "en": "Write to us your complaint",
+      "ar": "أكتب لنا شكوتك"
+    },
+    "enter_order_number": {
+      "en": "Enter Order Number",
+      "ar": "ادخل رقم الطلب "
+    },
+    "requiredField": {
+      "en": "This field is required",
+      "ar": "هذا الحقل مطلوب",
+    },
+    "phoneNumber": {
+      "en": "Phone number",
+      "ar": "رقم الهاتف",
+    },
+    "country": {
+      "en": "Country",
+      "ar": "الدولة",
+    },
+    "editProfile": {
+      "en": "Edit account information",
+      "ar": "تعديل بيانات الحساب",
+    },
+    "currentPassword": {
+      "en": "Current password",
+      "ar": "كلمة المرور الحالية",
+    },
+    "newPassword": {
+      "en": "New password",
+      "ar": "كلمة المرور الجديدة",
+    },
+    "welcome": {
+      "en": "Welcome",
+      "ar": "مرحبًا بك",
+    },
+    "logout": {
+      "en": "Logout",
+      "ar": "تسجيل الخروج",
+    },
     ////////////////////////////////////////////////////////
     //
-    // "phoneNumber": {
-    //   "en": "Phone number",
-    //   "ar": "رقم الهاتف",
-    // },
-    // "requiredField": {
-    //   "en": "This field is required",
-    //   "ar": "هذا الحقل مطلوب",
-    // },
+
+
     // "phoneValidation": {
     //   "en": "Phone number must be 11 digits",
     //   "ar": "رقم الهاتف يجب أن يتكون من 11 رقم",
@@ -298,10 +348,7 @@ class LangLocal {
     //   "ar": "كلمة المرور غير متطابقة",
     // },
     //
-    // "country": {
-    //   "en": "Country",
-    //   "ar": "الدولة",
-    // },
+
     //
     //
     //
@@ -330,18 +377,7 @@ class LangLocal {
     //   "en": "Operation failed",
     //   "ar": "فشلت العملية",
     // },
-    // "editProfile": {
-    //   "en": "Edit account information",
-    //   "ar": "تعديل بيانات الحساب",
-    // },
-    // "currentPassword": {
-    //   "en": "Current password",
-    //   "ar": "كلمة المرور الحالية",
-    // },
-    // "newPassword": {
-    //   "en": "New password",
-    //   "ar": "كلمة المرور الجديدة",
-    // },
+
     // "cityRequests": {
     //   "en": "Requests inside the city",
     //   "ar": "طلبات داخل المدينة",
@@ -428,28 +464,18 @@ class LangLocal {
     //   "ar": "الطلبات الراجعة",
     // },
     //
-    // "welcome": {
-    //   "en": "Welcome",
-    //   "ar": "مرحبًا بك",
-    // },
-    // "logout": {
-    //   "en": "Logout",
-    //   "ar": "تسجيل الخروج",
-    // },
+
     // "transaction_type_label": {
     //   "en": "Transaction Type:",
     //   "ar": "نوع المعاملة :"
     // },
     // "amount_label": {"en": "Amount:", "ar": "المبلغ :"},
-    // "current_balance": {"en": "Your Current Balance", "ar": "رصيدك الحالي"},
+
     // "withdraw_request": {
     //   "en": "Request Balance Withdrawal",
     //   "ar": "طلب سحب الرصيد"
     // },
-    // "recent_cash_transactions": {
-    //   "en": "Recent Cash Transactions",
-    //   "ar": "آخر معاملاتي النقدية"
-    // },
+
 
     "start": {"en": "Start", "ar": "ابدء"},
   };

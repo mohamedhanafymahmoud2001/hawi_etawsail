@@ -6,6 +6,8 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/myOrders/detailsOrder/containerdetails.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class EditProfileView extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
 
@@ -127,8 +129,8 @@ class EditProfileView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    "تعديل بيانات الحساب",
+                   Text(
+                    "${langLocal.langLocal['editProfile']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -143,22 +145,22 @@ class EditProfileView extends StatelessWidget {
                           children: [
                             Expanded(
                               child: _buildTextField(
-                                  val.api.f_name_ed, "الاسم الاول", false),
+                                  val.api.f_name_ed, "${langLocal.langLocal['firstName']!['${val.languagebox.get("language")}']}", false),
                             ),
                             SizedBox(width: 16),
                             Expanded(
                               child: _buildTextField(
-                                  val.api.l_name_ed, "الاسم الثاني:", false),
+                                  val.api.l_name_ed, "${langLocal.langLocal['lastName']!['${val.languagebox.get("language")}']}", false),
                             ),
                           ],
                         ),
-                        _buildTextField(val.api.phone_ed, "رقم الهاتف:", false),
+                        _buildTextField(val.api.phone_ed,  "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']}", false),
                         _buildTextField(
-                            val.api.pass_old_ed, "كلمة المرور السابقة:", true),
+                            val.api.pass_old_ed,  "${langLocal.langLocal['currentPassword']!['${val.languagebox.get("language")}']}",  true),
                         _buildTextField(
-                            val.api.pass_new_ed, "كلمة المرور الجديدة:", true),
+                            val.api.pass_new_ed, "${langLocal.langLocal['newPassword']!['${val.languagebox.get("language")}']}", true),
                         _buildTextField(
-                            val.api.pass_conf_ed, "تأكيد كلمة المرور:", true),
+                            val.api.pass_conf_ed, "${langLocal.langLocal['confirmPassword']!['${val.languagebox.get("language")}']}", true),
                         const SizedBox(height: 30),
                         MaterialButton(
                           onPressed: () {
@@ -175,7 +177,7 @@ class EditProfileView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(100),
                           ),
                           child: Text(
-                            "التالي",
+                            "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 12,

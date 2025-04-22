@@ -11,6 +11,7 @@ import 'package:hawy_altawsil/view/wallet/webWallet.dart';
 import 'package:hawy_altawsil/view/wallet/widgets/item_wallel.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
 import '../notifications/notifications_view.dart';
 
 class WalletView extends StatelessWidget {
@@ -61,7 +62,8 @@ class WalletView extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "رصيدك الحالي",
+                                "${langLocal.langLocal['current_balance']!['${val.languagebox.get("language")}']}",
+
                                           style: TextStyle(
                                               color: colorsApp.colorbody,
                                               fontSize: 10,
@@ -178,7 +180,8 @@ class WalletView extends StatelessWidget {
                                           ),
                                           SizedBox(height: 32),
                                           Text(
-                                            "حدد المبلغ المضاف",
+                                            "${langLocal.langLocal['add_amount']!['${val.languagebox.get("language")}']}",
+
                                             style: TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
@@ -216,7 +219,9 @@ class WalletView extends StatelessWidget {
                                                     .showSnackBar(
                                                   SnackBar(
                                                     content:
-                                                        Text("ضع مبلغا اولا"),
+                                                        Text(
+                                                          "${langLocal.langLocal['add_amount_first']!['${val.languagebox.get("language")}']}",
+                                                        ),
                                                     duration: Duration(
                                                         seconds:
                                                             3), // تختفي بعد 3 ثوانٍ
@@ -231,7 +236,7 @@ class WalletView extends StatelessWidget {
                                                 borderRadius:
                                                     BorderRadius.circular(16)),
                                             child: Text(
-                                              "موافق",
+                                              "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: 12,
@@ -262,7 +267,8 @@ class WalletView extends StatelessWidget {
                               width: 16,
                             ),
                             Text(
-                              "إضافة رصيد للمحفظة",
+                                "${langLocal.langLocal['add_wallet']!['${val.languagebox.get("language")}']}",
+
                               style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
@@ -294,7 +300,7 @@ class WalletView extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          "آخر معاملاتي النقدية",
+                          "${langLocal.langLocal['recent_cash_transactions']!['${val.languagebox.get("language")}']}",
                           style: TextStyle(
                             color: ColorsApp().colorgreen2,
                             fontSize: 14,

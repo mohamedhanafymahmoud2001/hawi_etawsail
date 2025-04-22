@@ -9,6 +9,7 @@ import 'package:hawy_altawsil/view/myOrders/detailsOrder/containerdetails.dart';
 import 'package:hawy_altawsil/view/profile/edit_profile_view.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
 import 'widgets/profile_item.dart';
 
 class ProfileView extends StatelessWidget {
@@ -98,7 +99,7 @@ class ProfileView extends StatelessWidget {
                                       ),
                                       const SizedBox(height: 10),
                                       Text(
-                                        "مرحبًا بك",
+                                        "${langLocal.langLocal['welcome']!['${val.languagebox.get("language")}']}",
                                         style: TextStyle(
                                           color: ColorsApp().colorgreen2,
                                           fontSize: 18,
@@ -243,11 +244,11 @@ class ProfileView extends StatelessWidget {
                                         ]),
                                     const SizedBox(height: 8),
                                     ProfileItem(
-                                      label: "رقم الهاتف :",
+                                      label: "${langLocal.langLocal['phoneNumber']!['${val.languagebox.get("language")}']}",
                                       value: "${val.profile['data']['phone']}",
                                     ),
                                     ProfileItem(
-                                      label: "الدولة :",
+                                      label:  "${langLocal.langLocal['country']!['${val.languagebox.get("language")}']}",
                                       value:
                                           "${val.profile['data']['country']}",
                                     ),
