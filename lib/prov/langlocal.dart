@@ -242,192 +242,18 @@ class LangLocal {
       "en": "Sent orders",
       "ar": "الطلبات المرسلة",
     },
-
-    ////////////////////////////////////////////////////////
-
-    "phoneNumber": {
-      "en": "Phone number",
-      "ar": "رقم الهاتف",
-    },
-    "requiredField": {
-      "en": "This field is required",
-      "ar": "هذا الحقل مطلوب",
-    },
-    "phoneValidation": {
-      "en": "Phone number must be 11 digits",
-      "ar": "رقم الهاتف يجب أن يتكون من 11 رقم",
-    },
-    "passwordValidation": {
-      "en": "Password must be at least 6 characters",
-      "ar": "كلمة السر يجب أن تكون على الأقل 6 أحرف",
-    },
-
-    "passwordMismatch": {
-      "en": "Passwords do not match",
-      "ar": "كلمة المرور غير متطابقة",
-    },
-
-    "country": {
-      "en": "Country",
-      "ar": "الدولة",
-    },
-
-
-
-    "insertImageHere": {
-      "en": "Insert the image here",
-      "ar": "قم بإدراج الصورة هنا",
-    },
-    "enterCarLicenseImage": {
-      "en": "Enter car license image",
-      "ar": "أدخل صورة رخصة السيارة",
-    },
-    "enterDriverLicenseImage": {
-      "en": "Enter driver license image",
-      "ar": "أدخل صورة رخصة القيادة",
-    },
-    "enterNationalIdImage": {
-      "en": "Enter national ID image",
-      "ar": "أدخل صورة البطاقة الشخصية",
-    },
-    "completeData": {
-      "en": "Complete the data",
-      "ar": "اكمل البيانات",
-    },
-
-    "operationFailed": {
-      "en": "Operation failed",
-      "ar": "فشلت العملية",
-    },
-    "editProfile": {
-      "en": "Edit account information",
-      "ar": "تعديل بيانات الحساب",
-    },
-    "currentPassword": {
-      "en": "Current password",
-      "ar": "كلمة المرور الحالية",
-    },
-    "newPassword": {
-      "en": "New password",
-      "ar": "كلمة المرور الجديدة",
-    },
-    "cityRequests": {
-      "en": "Requests inside the city",
-      "ar": "طلبات داخل المدينة",
-    },
-    "outsideCityRequests": {
-      "en": "Requests outside the city",
-      "ar": "طلبات خارج المدينة",
-    },
-
-
-    "confirmReturnRequest": {
-      "en": "Confirm return request",
-      "ar": "تأكيد إرجاع الطلب",
-    },
-    "deliverRequest": {
-      "en": "Deliver request",
-      "ar": "تسليم الطلب",
-    },
-    "returnRequest": {
-      "en": "Return request",
-      "ar": "إرجاع الطلب",
-    },
-    "confirmReturnPrompt": {
-      "en": "Do you want to return the request?",
-      "ar": "هل تريد إرجاع الطلب ؟",
-    },
-    "bookRequest": {
-      "en": "Book request",
-      "ar": "حجز الطلب",
-    },
-    "selectPickupTime": {
-      "en": "Select pickup time",
-      "ar": "حدد وقت استلام الطلب",
-    },
-    "selectDeliveryTime": {
-      "en": "Select delivery time",
-      "ar": "حدد وقت تسليم الطلب",
-    },
-    "selectPickupDate": {
-      "en": "Select pickup date",
-      "ar": "حدد تاريخ استلام الطلب ",
-    },
-    "selectDeliveryDate": {
-      "en": "Select delivery date",
-      "ar": "حدد تاريخ تسليم الطلب ",
-    },
-    "deliveryValue": {
-      "en": "Delivery price :",
-      "ar": "قيمة توصيل الطلب :",
-    },
-    "confirmOrder": {
-      "en": "Confirm order",
-      "ar": "تأكيد الطلب",
-    },
-
-    "confirmCancelOrderBooking": {
-      "en": "Do you want to cancel the order booking?",
-      "ar": "هل تريد إلغاء حجز الطلب ؟",
-    },
-    "confirmDelivery": {
-      "en": "Confirm delivery",
-      "ar": "تأكيد توصيل الطلب",
-    },
-    "enterOrderConfirmationCode": {
-      "en": "Enter the order confirmation code",
-      "ar": "قم بإدخال رقم تأكيد الطلب",
-    },
-
-    "reservedOrders": {
-      "en": "Reserved orders",
-      "ar": "الطلبات المحجوزة",
-    },
-
-    "deliveredOrders": {
-      "en": "Delivered orders",
-      "ar": "طلبات تم توصيلها",
-    },
-    "returnedOrders": {
-      "en": "Returned orders",
-      "ar": "طلبات تم ارجعها",
-    },
-    "rejectedOrders": {
-      "en": "Rejected orders",
-      "ar": "الطلبات الراجعة",
-    },
     "notifications": {
       "en": "Notifications",
       "ar": "الاشعارات",
     },
-    "welcome": {
-      "en": "Welcome",
-      "ar": "مرحبًا بك",
-    },
-    "logout": {
-      "en": "Logout",
-      "ar": "تسجيل الخروج",
-    },
-    "transaction_type_label": {
-      "en": "Transaction Type:",
-      "ar": "نوع المعاملة :"
-    },
-    "amount_label": {"en": "Amount:", "ar": "المبلغ :"},
-    "current_balance": {"en": "Your Current Balance", "ar": "رصيدك الحالي"},
-    "withdraw_request": {
-      "en": "Request Balance Withdrawal",
-      "ar": "طلب سحب الرصيد"
-    },
-    "recent_cash_transactions": {
-      "en": "Recent Cash Transactions",
-      "ar": "آخر معاملاتي النقدية"
-    },
+
+
     "onBoardingTitle1": {"en": "Hawee Tawseel", "ar": "هاوي توصيل"},
     "onBoarding1": {
       "en":
-          "Welcome to Hawee Tawseel, the app that gives you the freedom to work and increase your income easily!",
+      "Welcome to Hawee Tawseel, where safety and delivery speed are our skills",
       "ar":
-          "مرحبًا بك في هاوي توصيل، التطبيق الذي يمنحك حرية العمل وزيادة دخلك بسهولة!"
+      "مرحبا بك في هاوي توصيل,حيث الأمان و سرعة التوصيل هي مهارتنا",
     },
     "onBoardingTitle2": {
       "en": "Hawee Tawseel Service",
@@ -435,19 +261,196 @@ class LangLocal {
     },
     "onBoarding2": {
       "en":
-          "We provide everything you need to deliver orders quickly and safely.\nInstant notifications for new orders, accurate directions via maps, and a fast, secure payment system.",
+      "Hawee Tawseel is a service that connects you with trusted partners to send and receive small orders at any time and anywhere",
       "ar":
-          "نحن نوفر لك كل ما تحتاجه لتوصيل الطلبات بسرعة وأمان \n إشعارات فورية عند توفر طلب جديد, توجيهات دقيقة عبر الخريطة, نظام دفع سريع وآمن"
+      "نوصلك بمن تثق بهم لإرسال واستلام الطلبات الصغيرة في أي وقت وأي مكان. تابع رحلتك مع إشعارات فورية"
     },
     "onBoardingTitle3": {"en": "Get Started", "ar": "ابدء معنا"},
     "onBoarding3": {
       "en":
-          "You're one step away from starting your journey with us! Register now and start receiving orders.",
+      "Start your journey with Hawee Tawseel, where safety and delivery speed are our skills",
       "ar":
-          "أنت على بعد خطوة واحدة من بدء رحلتك معنا! سجّل الآن وابدأ في استلام الطلبات"
+      "ابدأ الآن وأرسل أول طلب لك في دقائق! لأن الوقت ثمين، ونحن هنا لجعل التوصيل أسرع وأسهل من أي وقت مضى"
     },
     "onBoardingTitle5": {"en": "Select Your Country", "ar": "حدد دولتك"},
     "onBoarding5": {"en": "Choose a country", "ar": "اختر الدولة"},
+    ////////////////////////////////////////////////////////
+    //
+    // "phoneNumber": {
+    //   "en": "Phone number",
+    //   "ar": "رقم الهاتف",
+    // },
+    // "requiredField": {
+    //   "en": "This field is required",
+    //   "ar": "هذا الحقل مطلوب",
+    // },
+    // "phoneValidation": {
+    //   "en": "Phone number must be 11 digits",
+    //   "ar": "رقم الهاتف يجب أن يتكون من 11 رقم",
+    // },
+    // "passwordValidation": {
+    //   "en": "Password must be at least 6 characters",
+    //   "ar": "كلمة السر يجب أن تكون على الأقل 6 أحرف",
+    // },
+    //
+    // "passwordMismatch": {
+    //   "en": "Passwords do not match",
+    //   "ar": "كلمة المرور غير متطابقة",
+    // },
+    //
+    // "country": {
+    //   "en": "Country",
+    //   "ar": "الدولة",
+    // },
+    //
+    //
+    //
+    // "insertImageHere": {
+    //   "en": "Insert the image here",
+    //   "ar": "قم بإدراج الصورة هنا",
+    // },
+    // "enterCarLicenseImage": {
+    //   "en": "Enter car license image",
+    //   "ar": "أدخل صورة رخصة السيارة",
+    // },
+    // "enterDriverLicenseImage": {
+    //   "en": "Enter driver license image",
+    //   "ar": "أدخل صورة رخصة القيادة",
+    // },
+    // "enterNationalIdImage": {
+    //   "en": "Enter national ID image",
+    //   "ar": "أدخل صورة البطاقة الشخصية",
+    // },
+    // "completeData": {
+    //   "en": "Complete the data",
+    //   "ar": "اكمل البيانات",
+    // },
+    //
+    // "operationFailed": {
+    //   "en": "Operation failed",
+    //   "ar": "فشلت العملية",
+    // },
+    // "editProfile": {
+    //   "en": "Edit account information",
+    //   "ar": "تعديل بيانات الحساب",
+    // },
+    // "currentPassword": {
+    //   "en": "Current password",
+    //   "ar": "كلمة المرور الحالية",
+    // },
+    // "newPassword": {
+    //   "en": "New password",
+    //   "ar": "كلمة المرور الجديدة",
+    // },
+    // "cityRequests": {
+    //   "en": "Requests inside the city",
+    //   "ar": "طلبات داخل المدينة",
+    // },
+    // "outsideCityRequests": {
+    //   "en": "Requests outside the city",
+    //   "ar": "طلبات خارج المدينة",
+    // },
+    //
+    //
+    // "confirmReturnRequest": {
+    //   "en": "Confirm return request",
+    //   "ar": "تأكيد إرجاع الطلب",
+    // },
+    // "deliverRequest": {
+    //   "en": "Deliver request",
+    //   "ar": "تسليم الطلب",
+    // },
+    // "returnRequest": {
+    //   "en": "Return request",
+    //   "ar": "إرجاع الطلب",
+    // },
+    // "confirmReturnPrompt": {
+    //   "en": "Do you want to return the request?",
+    //   "ar": "هل تريد إرجاع الطلب ؟",
+    // },
+    // "bookRequest": {
+    //   "en": "Book request",
+    //   "ar": "حجز الطلب",
+    // },
+    // "selectPickupTime": {
+    //   "en": "Select pickup time",
+    //   "ar": "حدد وقت استلام الطلب",
+    // },
+    // "selectDeliveryTime": {
+    //   "en": "Select delivery time",
+    //   "ar": "حدد وقت تسليم الطلب",
+    // },
+    // "selectPickupDate": {
+    //   "en": "Select pickup date",
+    //   "ar": "حدد تاريخ استلام الطلب ",
+    // },
+    // "selectDeliveryDate": {
+    //   "en": "Select delivery date",
+    //   "ar": "حدد تاريخ تسليم الطلب ",
+    // },
+    // "deliveryValue": {
+    //   "en": "Delivery price :",
+    //   "ar": "قيمة توصيل الطلب :",
+    // },
+    // "confirmOrder": {
+    //   "en": "Confirm order",
+    //   "ar": "تأكيد الطلب",
+    // },
+    //
+    // "confirmCancelOrderBooking": {
+    //   "en": "Do you want to cancel the order booking?",
+    //   "ar": "هل تريد إلغاء حجز الطلب ؟",
+    // },
+    // "confirmDelivery": {
+    //   "en": "Confirm delivery",
+    //   "ar": "تأكيد توصيل الطلب",
+    // },
+    // "enterOrderConfirmationCode": {
+    //   "en": "Enter the order confirmation code",
+    //   "ar": "قم بإدخال رقم تأكيد الطلب",
+    // },
+    //
+    // "reservedOrders": {
+    //   "en": "Reserved orders",
+    //   "ar": "الطلبات المحجوزة",
+    // },
+    //
+    // "deliveredOrders": {
+    //   "en": "Delivered orders",
+    //   "ar": "طلبات تم توصيلها",
+    // },
+    // "returnedOrders": {
+    //   "en": "Returned orders",
+    //   "ar": "طلبات تم ارجعها",
+    // },
+    // "rejectedOrders": {
+    //   "en": "Rejected orders",
+    //   "ar": "الطلبات الراجعة",
+    // },
+    //
+    // "welcome": {
+    //   "en": "Welcome",
+    //   "ar": "مرحبًا بك",
+    // },
+    // "logout": {
+    //   "en": "Logout",
+    //   "ar": "تسجيل الخروج",
+    // },
+    // "transaction_type_label": {
+    //   "en": "Transaction Type:",
+    //   "ar": "نوع المعاملة :"
+    // },
+    // "amount_label": {"en": "Amount:", "ar": "المبلغ :"},
+    // "current_balance": {"en": "Your Current Balance", "ar": "رصيدك الحالي"},
+    // "withdraw_request": {
+    //   "en": "Request Balance Withdrawal",
+    //   "ar": "طلب سحب الرصيد"
+    // },
+    // "recent_cash_transactions": {
+    //   "en": "Recent Cash Transactions",
+    //   "ar": "آخر معاملاتي النقدية"
+    // },
+
     "start": {"en": "Start", "ar": "ابدء"},
   };
 

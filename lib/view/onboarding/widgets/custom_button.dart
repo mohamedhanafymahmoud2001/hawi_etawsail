@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../constant.dart';
+import '../../../constant.dart' as val;
+
 class OnboardingButton extends StatelessWidget {
   const OnboardingButton({
     super.key,
@@ -21,7 +24,8 @@ class OnboardingButton extends StatelessWidget {
       height: 64,
       shape: const StadiumBorder(),
       child: Text(
-        "التالي",
+        "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
+
         style: TextStyle(
           color: titleColor,
           fontSize: 16,

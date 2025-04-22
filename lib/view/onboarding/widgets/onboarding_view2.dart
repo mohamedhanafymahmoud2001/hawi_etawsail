@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/generated/assets.dart';
 import 'package:hawy_altawsil/view/onboarding/widgets/custom_button.dart';
+import '../../../constant.dart';
+import '../../../constant.dart' as val;
 import 'onboarding_view3.dart';
 
 class OnboardingView2 extends StatelessWidget {
@@ -51,7 +53,8 @@ class OnboardingView2 extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            'تخطي',
+                            "${langLocal.langLocal['skip']!['${val.languagebox.get("language")}']}",
+
                             style: TextStyle(
                               color: ColorsApp().colorbody,
                               fontSize: 12,
@@ -82,7 +85,8 @@ class OnboardingView2 extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          Text("خدمة هاوي توصيل",
+          Text(
+              "${langLocal.langLocal['onboarding2']!['${val.languagebox.get("language")}']}",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 32,
@@ -93,8 +97,7 @@ class OnboardingView2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(
-                "نوصلك بمن تثق بهم لإرسال واستلام الطلبات الصغيرة في أي وقت وأي مكان. تابع رحلتك مع إشعارات فورية",
-                textAlign: TextAlign.center,
+                "${langLocal.langLocal['onboarding2']!['${val.languagebox.get("language")}']}",  textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 22,
                 )),

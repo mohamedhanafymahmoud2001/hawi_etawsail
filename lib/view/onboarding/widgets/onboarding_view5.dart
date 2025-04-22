@@ -7,6 +7,8 @@ import 'package:hawy_altawsil/view/auth/auth.dart';
 import 'package:hawy_altawsil/view/onboarding/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constant.dart';
+
 class OnboardingView5 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -72,7 +74,8 @@ class _OnboardingView5 extends State<OnboardingView5> {
                           ),
                         ),
                       ),
-                      Text("حدد دولتك",
+                      Text("${langLocal.langLocal['onBoardingTitle5']!['${val.languagebox.get("language")}']}",
+
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 32,
@@ -196,7 +199,8 @@ class _OnboardingView5 extends State<OnboardingView5> {
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
-                                      content: Text("اختر الدولة"),
+                                      content: Text("${langLocal.langLocal['onBoarding5']!['${val.languagebox.get("language")}']}",
+                                      ),
                                       duration: Duration(
                                           seconds: 1), // تختفي بعد 3 ثوانٍ
                                     ),

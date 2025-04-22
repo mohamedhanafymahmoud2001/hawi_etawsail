@@ -7,6 +7,8 @@ import 'package:hawy_altawsil/componant/nodata.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class NotificationsView extends StatelessWidget {
   NotificationsView({super.key});
   DialogApp dialogApp = new DialogApp();
@@ -23,7 +25,8 @@ class NotificationsView extends StatelessWidget {
             elevation: 0,
             backgroundColor: ColorsApp().colorbody,
             title: Text(
-              "الاشعارات",
+              "${langLocal.langLocal['notifications']!['${val.languagebox.get("language")}']}",
+
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
