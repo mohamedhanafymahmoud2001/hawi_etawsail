@@ -7,6 +7,8 @@ import 'package:hawy_altawsil/componant/input.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class Register extends StatelessWidget {
   GlobalKey<FormState> formstate = GlobalKey();
   ColorsApp colorsApp = new ColorsApp();
@@ -19,7 +21,8 @@ class Register extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "ادخل بياناتك لتبداء",
+              "${langLocal.langLocal['introText']!['${val.languagebox.get("language")}']}",
+
               style: TextStyle(
                   fontSize: 20, fontFamily: "Cairo", fontWeight: FontWeight.bold),
             ),
@@ -31,7 +34,8 @@ class Register extends StatelessWidget {
                 Expanded(
                     child: Container(
                   child: InputApp(
-                      hint: "first name",
+                      hint:  "${langLocal.langLocal['firstName']!['${val.languagebox.get("language")}']}",
+
                       controler: val.api.fname,
                       icon: Icon(
                         Icons.person_2_outlined,
@@ -42,7 +46,8 @@ class Register extends StatelessWidget {
                 Expanded(
                     child: Container(
                   child: InputApp(
-                      hint: "last name",
+                      hint:  "${langLocal.langLocal['lastName']!['${val.languagebox.get("language")}']}",
+
                       controler: val.api.lname,
                       icon: Icon(
                         Icons.person_2_outlined,
@@ -53,7 +58,8 @@ class Register extends StatelessWidget {
               ],
             ),
             InputApp(
-                hint: "phone",
+                hint:  "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']}",
+
                 controler: val.api.phone,
                 icon: Icon(
                   Icons.phone_outlined,
@@ -61,8 +67,8 @@ class Register extends StatelessWidget {
                 ),
                 keyboard: TextInputType.phone),
             InputAppPass(
-                hint: //${langLocal.langLocal['pass']['${val.languagebox.get("language")}']}
-                    "password",
+                hint:  "${langLocal.langLocal['password']!['${val.languagebox.get("language")}']}",
+
                 show: val.passshow1,
                 controler: val.api.password,
                 icon: IconButton(
@@ -78,7 +84,7 @@ class Register extends StatelessWidget {
                 keyboard: TextInputType.visiblePassword),
             InputAppPass(
                 hint: //${langLocal.langLocal['pass']['${val.languagebox.get("language")}']}
-                    "confirm password",
+                "${langLocal.langLocal['confirmPassword']!['${val.languagebox.get("language")}']}",
                 show: val.passshow2,
                 controler: val.api.confirmPassword,
                 icon: IconButton(
@@ -95,8 +101,9 @@ class Register extends StatelessWidget {
             Container(
               margin: EdgeInsets.all(20),
               child: ButtonApp(
-                  title: "انشاء الحساب",
-                  func: () {
+                  title:    "${langLocal.langLocal['createAccount']!['${val.languagebox.get("language")}']}",
+
+      func: () {
                     if (formstate.currentState!.validate()) {
                       val.RegisterUser();
                       dialogApp.checkdialog(

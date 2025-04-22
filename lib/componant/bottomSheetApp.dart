@@ -4,6 +4,7 @@ import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
 import 'package:hawy_altawsil/componant/nodata.dart';
+import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +31,7 @@ class BottomSheetApp {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              "بيانات نقطة الإنطلاق",
+                              "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
                               style:
                                   TextStyle(fontFamily: "Cairo", fontSize: 17),
                             ),
@@ -141,7 +142,8 @@ class BottomSheetApp {
                         height: 30,
                       ),
                       ButtonApp(
-                          title: "موافق",
+                          title:
+                              "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                           func: () {
                             if (val.mylocation > -1) {
                               Navigator.of(context).pop();
@@ -149,7 +151,9 @@ class BottomSheetApp {
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text("اختر موقع"),
+                                  content: Text(
+                                    "${langLocal.langLocal['select_location']!['${val.languagebox.get("language")}']}",
+                                  ),
                                   duration:
                                       Duration(seconds: 3), // تختفي بعد 3 ثوانٍ
                                 ),
@@ -180,7 +184,8 @@ class BottomSheetApp {
                   child: Column(
                     children: [
                       InputAppSearch(
-                          hint: "ابحث عن موقع برقم الهاتف",
+                          hint:
+                              "${langLocal.langLocal['search_location']!['${val.languagebox.get("language")}']}",
                           controler: val.api.search,
                           icon: IconButton(
                               onPressed: () {
@@ -194,7 +199,7 @@ class BottomSheetApp {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              "بيانات نقطة الإستلام",
+                              "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
                               style:
                                   TextStyle(fontFamily: "Cairo", fontSize: 17),
                             ),
@@ -307,7 +312,7 @@ class BottomSheetApp {
                                                 padding: const EdgeInsets.only(
                                                     right: 30),
                                                 child: Text(
-                                                  "المستلم :${val.addressReciver['data'][i]['name_receiver']}",
+                                                  "${langLocal.langLocal['recipient']!['${val.languagebox.get("language")}']} :${val.addressReciver['data'][i]['name_receiver']}",
                                                   style: TextStyle(
                                                       fontFamily: "Cairo",
                                                       fontSize: 12),
@@ -317,7 +322,7 @@ class BottomSheetApp {
                                                 padding: const EdgeInsets.only(
                                                     right: 30, bottom: 20),
                                                 child: Text(
-                                                  "الهاتف : ${val.addressReciver['data'][i]['phone_receiver']}",
+                                                  "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']} : ${val.addressReciver['data'][i]['phone_receiver']}",
                                                   style: TextStyle(
                                                       fontFamily: "Cairo"),
                                                 ),
@@ -332,7 +337,8 @@ class BottomSheetApp {
                         height: 30,
                       ),
                       ButtonApp(
-                          title: "موافق",
+                          title:
+                              "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                           func: () {
                             if (val.mylocation > -1) {
                               val.CheckLocationReciver(
@@ -350,7 +356,9 @@ class BottomSheetApp {
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                  content: Text("اختر موقع الاستلام"),
+                                  content: Text(
+                                    "${langLocal.langLocal['select_pickup_location']!['${val.languagebox.get("language")}']}",
+                                  ),
                                   duration:
                                       Duration(seconds: 3), // تختفي بعد 3 ثوانٍ
                                 ),
@@ -395,7 +403,7 @@ class BottomSheetApp {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Text(
-                                  "بيانات نقطة الإنطلاق",
+                                  "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
                                   style: TextStyle(
                                       fontFamily: "Cairo", fontSize: 17),
                                 ),
@@ -414,23 +422,28 @@ class BottomSheetApp {
                             ),
                           ),
                           InputLocation(
-                              suf: ": البلد",
+                              suf:
+                                  "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.cuntry,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":المدينة ",
+                              suf:
+                                  "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.city,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":الحي ",
+                              suf:
+                                  "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.neighbor,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":الشارع ",
+                              suf:
+                                  "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.street,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":رقم المبني ",
+                              suf:
+                                  "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.build_number,
                               keyboard: TextInputType.number),
                           Row(
@@ -438,7 +451,7 @@ class BottomSheetApp {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "حفظ موقع التسليم",
+                                "${langLocal.langLocal['saveLocation']!['${val.languagebox.get("language")}']}",
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
                                 ),
@@ -456,7 +469,8 @@ class BottomSheetApp {
                             height: 30,
                           ),
                           ButtonApp(
-                              title: "موافق",
+                              title:
+                                  "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                               func: () {
                                 if (formstate.currentState!.validate()) {
                                   val.CheckLocationSender(
@@ -510,7 +524,7 @@ class BottomSheetApp {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Text(
-                                  "بيانات نقطة الاستلام",
+                                  "${langLocal.langLocal['pickup_point_details']!['${val.languagebox.get("language")}']}",
                                   style: TextStyle(
                                       fontFamily: "Cairo", fontSize: 17),
                                 ),
@@ -529,23 +543,28 @@ class BottomSheetApp {
                             ),
                           ),
                           InputLocation(
-                              suf: ": البلد",
+                              suf:
+                                  "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.cuntry_Re,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":المدينة ",
+                              suf:
+                                  "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.city_Re,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":الحي ",
+                              suf:
+                                  "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.neighbor_Re,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":الشارع ",
+                              suf:
+                                  "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.street_Re,
                               keyboard: TextInputType.text),
                           InputLocation(
-                              suf: ":رقم المبني ",
+                              suf:
+                                  "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
                               controler: val.api.build_number_Re,
                               keyboard: TextInputType.number),
                           Row(
@@ -553,7 +572,7 @@ class BottomSheetApp {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "حفظ موقع التسليم",
+                                "${langLocal.langLocal['saveLocation']!['${val.languagebox.get("language")}']}",
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
                                 ),
@@ -571,7 +590,8 @@ class BottomSheetApp {
                             height: 30,
                           ),
                           ButtonApp(
-                              title: "موافق",
+                              title:
+                                  "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                               func: () {
                                 if (formstate.currentState!.validate()) {
                                   val.CheckLocationReciver(

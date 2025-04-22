@@ -4,6 +4,7 @@ import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
+import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,7 @@ class _ResetPhone extends State<ResetPhone> {
                   Expanded(child: SizedBox()),
                   Text(
                     textAlign: TextAlign.center,
-                    "إعادة تعيين كلمة المرور",
+                    "${langLocal.langLocal['resetPasswordTitle']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         fontSize: 12,
                         fontFamily: "Cairo",
@@ -42,20 +43,20 @@ class _ResetPhone extends State<ResetPhone> {
                   Expanded(child: SizedBox()),
                   Text(
                     textAlign: TextAlign.center,
-                    "قم بإدخال رقم المحمول ",
+                    "${langLocal.langLocal['enterPhoneNumber']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         fontSize: 12,
                         fontFamily: "Cairo",
                         fontWeight: FontWeight.bold),
                   ),
-                  
                   SizedBox(
                     height: 20,
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 25),
                     child: InputApp(
-                        hint: "phone",
+                        hint:
+                            "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']}",
                         controler: val.api.resetPhone,
                         icon: Icon(
                           Icons.phone_outlined,
@@ -63,12 +64,12 @@ class _ResetPhone extends State<ResetPhone> {
                         ),
                         keyboard: TextInputType.phone),
                   ),
-                  
                   Expanded(flex: 3, child: SizedBox()),
                   Container(
                     margin: EdgeInsets.all(20),
                     child: ButtonApp(
-                        title: "التالي",
+                        title:
+                            "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
                         func: () {
                           if (formstate.currentState!.validate()) {
                             val.ResetPhone();

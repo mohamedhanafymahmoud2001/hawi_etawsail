@@ -3,6 +3,7 @@ import 'package:hawy_altawsil/componant/appBarApp.dart';
 import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
+import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/auth/login.dart';
 import 'package:hawy_altawsil/view/auth/register.dart';
@@ -76,7 +77,7 @@ class _Auth extends State<Auth> {
                                 val.SwitchAuth("login");
                               },
                               child: Text(
-                                "تسجيل الدخول ",
+                                "${langLocal.langLocal['loginTitle']!['${val.languagebox.get("language")}']}",
                                 style: TextStyle(color: colorsApp.colorbody),
                               ),
                             ),
@@ -94,7 +95,7 @@ class _Auth extends State<Auth> {
                                 val.SwitchAuth("register");
                               },
                               child: Text(
-                                "انشاء حساب",
+                                "${langLocal.langLocal['createAccount']!['${val.languagebox.get("language")}']}",
                                 style: TextStyle(color: colorsApp.colorbody),
                               ),
                             ),

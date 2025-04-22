@@ -7,6 +7,8 @@ import 'package:hawy_altawsil/componant/input.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class Login extends StatelessWidget {
   GlobalKey<FormState> formstate = GlobalKey();
   ColorsApp colorsApp = new ColorsApp();
@@ -19,7 +21,8 @@ class Login extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "ادخل بياناتك لتبداء",
+              "${langLocal.langLocal['introText']!['${val.languagebox.get("language")}']}",
+
               style: TextStyle(
                   fontSize: 20, fontFamily: "Cairo", fontWeight: FontWeight.bold),
             ),
@@ -27,7 +30,7 @@ class Login extends StatelessWidget {
               height: 20,
             ),
             InputApp(
-                hint: "phone",
+                hint: "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']}",
                 controler: val.api.phoneSignin,
                 icon: Icon(
                   Icons.phone_outlined,
@@ -36,7 +39,8 @@ class Login extends StatelessWidget {
                 keyboard: TextInputType.phone),
             InputAppPass(
                 hint: //${langLocal.langLocal['pass']['${val.languagebox.get("language")}']}
-                    "pass",
+                "${langLocal.langLocal['password']!['${val.languagebox.get("language")}']}",
+
                 show: val.passshow3,
                 controler: val.api.passSignin,
                 icon: IconButton(
@@ -55,7 +59,8 @@ class Login extends StatelessWidget {
                 Navigator.of(context).pushNamed("resetphone");
               },
               child: Text(
-                "هل نسيت كلمة المرور",
+                "${langLocal.langLocal['forgotPassword']!['${val.languagebox.get("language")}']}",
+
                 style: TextStyle(
                     fontSize: 12,
                     fontFamily: "Cairo",
@@ -67,7 +72,8 @@ class Login extends StatelessWidget {
             Container(
               margin: EdgeInsets.all(20),
               child: ButtonApp(
-                  title: "تسجيل الدخول",
+                  title: "${langLocal.langLocal['login']!['${val.languagebox.get("language")}']}",
+
                   func: () {
 
                     if (formstate.currentState!.validate()) {

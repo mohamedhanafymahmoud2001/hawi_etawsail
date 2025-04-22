@@ -4,6 +4,7 @@ import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
+import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,7 @@ class _ResetCode extends State<ResetCode> {
                   Expanded(child: SizedBox()),
                   Text(
                     textAlign: TextAlign.center,
-                    "إعادة تعيين كلمة المرور",
+                    "${langLocal.langLocal['resetPasswordTitle']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         fontSize: 12,
                         fontFamily: "Cairo",
@@ -42,7 +43,7 @@ class _ResetCode extends State<ResetCode> {
                   Expanded(child: SizedBox()),
                   Text(
                     textAlign: TextAlign.center,
-                    "تم إرسال رقم تأكيد للحساب علي ${val.api.resetPhone.text}",
+                    "${langLocal.langLocal['confirmationSent2']!['${val.languagebox.get("language")}']} ${val.api.resetPhone.text}",
                     style: TextStyle(
                         fontSize: 12,
                         fontFamily: "Cairo",
@@ -129,7 +130,7 @@ class _ResetCode extends State<ResetCode> {
                       );
                     },
                     child: Text(
-                      "إعادة إرسال الكود !",
+                      "${langLocal.langLocal['resendCode']!['${val.languagebox.get("language")}']}",
                       style: TextStyle(
                           fontSize: 12,
                           fontFamily: "Cairo",
@@ -142,7 +143,8 @@ class _ResetCode extends State<ResetCode> {
                   Container(
                     margin: EdgeInsets.all(20),
                     child: ButtonApp(
-                        title: "موافق",
+                        title:
+                            "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                         func: () {
                           if (formstate.currentState!.validate()) {
                             val.ResetCode();

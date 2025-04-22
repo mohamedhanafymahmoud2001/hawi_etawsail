@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hawy_altawsil/componant/app_text_style.dart';
 import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
+import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/componant/generated/assets.dart';
 import 'package:provider/provider.dart';
@@ -70,13 +71,15 @@ class DialogApp {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ButtonApp(
-                      title: "رجوع",
+                      title:
+                          "${langLocal.langLocal['back']!['${val.languagebox.get("language")}']}",
                       func: () {
                         Navigator.of(context).pop();
                       },
                     ),
                     ButtonApp(
-                      title: "موافق",
+                      title:
+                          "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                       func: func,
                     ),
                   ],
@@ -152,7 +155,8 @@ class DialogApp {
                         Container(
                           alignment: Alignment.center,
                           child: ButtonApp(
-                            title: "موافق",
+                            title:
+                                "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                             func: func,
                           ),
                         ),

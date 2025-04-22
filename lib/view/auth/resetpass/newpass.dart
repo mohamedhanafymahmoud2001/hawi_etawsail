@@ -4,6 +4,7 @@ import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
+import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/auth/auth.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +34,7 @@ class _NewPass extends State<NewPass> {
                   Expanded(child: SizedBox()),
                   Text(
                     textAlign: TextAlign.center,
-                    "إعادة تعيين كلمة المرور",
+                    "${langLocal.langLocal['resetPasswordTitle']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         fontSize: 12,
                         fontFamily: "Cairo",
@@ -43,7 +44,7 @@ class _NewPass extends State<NewPass> {
                   Expanded(child: SizedBox()),
                   Text(
                     textAlign: TextAlign.center,
-                    "قم بإدخال كلمة المرور الجديدة",
+                    "${langLocal.langLocal['enterNewPassword']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         fontSize: 12,
                         fontFamily: "Cairo",
@@ -54,7 +55,7 @@ class _NewPass extends State<NewPass> {
                   ),
                   InputAppPass(
                       hint: //${langLocal.langLocal['pass']['${val.languagebox.get("language")}']}
-                          "password",
+                          "${langLocal.langLocal['password']!['${val.languagebox.get("language")}']}",
                       show: val.passshow1,
                       controler: val.api.newPass,
                       icon: IconButton(
@@ -70,7 +71,7 @@ class _NewPass extends State<NewPass> {
                       keyboard: TextInputType.visiblePassword),
                   InputAppPass(
                       hint: //${langLocal.langLocal['pass']['${val.languagebox.get("language")}']}
-                          "confirm password",
+                          "${langLocal.langLocal['confirmPassword']!['${val.languagebox.get("language")}']}",
                       show: val.passshow2,
                       controler: val.api.confirmNewPass,
                       icon: IconButton(
@@ -88,7 +89,8 @@ class _NewPass extends State<NewPass> {
                   Container(
                     margin: EdgeInsets.all(20),
                     child: ButtonApp(
-                        title: "موافق",
+                        title:
+                            "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                         func: () {
                           if (formstate.currentState!.validate()) {
                             val.NewPass();

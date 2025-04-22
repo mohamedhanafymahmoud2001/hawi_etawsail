@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
+import 'package:hawy_altawsil/constant.dart';
+import 'package:hawy_altawsil/constant.dart' as val;
 
 class NoData extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
@@ -25,7 +27,7 @@ class NoData extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 10),
             child: Text(
               textAlign: TextAlign.center,
-              "لا يوجد بيانات",
+              "${langLocal.langLocal['noData']!['${val.languagebox.get("language")}']}",
               style: TextStyle(
                   fontFamily: "Cairo",
                   color: colorsApp.colorgreen2,
