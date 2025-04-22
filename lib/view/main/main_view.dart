@@ -179,22 +179,25 @@ class MainViewState extends State<MainView> {
               ],
             ),
             Container(
-              margin: EdgeInsets.only(right: 16),
+              width: 40,
+              height: 40,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xFFF9F9F9),
               ),
               child: IconButton(
+                onPressed: () {
+                  val.shwatchLanguage();
+                },
                 icon: Center(
                     child: Text(
-                  "AR",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                  ),
-                )),
-                onPressed: () {},
+                      "${val.languagebox.get("language")}",
+                      style:TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )),
               ),
             ),
             IconButton(

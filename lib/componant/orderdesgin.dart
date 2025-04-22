@@ -5,6 +5,8 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/componant/generated/assets.dart';
 import 'package:provider/provider.dart';
 
+import '../constant.dart';
+
 class OrderDesign extends StatelessWidget {
   OrderDesign({super.key, required this.data});
   final Map data;
@@ -57,21 +59,21 @@ class OrderDesign extends StatelessWidget {
                   Expanded(child: SizedBox()),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 5),
-                    child: Text(
-                      textAlign: TextAlign.center,
+                    child:    Text(
                       data["status"] == "create"
-                          ? "انشاء الطلب"
+                          ? "${langLocal.langLocal['order_creation']!['${val.languagebox.get("language")}']}"
                           : data["status"] == "bookOrder"
-                              ? "تم الحجز"
-                              : data["status"] == "receiveOrder"
-                                  ? "تم الاستلام"
-                                  : data["status"] == "back"
-                                      ? "رجوع"
-                                      : data["status"] == "finishedBack"
-                                          ? "تم الارجاع"
-                                          : data["status"] == "cancelled"
-                                              ? "تم الالغاء"
-                                              : "تم توصيلها",
+                          ?"${langLocal.langLocal['order_booked']!['${val.languagebox.get("language")}']}"
+                          : data["status"] == "receiveOrder"
+                          ? "${langLocal.langLocal['order_received']!['${val.languagebox.get("language")}']}"
+                          : data["status"] == "back"
+                          ?"${langLocal.langLocal['go_back']!['${val.languagebox.get("language")}']}"
+                          : data["status"] == "finishedBack"
+                          ? "${langLocal.langLocal['order_returned']!['${val.languagebox.get("language")}']}"
+                          : data["status"] == "cancelled"
+                          ? "${langLocal.langLocal['order_cancelled']!['${val.languagebox.get("language")}']}"
+                          : "${langLocal.langLocal['order_delivered']!['${val.languagebox.get("language")}']}",
+
                       style: TextStyle(
                           fontFamily: "Cairo",
                           color: data["status"] == "create"

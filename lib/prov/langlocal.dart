@@ -184,9 +184,9 @@ class LangLocal {
       "ar": "مرحبا",
     },
     "home": {"en": "Home", "ar": "الرئيسية"},
-    "create_request": {"en": "Create Request", "ar": "إنشاء طلب"},
+    "create_request": {"en": "Request", "ar": "إنشاء طلب"},
     "wallet": {"en": "Wallet", "ar": "المحفظة"},
-    "customer_service": {"en": "Customer Service", "ar": "خدمة العملاء"},
+    "customer_service": {"en": "Service", "ar": "خدمة العملاء"},
 
     "driver": {"en": "Driver", "ar": "السائق"},
     "confirm_delete_order": {
@@ -201,6 +201,34 @@ class LangLocal {
     },
 
     "my_orders": {"en": "My Orders", "ar": "طلباتي"},
+    "order_creation": {
+      "en": "Order Creation",
+      "ar": "انشاء الطلب"
+    },
+    "order_booked": {
+      "en": "Booked",
+      "ar": "تم الحجز"
+    },
+    "order_received": {
+      "en": "Received",
+      "ar": "تم الاستلام"
+    },
+    "go_back": {
+      "en": "Back",
+      "ar": "رجوع"
+    },
+    "order_returned": {
+      "en": "Returned",
+      "ar": "تم الارجاع"
+    },
+    "order_cancelled": {
+      "en": "Cancelled",
+      "ar": "تم الالغاء"
+    },
+    "order_delivered": {
+      "en": "Delivered",
+      "ar": "تم توصيلها"
+    },
 
     "packaging": {
       "en": "Packaging:",
@@ -279,10 +307,7 @@ class LangLocal {
       "en": "Packaging Cost",
       "ar": "تكلفة التغليف",
     },
-    "allianceCost": {
-      "en": "Alliance Cost",
-      "ar": "التكلفة الكلية",
-    },
+
     "complete_payment": {
       "en": "Complete Payment",
       "ar": "اتمام الدفع"

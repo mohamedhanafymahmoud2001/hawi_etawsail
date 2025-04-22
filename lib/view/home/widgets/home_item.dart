@@ -3,6 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/generated/assets.dart';
 
+import '../../../constant.dart';
+import '../../../constant.dart' as val;
+
 class ItemHome extends StatelessWidget {
   const ItemHome({
     super.key,
@@ -35,18 +38,18 @@ class ItemHome extends StatelessWidget {
                 SizedBox(width: 8),
                 Text(
                   data["status"] == "create"
-                      ? "انشاء الطلب"
-                      : data["status"] == "bookOrder"
-                          ? "تم الحجز"
+                      ? "${langLocal.langLocal['order_creation']!['${val.languagebox.get("language")}']}"
+                    : data["status"] == "bookOrder"
+                          ?"${langLocal.langLocal['order_booked']!['${val.languagebox.get("language")}']}"
                           : data["status"] == "receiveOrder"
-                              ? "تم الاستلام"
+                              ? "${langLocal.langLocal['order_received']!['${val.languagebox.get("language")}']}"
                               : data["status"] == "back"
-                                  ? "رجوع"
+                                  ?"${langLocal.langLocal['go_back']!['${val.languagebox.get("language")}']}"
                                   : data["status"] == "finishedBack"
-                                      ? "تم الارجاع"
+                                      ? "${langLocal.langLocal['order_returned']!['${val.languagebox.get("language")}']}"
                                       : data["status"] == "cancelled"
-                                          ? "تم الالغاء"
-                                          : "تم توصيلها",
+                                          ? "${langLocal.langLocal['order_cancelled']!['${val.languagebox.get("language")}']}"
+                                          : "${langLocal.langLocal['order_delivered']!['${val.languagebox.get("language")}']}",
                   style: TextStyle(
                       fontSize: 12,
                       color: data["status"] == "create"

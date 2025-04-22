@@ -5,6 +5,7 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/componant/generated/assets.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constant.dart';
 import 'home_item.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -52,7 +53,8 @@ class HomeViewBody extends StatelessWidget {
                             size: 16,
                           ),
                           Text(
-                            "طلباتي",
+                            "${langLocal.langLocal['my_orders']!['${val.languagebox.get("language")}']}",
+
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
