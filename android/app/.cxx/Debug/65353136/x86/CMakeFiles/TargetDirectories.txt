@@ -1,0 +1,2 @@
+D:/hawy_altawsil/android/app/.cxx/Debug/65353136/x86/CMakeFiles/edit_cache.dir
+D:/hawy_altawsil/android/app/.cxx/Debug/65353136/x86/CMakeFiles/rebuild_cache.dir
