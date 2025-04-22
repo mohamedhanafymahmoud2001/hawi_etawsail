@@ -4,6 +4,8 @@ import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class DetailsLocations extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   @override
@@ -18,7 +20,7 @@ class DetailsLocations extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "بيانات نقطة الإنطلاق",
+                    "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(fontFamily: "Cairo", fontSize: 17),
                   ),
                   SizedBox(
@@ -53,7 +55,7 @@ class DetailsLocations extends StatelessWidget {
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
                     trailing: Text(
-                      ":البلد ",
+      "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
                       style: TextStyle(
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
@@ -65,7 +67,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":المدينة ",
+                  "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -77,7 +80,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":الحي ",
+                  "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -89,7 +93,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":الشارع ",
+                  "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -101,7 +106,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":رقم المبني ",
+                  "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -115,7 +121,8 @@ class DetailsLocations extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "بيانات نقطة الاستلام ",
+                    "${langLocal.langLocal['pickup_point_details']!['${val.languagebox.get("language")}']}",
+
                     style: TextStyle(fontFamily: "Cairo", fontSize: 17),
                   ),
                   SizedBox(
@@ -150,7 +157,8 @@ class DetailsLocations extends StatelessWidget {
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
                     trailing: Text(
-                      ":البلد ",
+                      "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
+
                       style: TextStyle(
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
@@ -162,7 +170,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":المدينة ",
+                  "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -174,7 +183,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":الحي ",
+                  "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -186,7 +196,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":الشارع ",
+                  "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -198,7 +209,8 @@ class DetailsLocations extends StatelessWidget {
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
-                  ":رقم المبني ",
+                  "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       fontFamily: "Cairo", fontWeight: FontWeight.bold),
                 ),
@@ -207,7 +219,8 @@ class DetailsLocations extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30,),
-            ButtonApp(title: "موافق", func: (){
+            ButtonApp(title:  "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
+      func: (){
               val.SwitchOrderScreen("details");
             }),SizedBox(height: 30,),
           ],

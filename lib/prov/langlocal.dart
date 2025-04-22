@@ -12,6 +12,54 @@ class LangLocal {
       "en": "Departure Point Details",
       "ar": "بيانات نقطة الإنطلاق"
     },
+    "recipient_details": {
+      "en": "Enter Recipient Details",
+      "ar": "أدخل بيانات المستلم"
+    },
+    "enter_recipient_name": {
+      "en": "Enter recipient's name",
+      "ar": "أدخل إسم المستلم"
+    },
+    "enter_recipient_phone": {
+      "en": "Enter recipient's phone number",
+      "ar": "أدخل رقم هاتف المستلم"
+    },
+    "enter_order_details": {
+      "en": "Enter your order details",
+      "ar": "أدخل بيانات طلبك"
+    },
+    "enter_product_name": {
+      "en": "Enter product name",
+      "ar": "أدخل إسم المنتج"
+    },
+    "enter_product_description": {
+      "en": "Enter product description",
+      "ar": "أدخل وصف المنتج"
+    },
+    "upload_product_image": {
+      "en": "Upload product image",
+      "ar": "أدخل صورة للمنتج"
+    },
+    "select_package_weight": {
+      "en": "Select package weight",
+      "ar": "حدد وزن الطرد"
+    },
+    "package_wrapping": {
+      "en": "Package wrapping",
+      "ar": "تغليف الطرد"
+    },
+    "complete_information": {
+      "en": "Complete the information",
+      "ar": "اكمل البيانات"
+    },   "": {
+      "en": "",
+      "ar": ""
+    },
+
+    // "departure_point_details": {
+    //   "en": "Departure Point Details",
+    //   "ar": "بيانات نقطة الإنطلاق"
+    // },
     "select_pickup_location": {
       "en": "Select Pickup Location",
       "ar": "اختر موقع الاستلام"
@@ -135,46 +183,24 @@ class LangLocal {
       "en": "Hello",
       "ar": "مرحبا",
     },
-    "home": {
-      "en": "Home",
-      "ar": "الرئيسية"
-    },
-    "create_request": {
-      "en": "Create Request",
-      "ar": "إنشاء طلب"
-    },
-    "wallet": {
-      "en": "Wallet",
-      "ar": "المحفظة"
-    },
-    "customer_service": {
-      "en": "Customer Service",
-      "ar": "خدمة العملاء"
-    },
+    "home": {"en": "Home", "ar": "الرئيسية"},
+    "create_request": {"en": "Create Request", "ar": "إنشاء طلب"},
+    "wallet": {"en": "Wallet", "ar": "المحفظة"},
+    "customer_service": {"en": "Customer Service", "ar": "خدمة العملاء"},
 
-    "driver": {
-      "en": "Driver",
-      "ar": "السائق"
-    },
+    "driver": {"en": "Driver", "ar": "السائق"},
     "confirm_delete_order": {
       "en": "Do You Want to delete this Order?!",
       "ar": "هل تريد حذف هذا الطلب؟!"
     },
-    "rate_service": {
-      "en": "Rate the Service",
-      "ar": "قيم الخدمة"
-    },
+    "rate_service": {"en": "Rate the Service", "ar": "قيم الخدمة"},
 
     "cancelOrder": {
       "en": "Cancel order",
       "ar": "إلغاء الطلب",
     },
 
-
-    "my_orders": {
-      "en": "My Orders",
-      "ar": "طلباتي"
-    },
+    "my_orders": {"en": "My Orders", "ar": "طلباتي"},
 
     "packaging": {
       "en": "Packaging:",
@@ -190,7 +216,7 @@ class LangLocal {
     },
     "productDescription": {
       "en": "Product description:",
-      "ar": "وصف المتج :",
+      "ar": "وصف المنتج :",
     },
 
     "fragility": {
@@ -225,18 +251,68 @@ class LangLocal {
       "en": "Recipient phone number:",
       "ar": "رقم هاتف المستلم :",
     },
+    "done": {
+      "en": "Done the order",
+      "ar": "اتمام الطلب",
+    },
+    "payment_failed": {
+      "en": "Payment failed",
+      "ar": "فشلت عملية الدفع"
+    },
+    "payment": {
+      "en": "Payment ",
+      "ar": " عملية الدفع"
+    },
+    "order_created_successfully": {
+      "en": "Your order has been created successfully",
+      "ar": "تم انشاء طلبك بنجاح"
+    },
     "cost": {
       "en": "Cost:",
       "ar": "التكلفة : ",
+    },
+    "deliveryCost": {
+      "en": "Delivery Cost",
+      "ar": "تكلفة التوصيل",
+    },
+    "packagingCost": {
+      "en": "Packaging Cost",
+      "ar": "تكلفة التغليف",
+    },
+    "allianceCost": {
+      "en": "Alliance Cost",
+      "ar": "التكلفة الكلية",
+    },
+    "complete_payment": {
+      "en": "Complete Payment",
+      "ar": "اتمام الدفع"
     },
     "packagingService": {
       "en": "Packaging service:",
       "ar": " خدمة الغليف :",
     },
+    "allianceCost": {
+      "en": "Alliance cost",
+      "ar": "تكلفة الكلية",
+    },
     "deliveryService": {
       "en": "Delivery service:",
       "ar": " خدمة التوصيل :",
     },
+    "paymentType": {
+      "en": "Payment type",
+      "ar": "حدد نوع الدفع",
+    },
+    "payment_credit_card": {
+      "en": "Payment by Credit Card",
+      "ar": "الدفع Credit Card"
+    },
+    "payment_app": {"en": "Payment by App ", "ar": "الدفع من التطبيق"},
+    "select_payment": {
+      "en": " Select payment method",
+      "ar": "اختر طريقة الدفع"
+    },
+    "select_delivery": {"en": " Select delivery type", "ar": "حدد نوع التوصيل"},
 
     "receivedOrders": {
       "en": "Received orders",
@@ -251,13 +327,11 @@ class LangLocal {
       "ar": "الاشعارات",
     },
 
-
     "onBoardingTitle1": {"en": "Hawee Tawseel", "ar": "هاوي توصيل"},
     "onBoarding1": {
       "en":
-      "Welcome to Hawee Tawseel, where safety and delivery speed are our skills",
-      "ar":
-      "مرحبا بك في هاوي توصيل,حيث الأمان و سرعة التوصيل هي مهارتنا",
+          "Welcome to Hawee Tawseel, where safety and delivery speed are our skills",
+      "ar": "مرحبا بك في هاوي توصيل,حيث الأمان و سرعة التوصيل هي مهارتنا",
     },
     "onBoardingTitle2": {
       "en": "Hawee Tawseel Service",
@@ -265,20 +339,20 @@ class LangLocal {
     },
     "onBoarding2": {
       "en":
-      "Hawee Tawseel is a service that connects you with trusted partners to send and receive small orders at any time and anywhere",
+          "Hawee Tawseel is a service that connects you with trusted partners to send and receive small orders at any time and anywhere",
       "ar":
-      "نوصلك بمن تثق بهم لإرسال واستلام الطلبات الصغيرة في أي وقت وأي مكان. تابع رحلتك مع إشعارات فورية"
+          "نوصلك بمن تثق بهم لإرسال واستلام الطلبات الصغيرة في أي وقت وأي مكان. تابع رحلتك مع إشعارات فورية"
     },
     "onBoardingTitle3": {"en": "Get Started", "ar": "ابدء معنا"},
     "onBoarding3": {
       "en":
-      "Start your journey with Hawee Tawseel, where safety and delivery speed are our skills",
+          "Start your journey with Hawee Tawseel, where safety and delivery speed are our skills",
       "ar":
-      "ابدأ الآن وأرسل أول طلب لك في دقائق! لأن الوقت ثمين، ونحن هنا لجعل التوصيل أسرع وأسهل من أي وقت مضى"
+          "ابدأ الآن وأرسل أول طلب لك في دقائق! لأن الوقت ثمين، ونحن هنا لجعل التوصيل أسرع وأسهل من أي وقت مضى"
     },
     "onBoardingTitle5": {"en": "Select Your Country", "ar": "حدد دولتك"},
     "onBoarding5": {"en": "Choose a country", "ar": "اختر الدولة"},
-     "current_balance": {"en": "Your Current Balance", "ar": "رصيدك الحالي"},
+    "current_balance": {"en": "Your Current Balance", "ar": "رصيدك الحالي"},
     "add_wallet": {"en": "Add Wallet Balance", "ar": "إضافة رصيد للمحفظة"},
     "add_amount": {"en": "Add Amount", "ar": "حدد المبلغ المضاف"},
     "add_amount_first": {"en": "Add Amount First", "ar": "ضع مبلغا اولا"},
@@ -286,18 +360,12 @@ class LangLocal {
       "en": "Recent Cash Transactions",
       "ar": "آخر معاملاتي النقدية"
     },
-    "send_complaint": {
-      "en": "Send Complaint",
-      "ar": "إرسال الشكوي"
-    },
+    "send_complaint": {"en": "Send Complaint", "ar": "إرسال الشكوي"},
     "send_complaint_text": {
       "en": "Write to us your complaint",
       "ar": "أكتب لنا شكوتك"
     },
-    "enter_order_number": {
-      "en": "Enter Order Number",
-      "ar": "ادخل رقم الطلب "
-    },
+    "enter_order_number": {"en": "Enter Order Number", "ar": "ادخل رقم الطلب "},
     "requiredField": {
       "en": "This field is required",
       "ar": "هذا الحقل مطلوب",
@@ -330,9 +398,30 @@ class LangLocal {
       "en": "Logout",
       "ar": "تسجيل الخروج",
     },
+
+    "delivery_within_city": {
+      "en": "Delivery Within City",
+      "ar": "توصيل داخل المدينة"
+    },
+    "delivery_outside_city": {
+      "en": "Delivery Outside City",
+      "ar": "توصيل خارج المدينة"
+    },
+    "create_new_order": {
+      "en": "Create New Order",
+      "ar": "إنشاء طلب جديد"
+    },
+    "choose_previous_senders": {
+      "en": "Choose from previous sending locations",
+      "ar": "أختر من مواقع الإرسال السابقة"
+    },
+    "choose_previous_receivers": {
+      "en": "Choose from previous receiving locations",
+      "ar": "أختر من مواقع الإستلام السابقة"
+    },
+
     ////////////////////////////////////////////////////////
     //
-
 
     // "phoneValidation": {
     //   "en": "Phone number must be 11 digits",
@@ -378,14 +467,6 @@ class LangLocal {
     //   "ar": "فشلت العملية",
     // },
 
-    // "cityRequests": {
-    //   "en": "Requests inside the city",
-    //   "ar": "طلبات داخل المدينة",
-    // },
-    // "outsideCityRequests": {
-    //   "en": "Requests outside the city",
-    //   "ar": "طلبات خارج المدينة",
-    // },
     //
     //
     // "confirmReturnRequest": {
@@ -475,7 +556,6 @@ class LangLocal {
     //   "en": "Request Balance Withdrawal",
     //   "ar": "طلب سحب الرصيد"
     // },
-
 
     "start": {"en": "Start", "ar": "ابدء"},
   };

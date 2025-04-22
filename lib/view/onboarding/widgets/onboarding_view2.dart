@@ -86,7 +86,7 @@ class OnboardingView2 extends StatelessWidget {
             height: 32,
           ),
           Text(
-              "${langLocal.langLocal['onboarding2']!['${val.languagebox.get("language")}']}",
+              "${langLocal.langLocal['onBoardingTitle2']!['${val.languagebox.get("language")}']}",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 32,
@@ -97,7 +97,7 @@ class OnboardingView2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(
-                "${langLocal.langLocal['onboarding2']!['${val.languagebox.get("language")}']}",  textAlign: TextAlign.center,
+                "${langLocal.langLocal['onBoarding2']!['${val.languagebox.get("language")}']}",  textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 22,
                 )),

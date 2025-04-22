@@ -6,6 +6,8 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/order/cridet.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class ChosePay extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   DialogApp dialogApp = new DialogApp();
@@ -17,7 +19,7 @@ class ChosePay extends StatelessWidget {
           Container(
               margin: EdgeInsets.all(20),
               child: Text(
-                "التكلفة",
+                "${langLocal.langLocal['cost']!['${val.languagebox.get("language")}']}",
                 style: TextStyle(
                     color: colorsApp.colorgreen2,
                     fontSize: 18,
@@ -39,7 +41,7 @@ class ChosePay extends StatelessWidget {
                           Container(
                               margin: EdgeInsets.all(10),
                               child: Text(
-                                "تكلفة التوصيل",
+                                "${langLocal.langLocal['deliveryCost']!['${val.languagebox.get("language")}']}",
                                 style: TextStyle(
                                     fontSize: 14, fontFamily: "Cairo"),
                               )),
@@ -61,7 +63,7 @@ class ChosePay extends StatelessWidget {
                           Container(
                               margin: EdgeInsets.all(10),
                               child: Text(
-                                "تكلفة التغليف",
+                                "${langLocal.langLocal['packagingService']!['${val.languagebox.get("language")}']}",
                                 style: TextStyle(
                                     fontSize: 14, fontFamily: "Cairo"),
                               )),
@@ -84,7 +86,7 @@ class ChosePay extends StatelessWidget {
                     Container(
                         margin: EdgeInsets.all(10),
                         child: Text(
-                          "التكلفة الكلية",
+                          "${langLocal.langLocal['allianceCost']!['${val.languagebox.get("language")}']}",
                           style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                         )),
                     Container(
@@ -104,7 +106,7 @@ class ChosePay extends StatelessWidget {
           Container(
               margin: EdgeInsets.all(20),
               child: Text(
-                "حدد نوع الدفع",
+                "${langLocal.langLocal['paymentType']!['${val.languagebox.get("language")}']}",
                 style: TextStyle(
                     color: colorsApp.colorgreen2,
                     fontSize: 18,
@@ -141,7 +143,7 @@ class ChosePay extends StatelessWidget {
                           height: 35,
                           child: Image.asset("assets/images/cart.png")),
                       Text(
-                        "الدفع Credit Card",
+                        "${langLocal.langLocal['payment_credit_card']!['${val.languagebox.get("language")}']}",
                         style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                       )
                     ],
@@ -177,7 +179,7 @@ class ChosePay extends StatelessWidget {
                           height: 35,
                           child: Image.asset("assets/images/walet.png")),
                       Text(
-                        "الدفع من التطبيق",
+                        "${langLocal.langLocal['payment_app']!['${val.languagebox.get("language")}']}",
                         style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                       )
                     ],
@@ -190,7 +192,7 @@ class ChosePay extends StatelessWidget {
             child: SizedBox(),
           ),
           ButtonApp(
-              title: "التالي",
+              title:         "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
               func: () {
                 // val.typePay
                 if (val.typePay != "") {
@@ -221,7 +223,8 @@ class ChosePay extends StatelessWidget {
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text("اختر طريقة الدفع"),
+                      content: Text(        "${langLocal.langLocal['select_payment']!['${val.languagebox.get("language")}']}",
+                      ),
                       duration: Duration(seconds: 2), // تختفي بعد 3 ثوانٍ
                     ),
                   );

@@ -6,6 +6,8 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/main/main_view.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class Finish extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   @override
@@ -33,14 +35,14 @@ class Finish extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "فشلت عملية الدفع",
+                      "${langLocal.langLocal['payment_failed']!['${val.languagebox.get("language")}']}",
                       maxLines: 1,
                       textAlign: TextAlign.center,
                       style: AppTextStyles.style16W600(context),
                     ),
                     Expanded(flex: 5, child: SizedBox()),
                     ButtonApp(
-                        title: "موافق",
+                        title:                "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                         func: () {
                           Navigator.push(
                             context,
@@ -62,7 +64,7 @@ class Finish extends StatelessWidget {
                       Container(
                           margin: EdgeInsets.all(10),
                           child: Text(
-                            "تم انشاء طلبك بنجاح",
+                            "${langLocal.langLocal['order_created_successfully']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(
                                 color: colorsApp.colorgreen2,
                                 fontSize: 18,
@@ -99,7 +101,7 @@ class Finish extends StatelessWidget {
                           )),
                       Expanded(flex: 5, child: SizedBox()),
                       ButtonApp(
-                          title: "موافق",
+                          title:               "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                           func: () {
                             Navigator.push(
                               context,

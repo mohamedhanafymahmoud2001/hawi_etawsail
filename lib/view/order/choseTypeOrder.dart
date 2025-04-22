@@ -4,6 +4,8 @@ import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class ChoseTypeOrder extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   @override
@@ -15,7 +17,8 @@ class ChoseTypeOrder extends StatelessWidget {
             Container(
                 margin: EdgeInsets.all(20),
                 child: Text(
-                  "حدد نوع التوصيل",
+                  "${langLocal.langLocal['select_delivery']!['${val.languagebox.get("language")}']}",
+
                   style: TextStyle(
                       color: colorsApp.colorgreen2,
                       fontSize: 18,
@@ -53,7 +56,8 @@ class ChoseTypeOrder extends StatelessWidget {
                             height: 35,
                             child: Image.asset("assets/images/type1.png")),
                         Text(
-                          "توصيل خارج المدينة",
+                          "${langLocal.langLocal['delivery_outside_city']!['${val.languagebox.get("language")}']}",
+
                           style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                         )
                       ],
@@ -88,7 +92,8 @@ class ChoseTypeOrder extends StatelessWidget {
                             height: 35,
                             child: Image.asset("assets/images/type2.png")),
                         Text(
-                          "توصيل داخل المدينة",
+                          "${langLocal.langLocal['delivery_within_city']!['${val.languagebox.get("language")}']}",
+
                           style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                         )
                       ],
@@ -102,7 +107,8 @@ class ChoseTypeOrder extends StatelessWidget {
             // ),
             SizedBox(height: 32,),
             ButtonApp(
-                title: "التالي",
+                title:   "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
+
                 func: () {
                   // val.typeOrder
                   if (val.typeOrder != "") {
@@ -111,7 +117,8 @@ class ChoseTypeOrder extends StatelessWidget {
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text("اختر نوع التوصيل"),
+                        content: Text(   "${langLocal.langLocal['select_delivery']!['${val.languagebox.get("language")}']}",
+                        ),
                         duration: Duration(seconds:2), // تختفي بعد 3 ثوانٍ
                       ),
                     );

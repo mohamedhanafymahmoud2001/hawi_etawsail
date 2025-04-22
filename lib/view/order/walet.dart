@@ -6,6 +6,8 @@ import 'package:hawy_altawsil/componant/nodata.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class Walet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,8 @@ class Walet extends StatelessWidget {
                       Container(
                           margin: EdgeInsets.all(10),
                           child: Text(
-                            "عملية الدفع",
+                            "${langLocal.langLocal['payment']!['${val.languagebox.get("language")}']}",
+
                             style: TextStyle(
                                 color: colorsApp.colorgreen2,
                                 fontSize: 18,
@@ -83,7 +86,8 @@ class Walet extends StatelessWidget {
                                     Container(
                                         margin: EdgeInsets.all(10),
                                         child: Text(
-                                          "رصيدك الحالي",
+                                          "${langLocal.langLocal['current_balance']!['${val.languagebox.get("language")}']}",
+
                                           style: TextStyle(
                                               color: colorsApp.colorbody,
                                               fontSize: 10,
@@ -159,7 +163,8 @@ class Walet extends StatelessWidget {
                                       Container(
                                           margin: EdgeInsets.all(10),
                                           child: Text(
-                                            "تكلفة التوصيل",
+                                            "${langLocal.langLocal['deliveryCost']!['${val.languagebox.get("language")}']}",
+
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "Cairo"),
@@ -182,7 +187,8 @@ class Walet extends StatelessWidget {
                                       Container(
                                           margin: EdgeInsets.all(10),
                                           child: Text(
-                                            "تكلفة التغليف",
+                                            "${langLocal.langLocal['packagingCost']!['${val.languagebox.get("language")}']}",
+
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "Cairo"),
@@ -206,7 +212,8 @@ class Walet extends StatelessWidget {
                                 Container(
                                     margin: EdgeInsets.all(10),
                                     child: Text(
-                                      "التكلفة الكلية",
+                                      "${langLocal.langLocal['allianceCost']!['${val.languagebox.get("language")}']}",
+
                                       style: TextStyle(
                                           fontSize: 14, fontFamily: "Cairo"),
                                     )),
@@ -226,7 +233,7 @@ class Walet extends StatelessWidget {
                       ),
                       Expanded(child: SizedBox()),
                       ButtonApp(
-                          title: 'اتمام الدفع',
+                          title: "${langLocal.langLocal['complete_payment']!['${val.languagebox.get("language")}']}",
                           func: () {
                             val.Payment();
                             dialogApp.checkdialog(context, () {

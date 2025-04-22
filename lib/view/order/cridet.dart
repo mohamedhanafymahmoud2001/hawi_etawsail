@@ -4,6 +4,8 @@ import 'package:hawy_altawsil/view/main/main_view.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../constant.dart';
+
 class web extends StatefulWidget {
   final String paymentToken; // استلام التوكين من شاشة أخرى
 
@@ -45,7 +47,8 @@ class _WebPageState extends State<web> {
     return Consumer<Control>(builder: (context, val, child) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('Web Page'),
+          title: Text(   "${langLocal.langLocal['webPage']!['${val.languagebox.get("language")}']}",
+          ),
         ),
         body: WebViewWidget(controller: _controller),
         floatingActionButton: FloatingActionButton(
@@ -58,7 +61,7 @@ class _WebPageState extends State<web> {
             Navigator.of(context).pop();
             val.SwitchOrderScreen("finish");
           },
-          child: Text("رجوع"),
+          child: Text("${langLocal.langLocal['back']!['${val.languagebox.get("language")}']}",),
         ),
       );
     });

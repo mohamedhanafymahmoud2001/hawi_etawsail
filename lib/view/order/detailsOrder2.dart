@@ -5,6 +5,8 @@ import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class DetailsOrder2 extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   DialogApp dialogApp = new DialogApp();
@@ -35,7 +37,8 @@ class DetailsOrder2 extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(":وصف المنتج "),
+                  Text( "${langLocal.langLocal['productDescription']!['${val.languagebox.get("language")}']}",
+                  ),
                   Text(
                     textAlign: TextAlign.end,
                     "${val.api.decPr.text}",
@@ -54,13 +57,13 @@ class DetailsOrder2 extends StatelessWidget {
                 children: [
                   Text(
                     textAlign: TextAlign.end,
-                    val.typeCover == "cover" ? "مغلف" : "غير مغلف",
+                    val.typeCover == "cover" ? "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}" : "${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
                   ),
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text(":التغليف "),
+                  Text("${langLocal.langLocal['packaging']!['${val.languagebox.get("language")}']}",),
                 ],
               ),
             ),
@@ -74,13 +77,13 @@ class DetailsOrder2 extends StatelessWidget {
                 children: [
                   Text(
                     textAlign: TextAlign.end,
-                    val.typeBreak == "break" ? "حساس" : "غير حساس",
+                    val.typeBreak == "break" ? "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}" : "${langLocal.langLocal['notFragile']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
                   ),
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text("حساسية الكسر"),
+                  Text( "${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",),
                 ],
               ),
             ),
@@ -100,7 +103,7 @@ class DetailsOrder2 extends StatelessWidget {
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text(":وزن الطرد "),
+                  Text( "${langLocal.langLocal['packageWeight']!['${val.languagebox.get("language")}']}",),
                 ],
               ),
             ),
@@ -120,7 +123,7 @@ class DetailsOrder2 extends StatelessWidget {
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text(":اسم المستلم "),
+                  Text( "${langLocal.langLocal['recipientName']!['${val.languagebox.get("language")}']}",),
                 ],
               ),
             ),
@@ -140,14 +143,14 @@ class DetailsOrder2 extends StatelessWidget {
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text(":رقم هاتف المستلم "),
+                  Text( "${langLocal.langLocal['recipientPhone']!['${val.languagebox.get("language")}']}",),
                 ],
               ),
             ),
             Container(
                 margin: EdgeInsets.all(30),
                 child: ButtonApp(
-                    title: "اتمام الطلب",
+                    title: "${langLocal.langLocal['done']!['${val.languagebox.get("language")}']}",
                     func: () {
                       val.Order();
                       dialogApp.checkdialog(context, () {

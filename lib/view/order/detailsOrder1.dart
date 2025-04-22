@@ -6,6 +6,8 @@ import 'package:hawy_altawsil/componant/input.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class DetailsOrder1 extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   GlobalKey<FormState> formstate = GlobalKey();
@@ -20,20 +22,22 @@ class DetailsOrder1 extends StatelessWidget {
               Container(
                   margin: EdgeInsets.all(20),
                   child: Text(
-                    "أدخل بيانات المستلم",
+                    "${langLocal.langLocal['recipient_details']!['${val.languagebox.get("language")}']}",
+
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
                         fontFamily: "Cairo"),
                   )),
               InputAppOrder(
-                hint: "أدخل إسم المستلم ",
+                hint: "${langLocal.langLocal['enter_recipient_name']!['${val.languagebox.get("language")}']}",
                 controler: val.api.nameRe,
                 keyboard: TextInputType.text,
                 line: 1,
               ),
               InputAppOrder(
-                hint: "أدخل رقم هاتف المستلم ",
+                hint:  "${langLocal.langLocal['enter_recipient_phone']!['${val.languagebox.get("language")}']}",
+
                 controler: val.api.phoneRe,
                 keyboard: TextInputType.phone,
                 line: 1,
@@ -41,20 +45,22 @@ class DetailsOrder1 extends StatelessWidget {
               Container(
                   margin: EdgeInsets.all(20),
                   child: Text(
-                    "أدخل بيانات طلبك",
+                    "${langLocal.langLocal['enter_order_details']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
                         fontFamily: "Cairo"),
                   )),
               InputAppOrder(
-                hint: "أدخل إسم المنتج",
+                hint: "${langLocal.langLocal['enter_product_name']!['${val.languagebox.get("language")}']}",
+
                 controler: val.api.namePr,
                 keyboard: TextInputType.text,
                 line: 1,
               ),
               InputAppOrder(
-                hint: "أدخل وصف المنتج",
+                hint:     "${langLocal.langLocal['enter_product_description']!['${val.languagebox.get("language")}']}",
+
                 controler: val.api.decPr,
                 keyboard: TextInputType.text,
                 line: 4,
@@ -96,7 +102,8 @@ class DetailsOrder1 extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 30),
                           child: Text(
-                            "أدخل صورة للمنتج",
+                            "${langLocal.langLocal['upload_product_image']!['${val.languagebox.get("language")}']}",
+
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                         )
@@ -108,7 +115,8 @@ class DetailsOrder1 extends StatelessWidget {
               Container(
                   margin: EdgeInsets.all(20),
                   child: Text(
-                    "حدد وزن الطرد",
+                    "${langLocal.langLocal['select_package_weight']!['${val.languagebox.get("language")}']}",
+
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
@@ -121,7 +129,8 @@ class DetailsOrder1 extends StatelessWidget {
               Container(
                   margin: EdgeInsets.all(20),
                   child: Text(
-                    "تغليف الطرد",
+                    "${langLocal.langLocal['package_wrapping']!['${val.languagebox.get("language")}']}",
+
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
@@ -146,7 +155,7 @@ class DetailsOrder1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "مغلف",
+                            "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                           ),
                           SizedBox(
@@ -188,7 +197,7 @@ class DetailsOrder1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "غير مغلف",
+                            "${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                           ),
                           SizedBox(
@@ -222,7 +231,7 @@ class DetailsOrder1 extends StatelessWidget {
               Container(
                   margin: EdgeInsets.all(20),
                   child: Text(
-                    "حساسية الكسر",
+                    "${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
@@ -247,7 +256,7 @@ class DetailsOrder1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "حساس",
+                            "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                           ),
                           SizedBox(
@@ -289,7 +298,7 @@ class DetailsOrder1 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "غير حساس",
+                            "${langLocal.langLocal['notFragile']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                           ),
                           SizedBox(
@@ -322,7 +331,7 @@ class DetailsOrder1 extends StatelessWidget {
                 height: 30,
               ),
               ButtonApp(
-                  title: "التالي",
+                  title: "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                   func: () {
                     if (formstate.currentState!.validate() &&
                         val.typeCover != "" &&
@@ -333,7 +342,8 @@ class DetailsOrder1 extends StatelessWidget {
                       print("not validat");
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text("اكمل البيانات"),
+                          content: Text(  "${langLocal.langLocal['complete_information']!['${val.languagebox.get("language")}']}",
+                          ),
                           duration: Duration(seconds: 3), // تختفي بعد 3 ثوانٍ
                         ),
                       );

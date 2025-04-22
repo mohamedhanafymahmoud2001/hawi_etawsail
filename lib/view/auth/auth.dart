@@ -57,7 +57,7 @@ class _Auth extends State<Auth> {
                       ),
                     ),
                     Container(
-                      width: 260,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                           color: colorsApp.colorblackApp,
@@ -65,7 +65,7 @@ class _Auth extends State<Auth> {
                       child: Row(
                         children: [
                           Container(
-                            width: 130,
+                            width: 140,
                             height: 50,
                             decoration: BoxDecoration(
                                 color: val.auth == "login"
@@ -83,7 +83,7 @@ class _Auth extends State<Auth> {
                             ),
                           ),
                           Container(
-                            width: 130,
+                            width: 140,
                             height: 50,
                             decoration: BoxDecoration(
                                 color: val.auth == "register"

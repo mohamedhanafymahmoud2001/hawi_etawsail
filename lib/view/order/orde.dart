@@ -16,6 +16,8 @@ import 'package:hawy_altawsil/view/order/recievelocation.dart';
 import 'package:hawy_altawsil/view/order/walet.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class Order extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -116,7 +118,7 @@ class _Order extends State<Order> {
                                   margin: EdgeInsets.only(right: 20),
                                   child: Text(
                                     textAlign: TextAlign.center,
-                                    "إنشاء طلب جديد",
+                                    "${langLocal.langLocal['create_new_order']!['${val.languagebox.get("language")}']}",
                                     style: TextStyle(
                                         fontFamily: "Cairo",
                                         color: colorsApp.colorbody,
@@ -153,8 +155,9 @@ class _Order extends State<Order> {
                                 children: [
                                   Text(
                                     val.orderscreen == "mylocation"
-                                        ? "أختر من مواقع الإرسال السابقة"
-                                        : "أختر من مواقع الإستلام السابقة",
+                                        ?       "${langLocal.langLocal['choose_previous_senders']!['${val.languagebox.get("language")}']}"
+                                :       "${langLocal.langLocal['choose_previous_receivers']!['${val.languagebox.get("language")}']}",
+
                                     style: TextStyle(
                                         fontFamily: "Cairo",
                                         color: colorsApp.colorbody),
