@@ -8,6 +8,8 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/myOrders/detailsOrder/containerdetails.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constant.dart';
+
 class Details extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -61,7 +63,7 @@ class _Details extends State<Details> {
                                             margin: EdgeInsets.only(right: 20),
                                             child: Text(
                                               textAlign: TextAlign.center,
-                                              "طلباتي",
+                                              "${langLocal.langLocal['my_orders']!['${val.languagebox.get("language")}']}",
                                               style: TextStyle(
                                                   fontFamily: "Cairo",
                                                   color: colorsApp.colorbody,
@@ -148,7 +150,9 @@ class _Details extends State<Details> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text(":وصف المنتج "),
+                                Text(
+                                    "${langLocal.langLocal['productDescription']!['${val.languagebox.get("language")}']}"
+                                ),
                                 Text(
                                   textAlign: TextAlign.end,
                                   "${val.showOrder['data']['description']}",
@@ -169,15 +173,15 @@ class _Details extends State<Details> {
                                 Text(
                                   textAlign: TextAlign.end,
                                   val.showOrder['data']['cover'] == "cover"
-                                      ? "مغلف"
-                                      : "غير مغلف",
+                                      ? "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}"
+                                      :"${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
                                 ),
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text(":التغليف "),
+                                Text( "${langLocal.langLocal['packaging']!['${val.languagebox.get("language")}']}",),
                               ],
                             ),
                           ),
@@ -192,15 +196,16 @@ class _Details extends State<Details> {
                                 Text(
                                   textAlign: TextAlign.end,
                                   val.showOrder['data']['break'] == "break"
-                                      ? "حساس"
-                                      : "غير حساس",
+                                      ?
+                                      "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}"
+                                      : "${langLocal.langLocal['notFragile']!['${val.languagebox.get("language")}']}",
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
                                 ),
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text(": حساسية الكسر "),
+                                Text("${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",),
                               ],
                             ),
                           ),
@@ -221,7 +226,9 @@ class _Details extends State<Details> {
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text(":وزن الطرد "),
+                                Text(
+                                  "${langLocal.langLocal['packageWeight']!['${val.languagebox.get("language")}']}",
+                                ),
                               ],
                             ),
                           ),
@@ -242,7 +249,9 @@ class _Details extends State<Details> {
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text(":اسم المستلم "),
+                                Text(
+                                  "${langLocal.langLocal['recipientName']!['${val.languagebox.get("language")}']}",
+                                ),
                               ],
                             ),
                           ),
@@ -263,7 +272,9 @@ class _Details extends State<Details> {
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text(":رقم هاتف المستلم "),
+                                Text(
+                                  "${langLocal.langLocal['recipientPhone']!['${val.languagebox.get("language")}']}",
+                                ),
                               ],
                             ),
                           ),

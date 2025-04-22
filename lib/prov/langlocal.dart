@@ -127,6 +127,122 @@ class LangLocal {
       "en": "Login",
       "ar": "تسجيل الدخول",
     },
+    "hello": {
+      "en": "Hello",
+      "ar": "مرحبا",
+    },
+    "home": {
+      "en": "Home",
+      "ar": "الرئيسية"
+    },
+    "create_request": {
+      "en": "Create Request",
+      "ar": "إنشاء طلب"
+    },
+    "wallet": {
+      "en": "Wallet",
+      "ar": "المحفظة"
+    },
+    "customer_service": {
+      "en": "Customer Service",
+      "ar": "خدمة العملاء"
+    },
+
+    "driver": {
+      "en": "Driver",
+      "ar": "السائق"
+    },
+    "confirm_delete_order": {
+      "en": "Do You Want to delete this Order?!",
+      "ar": "هل تريد حذف هذا الطلب؟!"
+    },
+    "rate_service": {
+      "en": "Rate the Service",
+      "ar": "قيم الخدمة"
+    },
+
+    "cancelOrder": {
+      "en": "Cancel order",
+      "ar": "إلغاء الطلب",
+    },
+
+
+    "my_orders": {
+      "en": "My Orders",
+      "ar": "طلباتي"
+    },
+
+    "packaging": {
+      "en": "Packaging:",
+      "ar": "التغليف :",
+    },
+    "packaged": {
+      "en": "Packaged",
+      "ar": "مغلف",
+    },
+    "notPackaged": {
+      "en": "Not packaged",
+      "ar": "غير مغلف",
+    },
+    "productDescription": {
+      "en": "Product description:",
+      "ar": "وصف المتج :",
+    },
+
+    "fragility": {
+      "en": "Fragility:",
+      "ar": "حساسية الكسر:",
+    },
+    "fragile": {
+      "en": "Fragile",
+      "ar": "حساس",
+    },
+    "notFragile": {
+      "en": "Not fragile",
+      "ar": "غير حساس",
+    },
+    "packageWeight": {
+      "en": "Package weight:",
+      "ar": "وزن الطرد :",
+    },
+    "departurePoint": {
+      "en": "Departure point:",
+      "ar": "نقطة الإنطلاق:",
+    },
+    "deliveryPoint": {
+      "en": "Delivery point:",
+      "ar": "نقطة الإستلام :",
+    },
+    "recipientName": {
+      "en": "Recipient name:",
+      "ar": "اسم المستلم :",
+    },
+    "recipientPhone": {
+      "en": "Recipient phone number:",
+      "ar": "رقم هاتف المستلم :",
+    },
+    "cost": {
+      "en": "Cost:",
+      "ar": "التكلفة : ",
+    },
+    "packagingService": {
+      "en": "Packaging service:",
+      "ar": " خدمة الغليف :",
+    },
+    "deliveryService": {
+      "en": "Delivery service:",
+      "ar": " خدمة التوصيل :",
+    },
+
+    "receivedOrders": {
+      "en": "Received orders",
+      "ar": "الطلبات المستلمة",
+    },
+    "sentOrders": {
+      "en": "Sent orders",
+      "ar": "الطلبات المرسلة",
+    },
+
     ////////////////////////////////////////////////////////
 
     "phoneNumber": {
@@ -156,10 +272,7 @@ class LangLocal {
       "ar": "الدولة",
     },
 
-    "hello": {
-      "en": "Hello",
-      "ar": "مرحبا",
-    },
+
 
     "insertImageHere": {
       "en": "Insert the image here",
@@ -181,10 +294,7 @@ class LangLocal {
       "en": "Complete the data",
       "ar": "اكمل البيانات",
     },
-    "operationSuccess": {
-      "en": "Operation completed successfully",
-      "ar": "تم العملية بنجاح",
-    },
+
     "operationFailed": {
       "en": "Operation failed",
       "ar": "فشلت العملية",
@@ -209,22 +319,7 @@ class LangLocal {
       "en": "Requests outside the city",
       "ar": "طلبات خارج المدينة",
     },
-    "requests": {
-      "en": "Requests",
-      "ar": "الطلبات",
-    },
-    "myRequests": {
-      "en": "My Requests",
-      "ar": "طلباتي",
-    },
-    "wallet": {
-      "en": "Wallet",
-      "ar": "المحفظة",
-    },
-    "myAccount": {
-      "en": "My Account",
-      "ar": "حسابي",
-    },
+
 
     "confirmReturnRequest": {
       "en": "Confirm return request",
@@ -270,10 +365,7 @@ class LangLocal {
       "en": "Confirm order",
       "ar": "تأكيد الطلب",
     },
-    "cancelOrderBooking": {
-      "en": "Cancel order booking",
-      "ar": "إلغاء حجز الطلب",
-    },
+
     "confirmCancelOrderBooking": {
       "en": "Do you want to cancel the order booking?",
       "ar": "هل تريد إلغاء حجز الطلب ؟",
@@ -286,74 +378,12 @@ class LangLocal {
       "en": "Enter the order confirmation code",
       "ar": "قم بإدخال رقم تأكيد الطلب",
     },
-    "productDescription": {
-      "en": "Product description:",
-      "ar": "وصف المتج :",
-    },
-    "packaging": {
-      "en": "Packaging:",
-      "ar": "التغليف :",
-    },
-    "packaged": {
-      "en": "Packaged",
-      "ar": "مغلف",
-    },
-    "notPackaged": {
-      "en": "Not packaged",
-      "ar": "غير مغلف",
-    },
-    "fragility": {
-      "en": "Fragility:",
-      "ar": "حساسية الكسر:",
-    },
-    "fragile": {
-      "en": "Fragile",
-      "ar": "حساس",
-    },
-    "notFragile": {
-      "en": "Not fragile",
-      "ar": "غير حساس",
-    },
-    "packageWeight": {
-      "en": "Package weight:",
-      "ar": "وزن الطرد :",
-    },
-    "departurePoint": {
-      "en": "Departure point:",
-      "ar": "نقطة الإنطلاق:",
-    },
-    "deliveryPoint": {
-      "en": "Delivery point:",
-      "ar": "نقطة الإستلام :",
-    },
-    "recipientName": {
-      "en": "Recipient name:",
-      "ar": "اسم المستلم :",
-    },
-    "recipientPhone": {
-      "en": "Recipient phone number:",
-      "ar": "رقم هاتف المستلم :",
-    },
-    "cost": {
-      "en": "Cost:",
-      "ar": "التكلفة : ",
-    },
-    "packagingService": {
-      "en": "Packaging service:",
-      "ar": " خدمة الغليف :",
-    },
-    "deliveryService": {
-      "en": "Delivery service:",
-      "ar": " خدمة التوصيل :",
-    },
+
     "reservedOrders": {
       "en": "Reserved orders",
       "ar": "الطلبات المحجوزة",
     },
-    "receivedOrders": {
-      "en": "Received orders",
-      "ar": "الطلبات المستلمة",
-    },
+
     "deliveredOrders": {
       "en": "Delivered orders",
       "ar": "طلبات تم توصيلها",

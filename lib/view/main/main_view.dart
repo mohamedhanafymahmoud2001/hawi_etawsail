@@ -18,6 +18,7 @@ import 'package:hawy_altawsil/view/support/support_view.dart';
 import 'package:hawy_altawsil/view/wallet/wallwt_view.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
 import '../home/home_view.dart';
 import '../notifications/notifications_view.dart';
 
@@ -114,7 +115,8 @@ class MainViewState extends State<MainView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "مرحبا",
+                              "${langLocal.langLocal['hello']!['${val.languagebox.get("language")}']}",
+
                                     style: TextStyle(
                                       color: ColorsApp().colorgreen2,
                                       fontSize: 10,
@@ -260,7 +262,7 @@ class MainViewState extends State<MainView> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     BottomNavBTN(
-                      title: "الرئيسية",
+                      title:  "${langLocal.langLocal['home']!['${val.languagebox.get("language")}']}",
                       onPressed: (valu) {
                         val.Home();
                         val.animateToPage(valu);
@@ -270,7 +272,7 @@ class MainViewState extends State<MainView> {
                       index: 0,
                     ),
                     BottomNavBTN(
-                      title: "إنشاء طلب",
+                      title:"${langLocal.langLocal['create_request']!['${val.languagebox.get("language")}']}",
                       onPressed: (valu) {
                         val.animateToPage(valu);
                       },
@@ -279,7 +281,7 @@ class MainViewState extends State<MainView> {
                       index: 1,
                     ),
                     BottomNavBTN(
-                      title: "المحفظة",
+                      title: "${langLocal.langLocal['wallet']!['${val.languagebox.get("language")}']}",
                       onPressed: (valu) {
                         val.AllWallet();
                         val.animateToPage(valu);
@@ -289,7 +291,7 @@ class MainViewState extends State<MainView> {
                       index: 2,
                     ),
                     BottomNavBTN(
-                      title: "خدمة العملاء",
+                      title: "${langLocal.langLocal['customer_service']!['${val.languagebox.get("language")}']}",
                       onPressed: (valu) {
                         val.animateToPage(valu);
                       },

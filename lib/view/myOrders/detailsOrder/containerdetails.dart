@@ -6,6 +6,8 @@ import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/myOrders/detailsOrder/stepper.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constant.dart';
+
 DialogApp dialogApp = new DialogApp();
 
 class ContainerDetails extends StatelessWidget {
@@ -84,13 +86,13 @@ class ContainerDetails extends StatelessWidget {
                         style: TextStyle(color: colorsApp.colorbody),
                       ),
                       trailing: Text(
-                        "Driver",
+                        "${langLocal.langLocal['driver']!['${val.languagebox.get("language")}']}",
                         style: TextStyle(color: colorsApp.colorbody),
                       ),
                     ),
               status == "create"
                   ? ButtonOrder(
-                      title: "cancel Order",
+                      title: "${langLocal.langLocal['cancelOrder']!['${val.languagebox.get("language")}']}",
                       func: () {
                         val.SwitchDetailsContainer("delete");
                       })
@@ -143,7 +145,7 @@ class ContainerDelete extends StatelessWidget {
                 margin: EdgeInsets.only(top: 20),
                 child: Text(
                   textAlign: TextAlign.center,
-                  "Do You Want to delete this Order ?!",
+                   "${langLocal.langLocal['confirm_delete_order']!['${val.languagebox.get("language")}']}",
                   style: TextStyle(
                       fontFamily: "Cairo",
                       color: colorsApp.colorbody,
@@ -152,8 +154,8 @@ class ContainerDelete extends StatelessWidget {
                 ),
               ),
               ButtonOrder(
-                title: "cancel Order",
-                func: () {
+                title:  "${langLocal.langLocal['cancelOrder']!['${val.languagebox.get("language")}']}",
+      func: () {
                   val.Cancel();
                   Future.delayed(Duration.zero, () {
                     if (context.mounted) {
@@ -225,7 +227,7 @@ class ContainerRate extends StatelessWidget {
               StepperRate(),
               Expanded(child: SizedBox()),
               ButtonOrder(
-                  title: "قيم الخدمة",
+                  title:  "${langLocal.langLocal['rate_service']!['${val.languagebox.get("language")}']}",
                   func: () {
                     val.AddRate();
                     dialogApp.checkdialog(context, () {

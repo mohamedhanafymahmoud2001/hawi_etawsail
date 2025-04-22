@@ -5,6 +5,8 @@ import 'package:hawy_altawsil/componant/orderdesgin.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant.dart';
+
 class MyOrders extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -47,7 +49,8 @@ class _MyOrders extends State<MyOrders> {
                             margin: EdgeInsets.only(right: 20),
                             child: Text(
                               textAlign: TextAlign.center,
-                              "طلباتي",
+
+                                "${langLocal.langLocal['my_orders']!['${val.languagebox.get("language")}']}",
                               style: TextStyle(
                                   fontFamily: "Cairo",
                                   color: colorsApp.colorbody,
@@ -89,7 +92,8 @@ class _MyOrders extends State<MyOrders> {
                           val.OrderReciver();
                         },
                         child: Text(
-                          "الطلبات المستلمة",
+                          "${langLocal.langLocal['receivedOrders']!['${val.languagebox.get("language")}']}",
+
                           style: TextStyle(
                               fontFamily: "Cairo", color: colorsApp.colorbody),
                         ),
@@ -109,7 +113,8 @@ class _MyOrders extends State<MyOrders> {
                           val.SwitchOrderType("send");
                         },
                         child: Text(
-                          "الطلبات المرسلة",
+                          "${langLocal.langLocal['sentOrders']!['${val.languagebox.get("language")}']}",
+
                           style: TextStyle(
                               fontFamily: "Cairo", color: colorsApp.colorbody),
                         ),
