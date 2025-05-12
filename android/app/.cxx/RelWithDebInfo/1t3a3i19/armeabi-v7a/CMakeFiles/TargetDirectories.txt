@@ -1,0 +1,2 @@
+D:/hawy_altawsil/android/app/.cxx/RelWithDebInfo/1t3a3i19/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/hawy_altawsil/android/app/.cxx/RelWithDebInfo/1t3a3i19/armeabi-v7a/CMakeFiles/rebuild_cache.dir
