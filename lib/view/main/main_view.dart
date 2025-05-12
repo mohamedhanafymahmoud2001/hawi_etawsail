@@ -46,298 +46,315 @@ class MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     AppSizes().init(context);
     return Consumer<Control>(builder: (context, val, child) {
-      return Scaffold(
-        bottomNavigationBar: Container(
-          color: Colors.transparent,
-          child: Padding(
-            padding: const EdgeInsets.only(
-              bottom: 12,
-              right: 16,
-              left: 16,
+      return Directionality(
+        textDirection: val.direction,
+        child: Scaffold(
+          bottomNavigationBar: Container(
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                bottom: 12,
+                right: 16,
+                left: 16,
+              ),
+              child: bottomNav(),
             ),
-            child: bottomNav(),
           ),
-        ),
-        backgroundColor: ColorsApp().colorbody,
-        appBar: AppBar(
-          leadingWidth: 0,
-          leading: SizedBox(),
-          elevation: 0,
           backgroundColor: ColorsApp().colorbody,
-          title: val.home == null
-              ? SizedBox()
-              : val.home['status'] == false
-                  ? Container()
-                  : GestureDetector(
-                      onTap: () {
-                        val.Profile();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ProfileView(),
+          appBar: AppBar(
+            leadingWidth: 0,
+            leading: SizedBox(),
+            elevation: 0,
+            backgroundColor: ColorsApp().colorbody,
+            title: val.home == null
+                ? SizedBox()
+                : val.home['status'] == false
+                    ? Container()
+                    : GestureDetector(
+                        onTap: () {
+                          val.Profile();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProfileView(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: 180,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            border: Border.all(
+                                width: 1, color: ColorsApp().colorgreen1),
                           ),
-                        );
-                      },
-                      child: Container(
-                        width: 180,
-                        height: 48,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          border: Border.all(
-                              width: 1, color: ColorsApp().colorgreen1),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                width: 44,
-                                height: 44,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 2.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 44,
+                                  height: 44,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: val.home['data']['user']['image'] ==
+                                          null
+                                      ? Icon(Icons.person_2_outlined,
+                                          color: Colors.grey)
+                                      : ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          child: ImageView(
+                                              image:
+                                                  "${val.api.ip}/${val.home['data']['user']['image']}")
+                                          //  Image.network(
+                                          //     "${val.api.ip}/${val.home['data']['user']['image']}"),
+                                          ),
                                 ),
-                                child: val.home['data']['user']['image'] == null
-                                    ? Icon(Icons.person_2_outlined,
-                                        color: Colors.grey)
-                                    : ClipRRect(
-                                        borderRadius: BorderRadius.circular(50),
-                                        child: ImageView(
-                                            image:
-                                                "${val.api.ip}/${val.home['data']['user']['image']}")
-                                        //  Image.network(
-                                        //     "${val.api.ip}/${val.home['data']['user']['image']}"),
-                                        ),
-                              ),
-                              SizedBox(width: 8),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                              "${langLocal.langLocal['hello']!['${val.languagebox.get("language")}']}",
-
-                                    style: TextStyle(
-                                      color: ColorsApp().colorgreen2,
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w400,
+                                SizedBox(width: 8),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "${langLocal.langLocal['hello']!['${val.languagebox.get("language")}']}",
+                                      style: TextStyle(
+                                        color: ColorsApp().colorgreen2,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    "${val.home['data']['user']['name']}",
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w400,
+                                    Text(
+                                      "${val.home['data']['user']['name']}",
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
+            actions: [
+              Stack(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 16),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xFFF9F9F9),
                     ),
-          actions: [
-            Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(right: 16),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFFF9F9F9),
-                  ),
-                  child: IconButton(
-                    icon: Center(
-                      child: SvgPicture.asset(
-                        Assets.imagesBell,
-                        width: 20,
+                    child: IconButton(
+                      icon: Center(
+                        child: SvgPicture.asset(
+                          Assets.imagesBell,
+                          width: 20,
+                        ),
                       ),
+                      onPressed: () {
+                        val.Notificat();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotificationsView()));
+                      },
                     ),
-                    onPressed: () {
-                      val.Notificat();
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NotificationsView()));
-                    },
                   ),
+                  val.home == null
+                      ? SizedBox()
+                      : val.home['status'] == false
+                          ? Container()
+                          : val.home['data']['notification'] == 0
+                              ? SizedBox()
+                              : CircleAvatar(
+                                  backgroundColor: colorsApp.colorgreen2,
+                                  radius: 8,
+                                  child: Text(
+                                    "${val.home['data']['notification']}",
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.white),
+                                  )),
+                ],
+              ),
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFF9F9F9),
                 ),
-                val.home == null
-                    ? SizedBox()
-                    : val.home['status'] == false
-                        ? Container()
-                        : val.home['data']['notification'] == 0
-                            ? SizedBox()
-                            : CircleAvatar(
-                                backgroundColor: colorsApp.colorgreen2,
-                                radius: 8,
-                                child: Text(
-                                  "${val.home['data']['notification']}",
-                                  style: TextStyle(
-                                      fontSize: 10, color: Colors.white),
-                                )),
-              ],
-            ),
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFFF9F9F9),
-              ),
-              child: IconButton(
-                onPressed: () {
-                  val.shwatchLanguage();
-                },
-                icon: Center(
-                    child: Text(
-                      "${val.languagebox.get("language")}",
-                      style:TextStyle(
-                        color: Colors.black,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    )),
-              ),
-            ),
-            IconButton(
-              icon: Image.asset(Assets.imagesLogo),
-              onPressed: () {
-                dialogApp.checkdialog(context, () {});
-              },
-            ),
-          ],
-        ),
-        body: val.home == null
-            ? Center(child: CircularProgressIndicator())
-            : val.home['status'] == false
-                ? Container(height: 300, child: Center(child: NoData()))
-                : Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: PageView(
-                            onPageChanged: (value) {
-                              setState(() {
-                                val.currentIndex = value;
-                              });
-                            },
-                            controller: val.pageController,
-                            // physics: const NeverScrollableScrollPhysics(),
-                            children: [
-                              HomeView(),
-                              ChoseTypeOrder(),
-                              WalletView(),
-                              SupportView(),
-                            ],
-                          ),
-                        ),
-                      ],
+                child: IconButton(
+                  onPressed: () {
+                    val.shwatchLanguage();
+                  },
+                  icon: Center(
+                      child: Text(
+                    "${val.languagebox.get("language")}",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
                     ),
-                  ),
+                  )),
+                ),
+              ),
+              IconButton(
+                icon: Image.asset(Assets.imagesLogo),
+                onPressed: () {
+                  dialogApp.checkdialog(context, () {});
+                },
+              ),
+            ],
+          ),
+          body: val.home == null
+              ? Center(child: CircularProgressIndicator())
+              : val.home['status'] == false
+                  ? Container(height: 300, child: Center(child: NoData()))
+                  : Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Stack(
+                        children: [
+                          Positioned.fill(
+                            child: PageView(
+                              onPageChanged: (value) {
+                                setState(() {
+                                  val.currentIndex = value;
+                                });
+                              },
+                              controller: val.pageController,
+                              // physics: const NeverScrollableScrollPhysics(),
+                              children: [
+                                HomeView(),
+                                ChoseTypeOrder(),
+                                WalletView(),
+                                SupportView(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+        ),
       );
     });
   }
 
   Widget bottomNav() {
     return Consumer<Control>(builder: (context, val, child) {
-      return Material(
-        borderRadius: BorderRadius.circular(30),
-        color: Colors.transparent,
-        elevation: 6,
-        child: Container(
-          height: AppSizes.blockSizeHorizontal * 18,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            color: Colors.grey[900],
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Stack(
-            children: [
-              Positioned(
-                top: 0,
-                bottom: 0,
-                left: AppSizes.blockSizeHorizontal * 3,
-                right: AppSizes.blockSizeHorizontal * 3,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    BottomNavBTN(
-                      title:  "${langLocal.langLocal['home']!['${val.languagebox.get("language")}']}",
-                      onPressed: (valu) {
-                        val.Home();
-                        val.animateToPage(valu);
-                      },
-                      icon: Assets.imagesHouseLine,
-                      currentIndex: val.currentIndex,
-                      index: 0,
-                    ),
-                    BottomNavBTN(
-                      title:"${langLocal.langLocal['create_request']!['${val.languagebox.get("language")}']}",
-                      onPressed: (valu) {
-                        val.animateToPage(valu);
-                      },
-                      icon: Assets.imagesPlus,
-                      currentIndex: val.currentIndex,
-                      index: 1,
-                    ),
-                    BottomNavBTN(
-                      title: "${langLocal.langLocal['wallet']!['${val.languagebox.get("language")}']}",
-                      onPressed: (valu) {
-                        val.AllWallet();
-                        val.animateToPage(valu);
-                      },
-                      icon: Assets.imagesWallet,
-                      currentIndex: val.currentIndex,
-                      index: 2,
-                    ),
-                    BottomNavBTN(
-                      title: "${langLocal.langLocal['customer_service']!['${val.languagebox.get("language")}']}",
-                      onPressed: (valu) {
-                        val.animateToPage(valu);
-                      },
-                      icon: Assets.imagesHeadset,
-                      currentIndex: val.currentIndex,
-                      index: 3,
-                    ),
-                  ],
-                ),
-              ),
-              AnimatedPositioned(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.decelerate,
-                top: 0,
-                left: animatedPositionedLEftValue(val.currentIndex),
-                child: Column(
-                  children: [
-                    Container(
-                      height: AppSizes.blockSizeHorizontal * 1.0,
-                      width: AppSizes.blockSizeHorizontal * 12,
-                      decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(10),
+      return Directionality(
+        textDirection: val.direction,
+        child: Material(
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.transparent,
+          elevation: 6,
+          child: Container(
+            height: AppSizes.blockSizeHorizontal * 18,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: colorsApp.colorgreen1,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                  top: 0,
+                  bottom: 0,
+                  left: AppSizes.blockSizeHorizontal * 3,
+                  right: AppSizes.blockSizeHorizontal * 3,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BottomNavBTN(
+                        title:
+                            "${langLocal.langLocal['home']!['${val.languagebox.get("language")}']}",
+                        onPressed: (valu) {
+                          val.Home();
+                          val.animateToPage(valu);
+                        },
+                        icon: Assets.imagesHouseLine,
+                        currentIndex: val.currentIndex,
+                        index: 0,
                       ),
-                    ),
-                    ClipPath(
-                      clipper: MyCustomClipper(),
-                      child: Container(
-                        height: AppSizes.blockSizeHorizontal * 15,
+                      BottomNavBTN(
+                        title:
+                            "${langLocal.langLocal['create_request']!['${val.languagebox.get("language")}']}",
+                        onPressed: (valu) {
+                          val.animateToPage(valu);
+                        },
+                        icon: Assets.imagesPlus,
+                        currentIndex: val.currentIndex,
+                        index: 1,
+                      ),
+                      BottomNavBTN(
+                        title:
+                            "${langLocal.langLocal['wallet']!['${val.languagebox.get("language")}']}",
+                        onPressed: (valu) {
+                          val.AllWallet();
+                          val.animateToPage(valu);
+                        },
+                        icon: Assets.imagesWallet,
+                        currentIndex: val.currentIndex,
+                        index: 2,
+                      ),
+                      BottomNavBTN(
+                        title:
+                            "${langLocal.langLocal['customer_service']!['${val.languagebox.get("language")}']}",
+                        onPressed: (valu) {
+                          val.animateToPage(valu);
+                        },
+                        icon: Assets.imagesHeadset,
+                        currentIndex: val.currentIndex,
+                        index: 3,
+                      ),
+                    ],
+                  ),
+                ),
+                AnimatedPositioned(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.decelerate,
+                  top: 0,
+                  left: val.direction == TextDirection.ltr
+                      ? animatedPositionedLEftValue(val.currentIndex)
+                      : null,
+                  right: val.direction == TextDirection.rtl
+                      ? animatedPositionedLEftValue(val.currentIndex)
+                      : null,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: AppSizes.blockSizeHorizontal * 1.0,
                         width: AppSizes.blockSizeHorizontal * 12,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: gradient,
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      ClipPath(
+                        clipper: MyCustomClipper(),
+                        child: Container(
+                          height: AppSizes.blockSizeHorizontal * 15,
+                          width: AppSizes.blockSizeHorizontal * 12,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: gradient,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       );

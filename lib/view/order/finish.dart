@@ -42,7 +42,8 @@ class Finish extends StatelessWidget {
                     ),
                     Expanded(flex: 5, child: SizedBox()),
                     ButtonApp(
-                        title:                "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
+                        title:
+                            "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                         func: () {
                           Navigator.push(
                             context,
@@ -101,7 +102,8 @@ class Finish extends StatelessWidget {
                           )),
                       Expanded(flex: 5, child: SizedBox()),
                       ButtonApp(
-                          title:               "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
+                          title:
+                              "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                           func: () {
                             Navigator.push(
                               context,

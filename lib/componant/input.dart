@@ -20,24 +20,30 @@ class InputApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.all(10),
-        child: TextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              prefixIcon: icon,
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(color: colorsApp.colorborder),
-                  borderRadius: BorderRadius.circular(20))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                prefixIcon: icon,
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorsApp.colorborder),
+                    borderRadius: BorderRadius.circular(20))),
+          ),
         ),
       );
     });
@@ -63,24 +69,30 @@ class InputAppPass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.all(10),
-        child: TextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          obscureText: show,
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              prefixIcon: icon,
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            obscureText: show,
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                prefixIcon: icon,
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20))),
+          ),
         ),
       );
     });
@@ -104,45 +116,51 @@ class InputCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.symmetric(horizontal: 3),
-        child: TextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 3),
+          child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
 
-            return null;
-          },
-          onChanged: (value) {
-            if (type == "start") {
-              if (value.length >= 1) {
-                FocusScope.of(context).nextFocus();
+              return null;
+            },
+            onChanged: (value) {
+              if (type == "start") {
+                if (value.length >= 1) {
+                  FocusScope.of(context).nextFocus();
+                }
+              } else if (type == "center") {
+                if (value.length >= 1) {
+                  FocusScope.of(context).nextFocus();
+                }
+                if (value.length < 1) {
+                  FocusScope.of(context).previousFocus();
+                }
+              } else {
+                if (value.length < 1) {
+                  FocusScope.of(context).previousFocus();
+                }
               }
-            } else if (type == "center") {
-              if (value.length >= 1) {
-                FocusScope.of(context).nextFocus();
-              }
-              if (value.length < 1) {
-                FocusScope.of(context).previousFocus();
-              }
-            } else {
-              if (value.length < 1) {
-                FocusScope.of(context).previousFocus();
-              }
-            }
-          },
-          maxLength: 1,
-          showCursor: false,
-          textAlign: TextAlign.center,
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              counterText: '',
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
+            },
+            maxLength: 1,
+            showCursor: false,
+            textAlign: TextAlign.center,
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                counterText: '',
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15))),
+          ),
         ),
       );
     });
@@ -164,28 +182,34 @@ class InputLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-        child: TextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              // hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              suffixIcon: Container(
-                  margin: EdgeInsets.only(right: 5),
-                  width: 100,
-                  alignment: Alignment.centerRight,
-                  child: Text("$suf", style: TextStyle(fontFamily: "Cairo"))),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(color: colorsApp.colorborder),
-                  borderRadius: BorderRadius.circular(20))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+          child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                // hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                suffixIcon: Container(
+                    margin: EdgeInsets.only(right: 5),
+                    width: 100,
+                    alignment: Alignment.centerRight,
+                    child: Text("$suf", style: TextStyle(fontFamily: "Cairo"))),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color: colorsApp.colorborder),
+                    borderRadius: BorderRadius.circular(20))),
+          ),
         ),
       );
     });
@@ -209,25 +233,31 @@ class InputAppSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.all(10),
-        child: TextFormField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              prefixIcon: icon,
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: colorsApp.colorborder, width: 0.3),
-                  borderRadius: BorderRadius.circular(50))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                prefixIcon: icon,
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: colorsApp.colorborder, width: 0.3),
+                    borderRadius: BorderRadius.circular(50))),
+          ),
         ),
       );
     });
@@ -251,25 +281,31 @@ class InputAppOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.all(10),
-        child: TextFormField(
-          maxLines: line,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: colorsApp.colorborder, width: 0.3),
-                  borderRadius: BorderRadius.circular(20))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: TextFormField(
+            maxLines: line,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: colorsApp.colorborder, width: 0.3),
+                    borderRadius: BorderRadius.circular(20))),
+          ),
         ),
       );
     });
@@ -291,38 +327,44 @@ class InputAppWhait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.all(10),
-        child: TextFormField(
-          textAlign: TextAlign.center,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              suffixIcon: IconButton(
-                  onPressed: () {
-                    val.decreesWhiet();
-                  },
-                  icon: Icon(Icons.minimize, color: Colors.red)),
-              prefixIcon: IconButton(
-                  onPressed: () {
-                    val.increesWhiet();
-                  },
-                  icon: Icon(
-                    Icons.add,
-                    color: colorsApp.colorgreen1,
-                  )),
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: colorsApp.colorborder, width: 0.3),
-                  borderRadius: BorderRadius.circular(20))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: TextFormField(
+            textAlign: TextAlign.center,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      val.decreesWhiet();
+                    },
+                    icon: Icon(Icons.minimize, color: Colors.red)),
+                prefixIcon: IconButton(
+                    onPressed: () {
+                      val.increesWhiet();
+                    },
+                    icon: Icon(
+                      Icons.add,
+                      color: colorsApp.colorgreen1,
+                    )),
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: colorsApp.colorborder, width: 0.3),
+                    borderRadius: BorderRadius.circular(20))),
+          ),
         ),
       );
     });
@@ -344,38 +386,44 @@ class InputAppRwchargeWallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
-      return Container(
-        margin: EdgeInsets.all(10),
-        child: TextFormField(
-          textAlign: TextAlign.center,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return val.languagebox.get("language") == "en" ? "empty" : "فارغ";
-            }
-            return null;
-          },
-          keyboardType: keyboard,
-          controller: controler,
-          decoration: InputDecoration(
-              suffixIcon: IconButton(
-                  onPressed: () {
-                    val.decreesRechargeWallet();
-                  },
-                  icon: Icon(Icons.minimize, color: Colors.red)),
-              prefixIcon: IconButton(
-                  onPressed: () {
-                    val.increesRechargeWallet();
-                  },
-                  icon: Icon(
-                    Icons.add,
-                    color: colorsApp.colorgreen1,
-                  )),
-              hintText: hint,
-              hintStyle: TextStyle(fontSize: 12, color: colorsApp.colorborder),
-              border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: colorsApp.colorborder, width: 0.3),
-                  borderRadius: BorderRadius.circular(70))),
+      return Directionality(
+        textDirection: val.direction,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: TextFormField(
+            textAlign: TextAlign.center,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return val.languagebox.get("language") == "en"
+                    ? "empty"
+                    : "فارغ";
+              }
+              return null;
+            },
+            keyboardType: keyboard,
+            controller: controler,
+            decoration: InputDecoration(
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      val.decreesRechargeWallet();
+                    },
+                    icon: Icon(Icons.minimize, color: Colors.red)),
+                prefixIcon: IconButton(
+                    onPressed: () {
+                      val.increesRechargeWallet();
+                    },
+                    icon: Icon(
+                      Icons.add,
+                      color: colorsApp.colorgreen1,
+                    )),
+                hintText: hint,
+                hintStyle:
+                    TextStyle(fontSize: 12, color: colorsApp.colorborder),
+                border: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: colorsApp.colorborder, width: 0.3),
+                    borderRadius: BorderRadius.circular(70))),
+          ),
         ),
       );
     });

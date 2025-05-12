@@ -23,21 +23,21 @@ class DetailsOrder1 extends StatelessWidget {
                   margin: EdgeInsets.all(20),
                   child: Text(
                     "${langLocal.langLocal['recipient_details']!['${val.languagebox.get("language")}']}",
-
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
                         fontFamily: "Cairo"),
                   )),
               InputAppOrder(
-                hint: "${langLocal.langLocal['enter_recipient_name']!['${val.languagebox.get("language")}']}",
+                hint:
+                    "${langLocal.langLocal['enter_recipient_name']!['${val.languagebox.get("language")}']}",
                 controler: val.api.nameRe,
                 keyboard: TextInputType.text,
                 line: 1,
               ),
               InputAppOrder(
-                hint:  "${langLocal.langLocal['enter_recipient_phone']!['${val.languagebox.get("language")}']}",
-
+                hint:
+                    "${langLocal.langLocal['enter_recipient_phone']!['${val.languagebox.get("language")}']}",
                 controler: val.api.phoneRe,
                 keyboard: TextInputType.phone,
                 line: 1,
@@ -52,15 +52,15 @@ class DetailsOrder1 extends StatelessWidget {
                         fontFamily: "Cairo"),
                   )),
               InputAppOrder(
-                hint: "${langLocal.langLocal['enter_product_name']!['${val.languagebox.get("language")}']}",
-
+                hint:
+                    "${langLocal.langLocal['enter_product_name']!['${val.languagebox.get("language")}']}",
                 controler: val.api.namePr,
                 keyboard: TextInputType.text,
                 line: 1,
               ),
               InputAppOrder(
-                hint:     "${langLocal.langLocal['enter_product_description']!['${val.languagebox.get("language")}']}",
-
+                hint:
+                    "${langLocal.langLocal['enter_product_description']!['${val.languagebox.get("language")}']}",
                 controler: val.api.decPr,
                 keyboard: TextInputType.text,
                 line: 4,
@@ -103,7 +103,6 @@ class DetailsOrder1 extends StatelessWidget {
                           margin: EdgeInsets.only(bottom: 30),
                           child: Text(
                             "${langLocal.langLocal['upload_product_image']!['${val.languagebox.get("language")}']}",
-
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                         )
@@ -116,7 +115,6 @@ class DetailsOrder1 extends StatelessWidget {
                   margin: EdgeInsets.all(20),
                   child: Text(
                     "${langLocal.langLocal['select_package_weight']!['${val.languagebox.get("language")}']}",
-
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
@@ -130,7 +128,6 @@ class DetailsOrder1 extends StatelessWidget {
                   margin: EdgeInsets.all(20),
                   child: Text(
                     "${langLocal.langLocal['package_wrapping']!['${val.languagebox.get("language")}']}",
-
                     style: TextStyle(
                         color: colorsApp.colorgreen2,
                         fontSize: 18,
@@ -188,7 +185,7 @@ class DetailsOrder1 extends StatelessWidget {
                     child: Container(
                       width: 130,
                       padding: EdgeInsets.only(
-                          top: 15, bottom: 15, right: 15, left: 30),
+                          top: 15, bottom: 15, right: 5, left: 0),
                       decoration: BoxDecoration(
                           border: Border.all(
                               width: val.typeCover == "unCover" ? 1 : 0.3),
@@ -289,7 +286,7 @@ class DetailsOrder1 extends StatelessWidget {
                     child: Container(
                       width: 135,
                       padding: EdgeInsets.only(
-                          top: 15, bottom: 15, right: 15, left: 30),
+                          top: 15, bottom: 15, right: 15, left: 0),
                       decoration: BoxDecoration(
                           border: Border.all(
                               width: val.typeBreak == "notBreak" ? 1 : 0.3),
@@ -331,7 +328,8 @@ class DetailsOrder1 extends StatelessWidget {
                 height: 30,
               ),
               ButtonApp(
-                  title: "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
+                  title:
+                      "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
                   func: () {
                     if (formstate.currentState!.validate() &&
                         val.typeCover != "" &&
@@ -342,7 +340,8 @@ class DetailsOrder1 extends StatelessWidget {
                       print("not validat");
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(  "${langLocal.langLocal['complete_information']!['${val.languagebox.get("language")}']}",
+                          content: Text(
+                            "${langLocal.langLocal['complete_information']!['${val.languagebox.get("language")}']}",
                           ),
                           duration: Duration(seconds: 3), // تختفي بعد 3 ثوانٍ
                         ),

@@ -11,6 +11,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Control extends ChangeNotifier {
   var data;
@@ -32,6 +33,7 @@ class Control extends ChangeNotifier {
     direction = languagebox.get("language") == "ar"
         ? TextDirection.rtl
         : TextDirection.ltr;
+
     notifyListeners();
   }
 
@@ -1120,5 +1122,17 @@ class Control extends ChangeNotifier {
     print(finish);
     print(finish);
     notifyListeners();
+  }
+
+  call(String number) async {
+    final Uri uri = Uri(
+      scheme: 'tel',
+      path: '$number',
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      print('error');
+    }
   }
 }

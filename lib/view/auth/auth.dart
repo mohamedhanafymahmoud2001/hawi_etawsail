@@ -32,83 +32,86 @@ class _Auth extends State<Auth> {
     return Scaffold(
       appBar: AppBarAuth(),
       body: Consumer<Control>(builder: (context, val, child) {
-        return Container(
-          // width: double.infinity,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      child: Row(
-                        children: [
-                          Expanded(
-                              child: Image.asset("assets/images/login1.png")),
-                          Expanded(child: SizedBox()),
-                          Expanded(
-                              child: Image.asset("assets/images/login2.png"))
-                        ],
+        return Directionality(
+          textDirection: val.direction,
+          child: Container(
+            // width: double.infinity,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: Image.asset("assets/images/login1.png")),
+                            Expanded(child: SizedBox()),
+                            Expanded(
+                                child: Image.asset("assets/images/login2.png"))
+                          ],
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: 280,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          color: colorsApp.colorblackApp,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 140,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                color: val.auth == "login"
-                                    ? colorsApp.colorgreen2
-                                    : colorsApp.colorblackApp,
-                                borderRadius: BorderRadius.circular(50)),
-                            child: MaterialButton(
-                              onPressed: () {
-                                val.SwitchAuth("login");
-                              },
-                              child: Text(
-                                "${langLocal.langLocal['loginTitle']!['${val.languagebox.get("language")}']}",
-                                style: TextStyle(color: colorsApp.colorbody),
+                      Container(
+                        width: 280,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: colorsApp.colorblackApp,
+                            borderRadius: BorderRadius.circular(50)),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 140,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  color: val.auth == "login"
+                                      ? colorsApp.colorgreen2
+                                      : colorsApp.colorblackApp,
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: MaterialButton(
+                                onPressed: () {
+                                  val.SwitchAuth("login");
+                                },
+                                child: Text(
+                                  "${langLocal.langLocal['loginTitle']!['${val.languagebox.get("language")}']}",
+                                  style: TextStyle(color: colorsApp.colorbody),
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            width: 140,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                color: val.auth == "register"
-                                    ? colorsApp.colorgreen2
-                                    : colorsApp.colorblackApp,
-                                borderRadius: BorderRadius.circular(50)),
-                            child: MaterialButton(
-                              onPressed: () {
-                                val.SwitchAuth("register");
-                              },
-                              child: Text(
-                                "${langLocal.langLocal['createAccount']!['${val.languagebox.get("language")}']}",
-                                style: TextStyle(color: colorsApp.colorbody),
+                            Container(
+                              width: 140,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  color: val.auth == "register"
+                                      ? colorsApp.colorgreen2
+                                      : colorsApp.colorblackApp,
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: MaterialButton(
+                                onPressed: () {
+                                  val.SwitchAuth("register");
+                                },
+                                child: Text(
+                                  "${langLocal.langLocal['createAccount']!['${val.languagebox.get("language")}']}",
+                                  style: TextStyle(color: colorsApp.colorbody),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    child: val.auth == "login" ? Login() : Register()),
-              ],
+                    ],
+                  ),
+                  Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      child: val.auth == "login" ? Login() : Register()),
+                ],
+              ),
             ),
           ),
         );

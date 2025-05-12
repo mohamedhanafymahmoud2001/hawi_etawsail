@@ -18,31 +18,7 @@ class OnboardingView4 extends StatelessWidget {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        border:
-                            Border.all(width: 1, color: Colors.grey.shade200),
-                      ),
-                      child: Center(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Icon(
-                            Icons.arrow_back_ios_new,
-                            size: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                child: Container(),
               ),
             ),
             Stack(
@@ -174,9 +150,7 @@ class OnboardingView4 extends StatelessWidget {
                       width: 4,
                     ),
                   ]),
-                  OnboardingButton(
-                    backgroundColor: ColorsApp().colorgreen1,
-                    titleColor: ColorsApp().colorbody,
+                  MaterialButton(
                     onPressed: () {
                       if (val.lang != "") {
                         Navigator.of(context).pushNamed("boarding1");
@@ -189,6 +163,17 @@ class OnboardingView4 extends StatelessWidget {
                         );
                       }
                     },
+                    color: ColorsApp().colorgreen1,
+                    minWidth: 64,
+                    height: 64,
+                    shape: const StadiumBorder(),
+                    child: Text(
+                      "التالي",
+                      style: TextStyle(
+                        color: ColorsApp().colorbody,
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ],
               ),

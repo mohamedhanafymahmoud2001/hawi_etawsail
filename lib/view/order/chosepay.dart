@@ -121,23 +121,26 @@ class ChosePay extends StatelessWidget {
                 },
                 child: Container(
                   width: 150,
+                  height: 120,
                   margin: EdgeInsets.symmetric(vertical: 5),
                   padding: EdgeInsets.only(bottom: 10, left: 10),
                   decoration: BoxDecoration(
-                      border: Border.all(width: 0.5),
+                      border: val.typePay == "credit"
+                          ? Border.all(width: 1.5)
+                          : Border.all(width: 0.5),
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Expanded(child: SizedBox()),
-                          Checkbox(
-                              hoverColor: colorsApp.colorblackApp,
-                              activeColor: colorsApp.colorblackApp,
-                              value: val.typePay == "credit" ? true : false,
-                              onChanged: (valu) {}),
-                        ],
-                      ),
+                      // Row(
+                      //   children: [
+                      //     Expanded(child: SizedBox()),
+                      //     Checkbox(
+                      //         hoverColor: colorsApp.colorblackApp,
+                      //         activeColor: colorsApp.colorblackApp,
+                      //         value: val.typePay == "credit" ? true : false,
+                      //         onChanged: (valu) {}),
+                      //   ],
+                      // ),
                       Container(
                           width: 35,
                           height: 35,
@@ -157,23 +160,26 @@ class ChosePay extends StatelessWidget {
                 },
                 child: Container(
                   width: 150,
+                  height: 120,
                   margin: EdgeInsets.symmetric(vertical: 5),
                   padding: EdgeInsets.only(bottom: 10, left: 10),
                   decoration: BoxDecoration(
-                      border: Border.all(width: 0.5),
+                      border: val.typePay == "wallet"
+                          ? Border.all(width: 1.5)
+                          : Border.all(width: 0.5),
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Expanded(child: SizedBox()),
-                          Checkbox(
-                              hoverColor: colorsApp.colorblackApp,
-                              activeColor: colorsApp.colorblackApp,
-                              value: val.typePay == "wallet" ? true : false,
-                              onChanged: (valu) {}),
-                        ],
-                      ),
+                      // Row(
+                      //   children: [
+                      //     Expanded(child: SizedBox()),
+                      //     Checkbox(
+                      //         hoverColor: colorsApp.colorblackApp,
+                      //         activeColor: colorsApp.colorblackApp,
+                      //         value: val.typePay == "wallet" ? true : false,
+                      //         onChanged: (valu) {}),
+                      //   ],
+                      // ),
                       Container(
                           width: 35,
                           height: 35,
@@ -192,7 +198,8 @@ class ChosePay extends StatelessWidget {
             child: SizedBox(),
           ),
           ButtonApp(
-              title:         "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
+              title:
+                  "${langLocal.langLocal['next']!['${val.languagebox.get("language")}']}",
               func: () {
                 // val.typePay
                 if (val.typePay != "") {
@@ -223,7 +230,8 @@ class ChosePay extends StatelessWidget {
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(        "${langLocal.langLocal['select_payment']!['${val.languagebox.get("language")}']}",
+                      content: Text(
+                        "${langLocal.langLocal['select_payment']!['${val.languagebox.get("language")}']}",
                       ),
                       duration: Duration(seconds: 2), // تختفي بعد 3 ثوانٍ
                     ),

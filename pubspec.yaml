@@ -46,6 +46,7 @@ dependencies:
   dot_curved_bottom_nav: ^0.0.2
   webview_flutter: ^4.4.1
   firebase_core: ^3.12.1
+  url_launcher: ^6.3.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -109,6 +110,9 @@ flutter:
     - family: Lemonada
       fonts:
         - asset: assets/fonts/lemonada.ttf
+    - family: VEXA
+      fonts:
+        - asset: assets/fonts/VEXA.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

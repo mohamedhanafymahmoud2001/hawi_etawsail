@@ -31,8 +31,16 @@ class ContainerDetails extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 10),
           height: 260,
           decoration: BoxDecoration(
-              color: colorsApp.colorgreen1,
-              borderRadius: BorderRadius.circular(20)),
+              color: colorsApp.colorbody,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  offset: Offset(7.0, 7),
+                  spreadRadius: 5,
+                  blurRadius: 10.0,
+                )
+              ]),
 
           //steper
           child: Column(
@@ -45,7 +53,7 @@ class ContainerDetails extends StatelessWidget {
                   "ID :  $idoreder",
                   style: TextStyle(
                       fontFamily: "Cairo",
-                      color: colorsApp.colorbody,
+                      color: colorsApp.colorblackApp,
                       fontSize: 13,
                       fontWeight: FontWeight.w500),
                 ),
@@ -72,6 +80,7 @@ class ContainerDetails extends StatelessWidget {
                   : ListTile(
                       leading: CircleAvatar(
                           backgroundColor: colorsApp.colorgreen2,
+                          radius: 23,
                           child: Icon(
                             Icons.person_2_outlined,
                             color: colorsApp.colorbody,
@@ -79,20 +88,21 @@ class ContainerDetails extends StatelessWidget {
                           )),
                       title: Text(
                         "${data['driver']['first_name']} ${data['driver']['last_name']}",
-                        style: TextStyle(color: colorsApp.colorbody),
+                        style: TextStyle(color: colorsApp.colorblackApp),
                       ),
                       subtitle: Text(
                         "${data['driver']['phone']}",
-                        style: TextStyle(color: colorsApp.colorbody),
+                        style: TextStyle(color: colorsApp.colorblackApp),
                       ),
                       trailing: Text(
                         "${langLocal.langLocal['driver']!['${val.languagebox.get("language")}']}",
-                        style: TextStyle(color: colorsApp.colorbody),
+                        style: TextStyle(color: colorsApp.colorblackApp),
                       ),
                     ),
               status == "create"
                   ? ButtonOrder(
-                      title: "${langLocal.langLocal['cancelOrder']!['${val.languagebox.get("language")}']}",
+                      title:
+                          "${langLocal.langLocal['cancelOrder']!['${val.languagebox.get("language")}']}",
                       func: () {
                         val.SwitchDetailsContainer("delete");
                       })
@@ -115,8 +125,16 @@ class ContainerDelete extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 10, top: 10),
           height: 160,
           decoration: BoxDecoration(
-              color: colorsApp.colorgreen1,
-              borderRadius: BorderRadius.circular(20)),
+              color: colorsApp.colorbody,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  offset: Offset(7.0, 7),
+                  spreadRadius: 5,
+                  blurRadius: 10.0,
+                )
+              ]),
 
           //steper
           child: Column(
@@ -145,17 +163,18 @@ class ContainerDelete extends StatelessWidget {
                 margin: EdgeInsets.only(top: 20),
                 child: Text(
                   textAlign: TextAlign.center,
-                   "${langLocal.langLocal['confirm_delete_order']!['${val.languagebox.get("language")}']}",
+                  "${langLocal.langLocal['confirm_delete_order']!['${val.languagebox.get("language")}']}",
                   style: TextStyle(
                       fontFamily: "Cairo",
-                      color: colorsApp.colorbody,
+                      color: colorsApp.colorblackApp,
                       fontSize: 13,
                       fontWeight: FontWeight.w500),
                 ),
               ),
               ButtonOrder(
-                title:  "${langLocal.langLocal['cancelOrder']!['${val.languagebox.get("language")}']}",
-      func: () {
+                title:
+                    "${langLocal.langLocal['cancelOrder']!['${val.languagebox.get("language")}']}",
+                func: () {
                   val.Cancel();
                   Future.delayed(Duration.zero, () {
                     if (context.mounted) {
@@ -186,8 +205,16 @@ class ContainerRate extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 10, top: 10),
           height: 260,
           decoration: BoxDecoration(
-              color: colorsApp.colorgreen1,
-              borderRadius: BorderRadius.circular(20)),
+              color: colorsApp.colorbody,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  offset: Offset(7.0, 7),
+                  spreadRadius: 5,
+                  blurRadius: 10.0,
+                )
+              ]),
 
           //steper
           child: Column(
@@ -219,7 +246,7 @@ class ContainerRate extends StatelessWidget {
                   "ID :  L98267MN07",
                   style: TextStyle(
                       fontFamily: "Cairo",
-                      color: colorsApp.colorbody,
+                      color: colorsApp.colorblackApp,
                       fontSize: 13,
                       fontWeight: FontWeight.w500),
                 ),
@@ -227,7 +254,8 @@ class ContainerRate extends StatelessWidget {
               StepperRate(),
               Expanded(child: SizedBox()),
               ButtonOrder(
-                  title:  "${langLocal.langLocal['rate_service']!['${val.languagebox.get("language")}']}",
+                  title:
+                      "${langLocal.langLocal['rate_service']!['${val.languagebox.get("language")}']}",
                   func: () {
                     val.AddRate();
                     dialogApp.checkdialog(context, () {

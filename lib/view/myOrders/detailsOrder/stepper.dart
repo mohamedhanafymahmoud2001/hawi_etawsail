@@ -5,7 +5,9 @@ import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
+import 'package:hawy_altawsil/prov/langlocal.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
+import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 
 class StepperOrder extends StatelessWidget {
@@ -21,6 +23,9 @@ class StepperOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LangLocal langLocal = new LangLocal();
+
+    late Box languagebox = Hive.box("language");
     // إنشاء قائمة الخطوات بناءً على الحالة
     //create', 'bookOrder', 'receiveOrder', 'finished', 'back', 'finishedBack', 'cancelled'
     List<EasyStep> steps = [
@@ -31,10 +36,11 @@ class StepperOrder extends StatelessWidget {
           child: CircleAvatar(
             radius: 7,
             backgroundColor:
-                activeStep >= 0 ? colorsApp.colorgreen2 : colorsApp.colorbody,
+                activeStep >= 0 ? colorsApp.colorgreen2 : colorsApp.colorborder,
           ),
         ),
-        title: 'Create',
+        title:
+            '${langLocal.langLocal['create']!['${languagebox.get("language")}']}',
       ),
       if (status == "cancelled")
         EasyStep(
@@ -44,11 +50,13 @@ class StepperOrder extends StatelessWidget {
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 7,
-              backgroundColor:
-                  activeStep >= 0 ? colorsApp.colorgreen2 : colorsApp.colorbody,
+              backgroundColor: activeStep >= 0
+                  ? colorsApp.colorgreen2
+                  : colorsApp.colorborder,
             ),
           ),
-          title: 'cancelled',
+          title:
+              '${langLocal.langLocal['cancelled']!['${languagebox.get("language")}']}',
         ),
       if (status != "cancelled")
         EasyStep(
@@ -57,11 +65,13 @@ class StepperOrder extends StatelessWidget {
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 7,
-              backgroundColor:
-                  activeStep >= 1 ? colorsApp.colorgreen2 : colorsApp.colorbody,
+              backgroundColor: activeStep >= 1
+                  ? colorsApp.colorgreen2
+                  : colorsApp.colorborder,
             ),
           ),
-          title: 'Book',
+          title:
+              '${langLocal.langLocal['book']!['${languagebox.get("language")}']}',
           topTitle: true,
         ),
       if (status != "cancelled")
@@ -71,11 +81,13 @@ class StepperOrder extends StatelessWidget {
             backgroundColor: Colors.white,
             child: CircleAvatar(
               radius: 7,
-              backgroundColor:
-                  activeStep >= 2 ? colorsApp.colorgreen2 : colorsApp.colorbody,
+              backgroundColor: activeStep >= 2
+                  ? colorsApp.colorgreen2
+                  : colorsApp.colorborder,
             ),
           ),
-          title: 'Receive',
+          title:
+              '${langLocal.langLocal['recive']!['${languagebox.get("language")}']}',
         ),
       if (status != "cancelled")
         if (status == 'back' ||
@@ -88,10 +100,11 @@ class StepperOrder extends StatelessWidget {
                 radius: 7,
                 backgroundColor: activeStep >= 3
                     ? colorsApp.colorgreen2
-                    : colorsApp.colorbody,
+                    : colorsApp.colorborder,
               ),
             ),
-            title: 'Back',
+            title:
+                '${langLocal.langLocal['back']!['${languagebox.get("language")}']}',
             topTitle: true,
           ),
       if (status != "cancelled")
@@ -104,10 +117,11 @@ class StepperOrder extends StatelessWidget {
                     radius: 7,
                     backgroundColor: activeStep >= 4
                         ? colorsApp.colorgreen2
-                        : colorsApp.colorbody,
+                        : colorsApp.colorborder,
                   ),
                 ),
-                title: 'FinishedBack',
+                title:
+                    '${langLocal.langLocal['finishback']!['${languagebox.get("language")}']}',
               )
             : EasyStep(
                 topTitle: true,
@@ -118,10 +132,11 @@ class StepperOrder extends StatelessWidget {
                     radius: 7,
                     backgroundColor: activeStep >= 4
                         ? colorsApp.colorgreen2
-                        : colorsApp.colorbody,
+                        : colorsApp.colorborder,
                   ),
                 ),
-                title: 'Finished',
+                title:
+                    '${langLocal.langLocal['finish']!['${languagebox.get("language")}']}',
               ),
     ];
 

@@ -28,10 +28,7 @@ class LangLocal {
       "en": "Enter your order details",
       "ar": "أدخل بيانات طلبك"
     },
-    "enter_product_name": {
-      "en": "Enter product name",
-      "ar": "أدخل إسم المنتج"
-    },
+    "enter_product_name": {"en": "Enter product name", "ar": "أدخل إسم المنتج"},
     "enter_product_description": {
       "en": "Enter product description",
       "ar": "أدخل وصف المنتج"
@@ -44,17 +41,12 @@ class LangLocal {
       "en": "Select package weight",
       "ar": "حدد وزن الطرد"
     },
-    "package_wrapping": {
-      "en": "Package wrapping",
-      "ar": "تغليف الطرد"
-    },
+    "package_wrapping": {"en": "Package wrapping", "ar": "تغليف الطرد"},
     "complete_information": {
       "en": "Complete the information",
       "ar": "اكمل البيانات"
-    },   "": {
-      "en": "",
-      "ar": ""
     },
+    "": {"en": "", "ar": ""},
 
     // "departure_point_details": {
     //   "en": "Departure Point Details",
@@ -201,35 +193,20 @@ class LangLocal {
     },
 
     "my_orders": {"en": "My Orders", "ar": "طلباتي"},
-    "order_creation": {
-      "en": "Order Creation",
-      "ar": "انشاء الطلب"
-    },
-    "order_booked": {
-      "en": "Booked",
-      "ar": "تم الحجز"
-    },
-    "order_received": {
-      "en": "Received",
-      "ar": "تم الاستلام"
-    },
-    "go_back": {
-      "en": "Back",
-      "ar": "رجوع"
-    },
-    "order_returned": {
-      "en": "Returned",
-      "ar": "تم الارجاع"
-    },
-    "order_cancelled": {
-      "en": "Cancelled",
-      "ar": "تم الالغاء"
-    },
-    "order_delivered": {
-      "en": "Delivered",
-      "ar": "تم توصيلها"
-    },
+    "order_creation": {"en": "Order Creation", "ar": "انشاء الطلب"},
+    "order_booked": {"en": "Booked", "ar": "تم الحجز"},
+    "order_received": {"en": "Received", "ar": "تم الاستلام"},
+    "go_back": {"en": "Back", "ar": "رجوع"},
 
+    "order_returned": {"en": "Returned", "ar": "تم الارجاع"},
+    "order_cancelled": {"en": "Cancelled", "ar": "تم الالغاء"},
+    "order_delivered": {"en": "Delivered", "ar": "تم توصيلها"},
+    "create": {"en": "create", "ar": "انشاء"},
+    "cancelled": {"en": "cancelled", "ar": "نم الغائه"},
+    "book": {"en": "Booked", "ar": "تم حجزه"},
+    "recive": {"en": "Recive", "ar": "استلم"},
+    "finishback": {"en": "FinishBack", "ar": "تم الرجوع"},
+    "finish": {"en": "Delivered", "ar": "تم التوصيل"},
     "packaging": {
       "en": "Packaging:",
       "ar": "التغليف :",
@@ -239,7 +216,7 @@ class LangLocal {
       "ar": "مغلف",
     },
     "notPackaged": {
-      "en": "Not packaged",
+      "en": "Not packag",
       "ar": "غير مغلف",
     },
     "productDescription": {
@@ -283,14 +260,8 @@ class LangLocal {
       "en": "Done the order",
       "ar": "اتمام الطلب",
     },
-    "payment_failed": {
-      "en": "Payment failed",
-      "ar": "فشلت عملية الدفع"
-    },
-    "payment": {
-      "en": "Payment ",
-      "ar": " عملية الدفع"
-    },
+    "payment_failed": {"en": "Payment failed", "ar": "فشلت عملية الدفع"},
+    "payment": {"en": "Payment ", "ar": " عملية الدفع"},
     "order_created_successfully": {
       "en": "Your order has been created successfully",
       "ar": "تم انشاء طلبك بنجاح"
@@ -308,10 +279,7 @@ class LangLocal {
       "ar": "تكلفة التغليف",
     },
 
-    "complete_payment": {
-      "en": "Complete Payment",
-      "ar": "اتمام الدفع"
-    },
+    "complete_payment": {"en": "Complete Payment", "ar": "اتمام الدفع"},
     "packagingService": {
       "en": "Packaging service:",
       "ar": " خدمة الغليف :",
@@ -432,10 +400,7 @@ class LangLocal {
       "en": "Delivery Outside City",
       "ar": "توصيل خارج المدينة"
     },
-    "create_new_order": {
-      "en": "Create New Order",
-      "ar": "إنشاء طلب جديد"
-    },
+    "create_new_order": {"en": "Create New Order", "ar": "إنشاء طلب جديد"},
     "choose_previous_senders": {
       "en": "Choose from previous sending locations",
       "ar": "أختر من مواقع الإرسال السابقة"
@@ -583,6 +548,12 @@ class LangLocal {
     // },
 
     "start": {"en": "Start", "ar": "ابدء"},
+    "code": {"en": "Code", "ar": "كود"},
+    "addcredit": {"en": "Add credit", "ar": "اضافة رصيد"},
+    "orderPaid": {"en": "Order paid", "ar": "تم سداد طلب"},
+    "Refund": {"en": "Refund", "ar": "ارجاع رصيد"},
+    "Amount": {"en": "Amount:", "ar": "المبلغ:"},
+    "Typeofoperation": {"en": "Type of operation:", "ar": "نوع العملية : "},
   };
 
   String getText(String key, String localeCode) {

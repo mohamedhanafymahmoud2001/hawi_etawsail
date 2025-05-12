@@ -62,27 +62,30 @@ class _HomeView extends State<HomeView> {
         return Center(child: CircularProgressIndicator());
       }
 
-      return SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 16),
-            Container(
-              height: 230,
-              width: MediaQuery.of(context).size.width,
-              child: PageView.builder(
-                controller: _pageController,
-                itemCount: banners.length,
-                itemBuilder: (context, i) {
-                  return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: ImageViewBanner(
-                          image: "${val.api.ip}/${banners[i]['image']}"));
-                },
+      return Directionality(
+        textDirection: val.direction,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 16),
+              Container(
+                height: 230,
+                width: MediaQuery.of(context).size.width,
+                child: PageView.builder(
+                  controller: _pageController,
+                  itemCount: banners.length,
+                  itemBuilder: (context, i) {
+                    return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: ImageViewBanner(
+                            image: "${val.api.ip}/${banners[i]['image']}"));
+                  },
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            HomeViewBody()
-          ],
+              SizedBox(height: 16),
+              HomeViewBody()
+            ],
+          ),
         ),
       );
     });

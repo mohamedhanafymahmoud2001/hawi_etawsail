@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hawy_altawsil/componant/ImageView.dart';
+import 'package:hawy_altawsil/componant/app_text_style.dart';
 import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/nodata.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/myOrders/detailsOrder/containerdetails.dart';
+import 'package:hawy_altawsil/view/myOrders/detailsOrder/detailsItem.dart';
 import 'package:provider/provider.dart';
 
 import '../../../constant.dart';
@@ -142,17 +144,42 @@ class _Details extends State<Details> {
                                       "${val.api.ip}/${val.showOrder['data']['image']}"),
                             ),
                           ),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 20),
                             width: double.infinity,
-                            color: colorsApp.colorborder.withOpacity(0.4),
+                            color: colorsApp.colorbody,
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  textAlign: TextAlign.end,
+                                  "${val.showOrder['data']['secret_key']}",
+                                  style: TextStyle(
+                                      fontSize: 11, fontFamily: "Cairo"),
+                                ),
+                                Expanded(
+                                  child: SizedBox(),
+                                ),
+                                Text(
+                                  "${langLocal.langLocal['code']!['${val.languagebox.get("language")}']}",
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            width: double.infinity,
+                            color: Color(0xffF1F1F1),
                             padding: EdgeInsets.all(10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                    "${langLocal.langLocal['productDescription']!['${val.languagebox.get("language")}']}"
-                                ),
+                                    "${langLocal.langLocal['productDescription']!['${val.languagebox.get("language")}']}"),
                                 Text(
                                   textAlign: TextAlign.end,
                                   "${val.showOrder['data']['description']}",
@@ -174,21 +201,23 @@ class _Details extends State<Details> {
                                   textAlign: TextAlign.end,
                                   val.showOrder['data']['cover'] == "cover"
                                       ? "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}"
-                                      :"${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
+                                      : "${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
                                 ),
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text( "${langLocal.langLocal['packaging']!['${val.languagebox.get("language")}']}",),
+                                Text(
+                                  "${langLocal.langLocal['packaging']!['${val.languagebox.get("language")}']}",
+                                ),
                               ],
                             ),
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 20),
                             width: double.infinity,
-                            color: colorsApp.colorborder.withOpacity(0.4),
+                            color: Color(0xffF1F1F1),
                             padding: EdgeInsets.all(10),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -196,8 +225,7 @@ class _Details extends State<Details> {
                                 Text(
                                   textAlign: TextAlign.end,
                                   val.showOrder['data']['break'] == "break"
-                                      ?
-                                      "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}"
+                                      ? "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}"
                                       : "${langLocal.langLocal['notFragile']!['${val.languagebox.get("language")}']}",
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
@@ -205,7 +233,9 @@ class _Details extends State<Details> {
                                 Expanded(
                                   child: SizedBox(),
                                 ),
-                                Text("${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",),
+                                Text(
+                                  "${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",
+                                ),
                               ],
                             ),
                           ),
@@ -235,14 +265,14 @@ class _Details extends State<Details> {
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 20),
                             width: double.infinity,
-                            color: colorsApp.colorborder.withOpacity(0.4),
+                            color: Color(0xffF1F1F1),
                             padding: EdgeInsets.all(10),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
                                   textAlign: TextAlign.end,
-                                  "${val.showOrder['data']['name_sender']}",
+                                  "${val.showOrder['data']['name_receiver']}",
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
                                 ),
@@ -265,7 +295,7 @@ class _Details extends State<Details> {
                               children: [
                                 Text(
                                   textAlign: TextAlign.end,
-                                  "${val.showOrder['data']['phone_sender']}",
+                                  "${val.showOrder['data']['phone_receiver']}",
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
                                 ),
@@ -274,6 +304,99 @@ class _Details extends State<Details> {
                                 ),
                                 Text(
                                   "${langLocal.langLocal['recipientPhone']!['${val.languagebox.get("language")}']}",
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            width: double.infinity,
+                            color: Color(0xffF1F1F1),
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    textAlign: TextAlign.start,
+                                    "${val.showOrder['data']['city_receiver']} ${val.showOrder['data']['neighborhood_receiver']} ${val.showOrder['data']['area_street_receiver']} ${val.showOrder['data']['build_number_receiver']}",
+                                    style: TextStyle(
+                                        fontSize: 11, fontFamily: "Cairo"),
+                                  ),
+                                ),
+                                Text(
+                                  "${langLocal.langLocal['deliveryPoint']!['${val.languagebox.get("language")}']}",
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(16.0),
+                            margin: EdgeInsets.symmetric(horizontal: 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      "${val.showOrder['data']['totalPrice']} ",
+                                      style: AppTextStyles.style12W500(context)
+                                          .copyWith(
+                                        fontFamily: "Noto Kufi Arabic",
+                                        color: colorsApp.colorblackApp,
+                                      ),
+                                    ),
+                                    Expanded(child: SizedBox()),
+                                    Text(
+                                      "${langLocal.langLocal['cost']!['${val.languagebox.get("language")}']}",
+                                      style: AppTextStyles.style12W500(context)
+                                          .copyWith(
+                                        fontFamily: "Noto Kufi Arabic",
+                                        color: colorsApp.colorblackApp,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Divider(),
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 24,
+                                    ),
+                                    Text(
+                                      "${val.showOrder['data']['coverPrice']} ",
+                                      style: AppTextStyles.style10W500(context),
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "${langLocal.langLocal['packagingService']!['${val.languagebox.get("language")}']}",
+                                      style: AppTextStyles.style10W500(context),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 24,
+                                    ),
+                                    Text(
+                                      "${val.showOrder['data']['basePrice']}",
+                                      style: AppTextStyles.style10W500(context),
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "${langLocal.langLocal['deliveryService']!['${val.languagebox.get("language")}']}",
+                                      style: AppTextStyles.style10W500(context),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),

@@ -16,7 +16,7 @@ class NotificationsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
       return Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: val.direction,
         child: Scaffold(
           backgroundColor: ColorsApp().colorbody,
           appBar: AppBar(
@@ -26,7 +26,6 @@ class NotificationsView extends StatelessWidget {
             backgroundColor: ColorsApp().colorbody,
             title: Text(
               "${langLocal.langLocal['notifications']!['${val.languagebox.get("language")}']}",
-
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -57,7 +56,9 @@ class NotificationsView extends StatelessWidget {
                   color: Color(0xFFF9F9F9),
                 ),
                 child: IconButton(
-                  icon: Icon(Icons.keyboard_arrow_left),
+                  icon: Icon(val.direction == TextDirection.rtl
+                      ? Icons.keyboard_arrow_left
+                      : Icons.keyboard_arrow_right),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -127,9 +128,11 @@ class NotificationsView extends StatelessWidget {
                                   height: 8,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(right: 60),
-                                  alignment: Alignment.centerRight,
+                                  width: double.infinity,
+                                  margin: EdgeInsets.symmetric(horizontal: 60),
+                                  // alignment: Alignment.centerRight,
                                   child: Text(
+                                    textAlign: TextAlign.start,
                                     val.notificat['data'][i]["description"],
                                     maxLines: 1,
                                     style: TextStyle(
