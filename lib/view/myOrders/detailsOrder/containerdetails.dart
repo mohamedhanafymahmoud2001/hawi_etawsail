@@ -48,14 +48,28 @@ class ContainerDetails extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(top: 20),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "ID :  $idoreder",
-                  style: TextStyle(
-                      fontFamily: "Cairo",
-                      color: colorsApp.colorblackApp,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      textAlign: TextAlign.center,
+                      "ID :  $idoreder",
+                      style: TextStyle(
+                          fontFamily: "Cairo",
+                          color: colorsApp.colorblackApp,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    InkWell(
+                        onTap: () {
+                          val.Copy(context, "$idoreder");
+                        },
+                        child: Icon(Icons.copy, size: 17)),
+                  ],
                 ),
               ),
               //create', 'bookOrder', 'receiveOrder', 'finished', 'back', 'finishedBack', 'cancelled'

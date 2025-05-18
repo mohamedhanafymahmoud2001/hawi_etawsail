@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hawy_altawsil/componant/bottomSheetApp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/generated/assets.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
@@ -10,6 +11,7 @@ import '../../constant.dart';
 
 class EditProfileView extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
+  BottomSheetApp bottomSheetApp = new BottomSheetApp();
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +114,9 @@ class EditProfileView extends StatelessWidget {
                                 child: IconButton(
                                   padding: EdgeInsets.zero,
                                   onPressed: () {
-                                    val.uploadImageProfileEdite();
+                                    // val.uploadImageProfileEdite();
+                                    bottomSheetApp
+                                        .showPickerProfileEdit(context);
                                   },
                                   icon: SvgPicture.asset(
                                     Assets.imagesEdit,
@@ -129,7 +133,7 @@ class EditProfileView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                   Text(
+                  Text(
                     "${langLocal.langLocal['editProfile']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(
                       fontSize: 18,
@@ -145,22 +149,35 @@ class EditProfileView extends StatelessWidget {
                           children: [
                             Expanded(
                               child: _buildTextField(
-                                  val.api.f_name_ed, "${langLocal.langLocal['firstName']!['${val.languagebox.get("language")}']}", false),
+                                  val.api.f_name_ed,
+                                  "${langLocal.langLocal['firstName']!['${val.languagebox.get("language")}']}",
+                                  false),
                             ),
                             SizedBox(width: 16),
                             Expanded(
                               child: _buildTextField(
-                                  val.api.l_name_ed, "${langLocal.langLocal['lastName']!['${val.languagebox.get("language")}']}", false),
+                                  val.api.l_name_ed,
+                                  "${langLocal.langLocal['lastName']!['${val.languagebox.get("language")}']}",
+                                  false),
                             ),
                           ],
                         ),
-                        _buildTextField(val.api.phone_ed,  "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']}", false),
                         _buildTextField(
-                            val.api.pass_old_ed,  "${langLocal.langLocal['currentPassword']!['${val.languagebox.get("language")}']}",  true),
+                            val.api.phone_ed,
+                            "${langLocal.langLocal['phone']!['${val.languagebox.get("language")}']}",
+                            false),
                         _buildTextField(
-                            val.api.pass_new_ed, "${langLocal.langLocal['newPassword']!['${val.languagebox.get("language")}']}", true),
+                            val.api.pass_old_ed,
+                            "${langLocal.langLocal['currentPassword']!['${val.languagebox.get("language")}']}",
+                            true),
                         _buildTextField(
-                            val.api.pass_conf_ed, "${langLocal.langLocal['confirmPassword']!['${val.languagebox.get("language")}']}", true),
+                            val.api.pass_new_ed,
+                            "${langLocal.langLocal['newPassword']!['${val.languagebox.get("language")}']}",
+                            true),
+                        _buildTextField(
+                            val.api.pass_conf_ed,
+                            "${langLocal.langLocal['confirmPassword']!['${val.languagebox.get("language")}']}",
+                            true),
                         const SizedBox(height: 30),
                         MaterialButton(
                           onPressed: () {

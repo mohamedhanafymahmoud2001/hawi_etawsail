@@ -11,15 +11,19 @@ class Assets {
   static const String imagesHeadset = 'assets/images/Headset.svg';
   static const String imagesHomeBanner = 'assets/images/homeBanner.png';
   static const String imagesHouseLine = 'assets/images/HouseLine.svg';
-  static const String imagesImagesOnboardingBackground3 = 'assets/images/imagesOnboardingBackground3.png';
+  static const String imagesImagesOnboardingBackground3 =
+      'assets/images/imagesOnboardingBackground3.png';
   static const String imagesLogo = 'assets/images/logo.png';
-  static const String imagesNoiseBackground = 'assets/images/noiseBackground.png';
+  static const String imagesNoiseBackground =
+      'assets/images/noiseBackground.png';
   static const String imagesOnboarding1 = 'assets/images/onboarding1.png';
   static const String imagesOnboarding2 = 'assets/images/onboarding2.png';
   static const String imagesOnboarding3 = 'assets/images/onboarding3.png';
   static const String imagesOnboarding4 = 'assets/images/onboarding4.png';
-  static const String imagesOnboardingBackground1 = 'assets/images/OnboardingBackground1.png';
-  static const String imagesOnboardingBackground2 = 'assets/images/onboardingBackground2.png';
+  static const String imagesOnboardingBackground1 =
+      'assets/images/OnboardingBackground1.png';
+  static const String imagesOnboardingBackground2 =
+      'assets/images/onboardingBackground2.png';
   static const String imagesPlus = 'assets/images/Plus.svg';
   static const String imagesPress = 'assets/images/press.png';
   static const String imagesPress1 = 'assets/images/press1.png';
@@ -31,5 +35,5 @@ class Assets {
   static const String imagesSupportView = 'assets/images/support_view.png';
   static const String imagesTest1 = 'assets/images/test1.png';
   static const String imagesWallet = 'assets/images/Wallet.svg';
-
+  static const String imagesWhatsApp = 'assets/images/whatsapp.png';
 }

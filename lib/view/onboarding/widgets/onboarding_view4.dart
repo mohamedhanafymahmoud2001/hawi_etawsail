@@ -21,20 +21,24 @@ class OnboardingView4 extends StatelessWidget {
                 child: Container(),
               ),
             ),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Image.asset(
-                    Assets.imagesOnboardingBackground2,
+            Expanded(
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Image.asset(
+                      Assets.imagesOnboardingBackground2,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: 300,
-                  child: Image.asset(Assets.imagesOnboarding4),
-                ),
-              ],
+                  Container(
+                    width: 300,
+                    child: Image.asset(
+                      Assets.imagesOnboarding4,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(
               height: 32,
@@ -87,7 +91,7 @@ class OnboardingView4 extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            Spacer(),
+            // Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Row(

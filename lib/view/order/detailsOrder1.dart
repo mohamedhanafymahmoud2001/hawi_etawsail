@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:hawy_altawsil/componant/bottomSheetApp.dart';
 import 'package:hawy_altawsil/componant/buttonapp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
@@ -11,6 +12,7 @@ import '../../constant.dart';
 class DetailsOrder1 extends StatelessWidget {
   ColorsApp colorsApp = new ColorsApp();
   GlobalKey<FormState> formstate = GlobalKey();
+  BottomSheetApp bottomSheetApp = new BottomSheetApp();
   @override
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
@@ -67,7 +69,8 @@ class DetailsOrder1 extends StatelessWidget {
               ),
               MaterialButton(
                 onPressed: () {
-                  val.uploadImageProdect();
+                  // val.uploadImageProdect();
+                  bottomSheetApp.showPickerOptions(context);
                 },
                 child: DottedBorder(
                   borderType: BorderType.RRect,

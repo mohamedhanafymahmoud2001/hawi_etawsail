@@ -112,7 +112,8 @@ class _Details extends State<Details> {
                                                     "${val.showOrder['data']['orderNumber']}",
                                                 data: val.showOrder['data'],
                                               )),
-                              ), //ContainerRate() // ContainerDelete()//ContainerDetails()
+                              ),
+                              // ContainerRate(), // ContainerDelete()//ContainerDetails()
                               // val.switchdetailscontainer == "details"
                               //     ? ContainerDetails(
                               //         status:
@@ -161,6 +162,15 @@ class _Details extends State<Details> {
                                   style: TextStyle(
                                       fontSize: 11, fontFamily: "Cairo"),
                                 ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                InkWell(
+                                    onTap: () {
+                                      val.Copy(context,
+                                          "${val.showOrder['data']['secret_key']}");
+                                    },
+                                    child: Icon(Icons.copy, size: 17)),
                                 Expanded(
                                   child: SizedBox(),
                                 ),
@@ -400,6 +410,19 @@ class _Details extends State<Details> {
                                 ),
                               ],
                             ),
+                          ),
+                          ButtonApp(
+                              title: "تقديم شكوى",
+                              func: () {
+                                //${val.showOrder['data']['orderNumber']}
+                                val.api.orderNumber.text =
+                                    val.showOrder['data']['orderNumber'];
+                                Navigator.of(context).pop();
+                                Navigator.of(context).pop();
+                                val.ChangeScreenMain(3);
+                              }),
+                          SizedBox(
+                            height: 20,
                           ),
                         ],
                       ),

@@ -6,6 +6,7 @@ import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/input.dart';
 import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
+import 'package:hawy_altawsil/view/auth/pincode.dart';
 import 'package:provider/provider.dart';
 
 class ResetCode extends StatefulWidget {
@@ -57,66 +58,72 @@ class _ResetCode extends State<ResetCode> {
                     Container(
                       height: 50,
                       width: 330,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              child: InputCode(
-                                hint: "*",
-                                controler: val.api.code1,
-                                keyboard: TextInputType.number,
-                                type: "start",
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                              child: Container(
-                            child: InputCode(
-                              hint: "*",
-                              controler: val.api.code2,
-                              keyboard: TextInputType.number,
-                              type: "center",
-                            ),
-                          )),
-                          Expanded(
-                            child: Container(
-                              child: InputCode(
-                                hint: "*",
-                                controler: val.api.code3,
-                                keyboard: TextInputType.number,
-                                type: "center",
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                              child: Container(
-                            child: InputCode(
-                              hint: "*",
-                              controler: val.api.code4,
-                              keyboard: TextInputType.number,
-                              type: "center",
-                            ),
-                          )),
-                          Expanded(
-                              child: Container(
-                            child: InputCode(
-                              hint: "*",
-                              controler: val.api.code5,
-                              keyboard: TextInputType.number,
-                              type: "center",
-                            ),
-                          )),
-                          Expanded(
-                              child: Container(
-                            child: InputCode(
-                              hint: "*",
-                              controler: val.api.code6,
-                              keyboard: TextInputType.number,
-                              type: "end",
-                            ),
-                          )),
-                        ],
+                      child: PinInputStyles.buildPinInput(
+                        onCompleted: (pin) {
+                          //  print("User entered PIN: $pin");
+                        },
                       ),
+
+                      //  Row(
+                      //   children: [
+                      //     Expanded(
+                      //       child: Container(
+                      //         child: InputCode(
+                      //           hint: "*",
+                      //           controler: val.api.code1,
+                      //           keyboard: TextInputType.number,
+                      //           type: "start",
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     Expanded(
+                      //         child: Container(
+                      //       child: InputCode(
+                      //         hint: "*",
+                      //         controler: val.api.code2,
+                      //         keyboard: TextInputType.number,
+                      //         type: "center",
+                      //       ),
+                      //     )),
+                      //     Expanded(
+                      //       child: Container(
+                      //         child: InputCode(
+                      //           hint: "*",
+                      //           controler: val.api.code3,
+                      //           keyboard: TextInputType.number,
+                      //           type: "center",
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     Expanded(
+                      //         child: Container(
+                      //       child: InputCode(
+                      //         hint: "*",
+                      //         controler: val.api.code4,
+                      //         keyboard: TextInputType.number,
+                      //         type: "center",
+                      //       ),
+                      //     )),
+                      //     Expanded(
+                      //         child: Container(
+                      //       child: InputCode(
+                      //         hint: "*",
+                      //         controler: val.api.code5,
+                      //         keyboard: TextInputType.number,
+                      //         type: "center",
+                      //       ),
+                      //     )),
+                      //     Expanded(
+                      //         child: Container(
+                      //       child: InputCode(
+                      //         hint: "*",
+                      //         controler: val.api.code6,
+                      //         keyboard: TextInputType.number,
+                      //         type: "end",
+                      //       ),
+                      //     )),
+                      //   ],
+                      // ),
                     ),
                     SizedBox(
                       height: 20,

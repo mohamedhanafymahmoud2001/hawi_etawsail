@@ -54,7 +54,6 @@ class OnboardingView2 extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "${langLocal.langLocal['skip']!['${val.languagebox.get("language")}']}",
-
                             style: TextStyle(
                               color: ColorsApp().colorbody,
                               fontSize: 12,
@@ -67,20 +66,22 @@ class OnboardingView2 extends StatelessWidget {
               ),
             ),
           ),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: Image.asset(
-                  Assets.imagesOnboardingBackground2,
+          Expanded(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.asset(
+                    Assets.imagesOnboardingBackground2,
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: 300,
-                child: Image.asset(Assets.imagesOnboarding2),
-              ),
-            ],
+                Container(
+                  width: 300,
+                  child: Image.asset(Assets.imagesOnboarding2),
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 32,
@@ -97,12 +98,13 @@ class OnboardingView2 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(
-                "${langLocal.langLocal['onBoarding2']!['${val.languagebox.get("language")}']}",  textAlign: TextAlign.center,
+                "${langLocal.langLocal['onBoarding2']!['${val.languagebox.get("language")}']}",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 22,
                 )),
           ),
-          Spacer(),
+          // Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(

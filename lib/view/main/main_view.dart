@@ -107,7 +107,7 @@ class MainViewState extends State<MainView> {
                                       : ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(50),
-                                          child: ImageView(
+                                          child: ImageViewBanner(
                                               image:
                                                   "${val.api.ip}/${val.home['data']['user']['image']}")
                                           //  Image.network(
@@ -204,11 +204,9 @@ class MainViewState extends State<MainView> {
                   )),
                 ),
               ),
-              IconButton(
-                icon: Image.asset(Assets.imagesLogo),
-                onPressed: () {
-                  dialogApp.checkdialog(context, () {});
-                },
+              Container(
+                padding: EdgeInsets.all(2),
+                child: Image.asset(Assets.imagesLogo),
               ),
             ],
           ),
@@ -240,6 +238,19 @@ class MainViewState extends State<MainView> {
                         ],
                       ),
                     ),
+          floatingActionButton: val.currentIndex == 3
+              ? FloatingActionButton(
+                  backgroundColor: Colors.white,
+                  onPressed: () {
+                    val.WhatsApp();
+                  },
+                  child: Image.asset(
+                    Assets.imagesWhatsApp,
+                    width: 50,
+                    height: 50,
+                  ),
+                )
+              : SizedBox(),
         ),
       );
     });
@@ -257,7 +268,14 @@ class MainViewState extends State<MainView> {
             height: AppSizes.blockSizeHorizontal * 18,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: colorsApp.colorgreen1,
+              color: Colors.black.withOpacity(0.8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
               borderRadius: BorderRadius.circular(30),
             ),
             child: Stack(
@@ -367,7 +385,6 @@ final List<Color> gradient = [
   Colors.orange.withOpacity(0.2),
   Colors.transparent
 ];
-
 double animatedPositionedLEftValue(int currentIndex) {
   switch (currentIndex) {
     case 0:

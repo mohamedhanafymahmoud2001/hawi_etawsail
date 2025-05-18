@@ -201,7 +201,7 @@ class InputLocation extends StatelessWidget {
                 // hintText: hint,
                 hintStyle:
                     TextStyle(fontSize: 12, color: colorsApp.colorborder),
-                suffixIcon: Container(
+                label: Container(
                     margin: EdgeInsets.only(right: 5),
                     width: 100,
                     alignment: Alignment.centerRight,

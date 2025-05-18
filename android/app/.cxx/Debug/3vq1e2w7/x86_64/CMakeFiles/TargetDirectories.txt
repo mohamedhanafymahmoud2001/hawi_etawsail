@@ -1,0 +1,2 @@
+F:/flutter/hawyApps/hawy_altawsil/android/app/.cxx/Debug/3vq1e2w7/x86_64/CMakeFiles/edit_cache.dir
+F:/flutter/hawyApps/hawy_altawsil/android/app/.cxx/Debug/3vq1e2w7/x86_64/CMakeFiles/rebuild_cache.dir

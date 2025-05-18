@@ -6,6 +6,7 @@ import 'package:hawy_altawsil/componant/input.dart';
 import 'package:hawy_altawsil/componant/nodata.dart';
 import 'package:hawy_altawsil/constant.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class BottomSheetApp {
@@ -418,7 +419,8 @@ class BottomSheetApp {
                         child: Column(
                           children: [
                             Container(
-                              margin: EdgeInsets.only(right: 10, top: 30),
+                              margin:
+                                  EdgeInsets.only(right: 10, top: 30, left: 10),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -641,6 +643,167 @@ class BottomSheetApp {
             );
           });
         });
+  }
+
+  void showPickerOptions(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (_) => Consumer<Control>(builder: (context, val, child) {
+              return SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'اختر طريقة تحميل الصورة',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.blue.shade50,
+                          child: Icon(Icons.photo_camera, color: Colors.blue),
+                        ),
+                        title: Text('التقاط صورة بالكاميرا'),
+                        onTap: () => val.pickImageProdect(ImageSource.camera),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.green.shade50,
+                          child: Icon(Icons.photo_library, color: Colors.green),
+                        ),
+                        title: Text('اختيار من المعرض'),
+                        onTap: () => val.pickImageProdect(ImageSource.gallery),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }));
+  }
+
+  void showPickerProfile(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (_) => Consumer<Control>(builder: (context, val, child) {
+              return SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'اختر طريقة تحميل الصورة',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.blue.shade50,
+                          child: Icon(Icons.photo_camera, color: Colors.blue),
+                        ),
+                        title: Text('التقاط صورة بالكاميرا'),
+                        onTap: () => val.pickImageProfile(ImageSource.camera),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.green.shade50,
+                          child: Icon(Icons.photo_library, color: Colors.green),
+                        ),
+                        title: Text('اختيار من المعرض'),
+                        onTap: () => val.pickImageProfile(ImageSource.gallery),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }));
+  }
+
+  void showPickerProfileEdit(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (_) => Consumer<Control>(builder: (context, val, child) {
+              return SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'اختر طريقة تحميل الصورة',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.blue.shade50,
+                          child: Icon(Icons.photo_camera, color: Colors.blue),
+                        ),
+                        title: Text('التقاط صورة بالكاميرا'),
+                        onTap: () =>
+                            val.pickImageProfileEdit(ImageSource.camera),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.green.shade50,
+                          child: Icon(Icons.photo_library, color: Colors.green),
+                        ),
+                        title: Text('اختيار من المعرض'),
+                        onTap: () =>
+                            val.pickImageProfileEdit(ImageSource.gallery),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }));
   }
 }
 //MediaQuery.of(context).viewInsets.bottom,

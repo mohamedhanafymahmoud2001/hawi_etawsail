@@ -9,6 +9,7 @@ class AppBarBack extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
       return AppBar(
+        backgroundColor: Colors.white,
         leading: Container(
           margin: EdgeInsets.all(5),
           decoration: BoxDecoration(
@@ -18,7 +19,9 @@ class AppBarBack extends StatelessWidget implements PreferredSizeWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: Icon(Icons.keyboard_arrow_left)),
+              icon: Icon(val.direction == TextDirection.ltr
+                  ? Icons.keyboard_arrow_left
+                  : Icons.keyboard_arrow_right)),
         ),
         actions: [
           Container(
@@ -27,7 +30,7 @@ class AppBarBack extends StatelessWidget implements PreferredSizeWidget {
               // margin: EdgeInsets.symmetric(horizontal: 10),
               child: Image.asset(
                 "assets/images/logo.png",
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
               ))
         ],
       );

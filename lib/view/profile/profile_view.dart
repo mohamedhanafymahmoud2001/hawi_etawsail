@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hawy_altawsil/componant/appBarApp.dart';
 import 'package:hawy_altawsil/componant/colorsApp.dart';
 import 'package:hawy_altawsil/componant/nodata.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
@@ -23,6 +24,7 @@ class ProfileView extends StatelessWidget {
           return Directionality(
             textDirection: val.direction,
             child: Scaffold(
+              appBar: AppBarBack(),
               backgroundColor: ColorsApp().colorbody,
               body: SafeArea(
                 child: val.profile == null

@@ -75,12 +75,13 @@ class Api {
     return registerUser;
   }
 
-  TextEditingController code1 = TextEditingController();
-  TextEditingController code2 = TextEditingController();
-  TextEditingController code3 = TextEditingController();
-  TextEditingController code4 = TextEditingController();
-  TextEditingController code5 = TextEditingController();
-  TextEditingController code6 = TextEditingController();
+  // TextEditingController code1 = TextEditingController();
+  // TextEditingController code2 = TextEditingController();
+  // TextEditingController code3 = TextEditingController();
+  // TextEditingController code4 = TextEditingController();
+  // TextEditingController code5 = TextEditingController();
+  // TextEditingController code6 = TextEditingController();
+  TextEditingController code = TextEditingController();
 
   var verfy;
   Future Verfy() async {
@@ -89,8 +90,7 @@ class Api {
     try {
       var respons = await http.post(Uri.parse(uri), body: {
         "phone": "${phone.text}",
-        "otp":
-            "${code1.text}${code2.text}${code3.text}${code4.text}${code5.text}${code6.text}",
+        "otp": "${code.text}",
       }, headers: {
         "lang": languagebox.get("language")
       });
@@ -143,8 +143,7 @@ class Api {
     try {
       var respons = await http.post(Uri.parse(uri), body: {
         "phone": "${resetPhone.text}",
-        "otp":
-            "${code1.text}${code2.text}${code3.text}${code4.text}${code5.text}${code6.text}",
+        "otp": "${code.text}",
       }, headers: {
         "lang": languagebox.get("language")
       });

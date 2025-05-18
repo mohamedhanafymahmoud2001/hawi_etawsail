@@ -4,14 +4,17 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/prov/api.dart';
+import 'package:hawy_altawsil/view/main/size_config.dart';
 import 'package:hive/hive.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Control extends ChangeNotifier {
   var data;
@@ -157,7 +160,7 @@ class Control extends ChangeNotifier {
           print("object");
         },
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-        infoWindow: InfoWindow(title: "mohamed Hanafy"),
+        infoWindow: InfoWindow(title: null),
         markerId: MarkerId("1"),
         position: LatLng(cl!.latitude, cl!.longitude)),
   };
@@ -188,7 +191,7 @@ class Control extends ChangeNotifier {
       Marker(
           icon:
               BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-          infoWindow: InfoWindow(title: "mohamed Hanafy"),
+          infoWindow: InfoWindow(title: null),
           markerId: MarkerId("1"),
           position: LatLng(lat, long)),
     };
@@ -263,7 +266,7 @@ class Control extends ChangeNotifier {
           print("object");
         },
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-        infoWindow: InfoWindow(title: "mohamed Hanafy"),
+        infoWindow: InfoWindow(title: null),
         markerId: MarkerId("1"),
         position: LatLng(cl_Re!.latitude, cl_Re!.longitude)),
   };
@@ -294,7 +297,7 @@ class Control extends ChangeNotifier {
       Marker(
           icon:
               BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-          infoWindow: InfoWindow(title: "mohamed Hanafy"),
+          infoWindow: InfoWindow(title: null),
           markerId: MarkerId("1"),
           position: LatLng(lat_Re, long_Re)),
     };
@@ -314,7 +317,7 @@ class Control extends ChangeNotifier {
           print("object");
         },
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-        infoWindow: InfoWindow(title: "mohamed Hanafy"),
+        infoWindow: InfoWindow(title: null),
         markerId: MarkerId("f"),
         position: LatLng(0.0, 0.0)),
   };
@@ -494,25 +497,26 @@ class Control extends ChangeNotifier {
   }
 
   File? imageFileProdect;
-  void uploadImageProdect() async {
-    try {
-      // فتح نافذة لاختيار ملف
-      FilePickerResult? result = await FilePicker.platform.pickFiles(
-        type: FileType.image,
-      );
 
-      if (result != null) {
-        imageFileProdect = File(result.files.single.path!);
+  final ImagePicker picker = ImagePicker();
 
-        print(imageFileProdect!.path);
-        print("image$imageFileProdect");
-        notifyListeners();
-      }
-    } catch (e) {
-      print('حدث خطأ أثناء رفع الصورة: $e');
-    }
+  Future<void> pickImageProdect(ImageSource source) async {
+    final pickedFile = await picker.pickImage(source: source);
+    if (pickedFile != null) {
+      imageFileProdect = File(pickedFile.path);
+    } // إغلاق الـ BottomSheet بعد الاختيار
     notifyListeners();
   }
+  // // File? imageFile;
+  // final ImagePicker picker = ImagePicker();
+
+  // Future<void> pickImage(ImageSource source) async {
+  //   final pickedFile = await picker.pickImage(source: source);
+  //   if (pickedFile != null) {
+  //     imageFile = File(pickedFile.path);
+  //   } // إغلاق الـ BottomSheet بعد الاختيار
+  //   notifyListeners();
+  // }
 
   String typeOrder = "";
   choseTypeOrder(String valu) {
@@ -524,6 +528,7 @@ class Control extends ChangeNotifier {
   String orderscreen = "mylocation";
   SwitchOrderScreen(String valu) {
     orderscreen = valu;
+    print(valu);
     notifyListeners();
   }
 
@@ -732,23 +737,12 @@ class Control extends ChangeNotifier {
   }
 
   File? imageFileProfile;
-  void uploadImageProfile() async {
-    try {
-      // فتح نافذة لاختيار ملف
-      FilePickerResult? result = await FilePicker.platform.pickFiles(
-        type: FileType.image,
-      );
 
-      if (result != null) {
-        imageFileProfile = File(result.files.single.path!);
-
-        print(imageFileProfile!.path);
-        print("image$imageFileProfile");
-        notifyListeners();
-      }
-    } catch (e) {
-      print('حدث خطأ أثناء رفع الصورة: $e');
-    }
+  Future<void> pickImageProfile(ImageSource source) async {
+    final pickedFile = await picker.pickImage(source: source);
+    if (pickedFile != null) {
+      imageFileProfile = File(pickedFile.path);
+    } // إغلاق الـ BottomSheet بعد الاختيار
     notifyListeners();
   }
 
@@ -1057,23 +1051,12 @@ class Control extends ChangeNotifier {
   }
 
   File? imageFileProfileEdite;
-  void uploadImageProfileEdite() async {
-    try {
-      // فتح نافذة لاختيار ملف
-      FilePickerResult? result = await FilePicker.platform.pickFiles(
-        type: FileType.image,
-      );
 
-      if (result != null) {
-        imageFileProfileEdite = File(result.files.single.path!);
-
-        print(imageFileProfileEdite!.path);
-        print("image$imageFileProfileEdite");
-        notifyListeners();
-      }
-    } catch (e) {
-      print('حدث خطأ أثناء رفع الصورة: $e');
-    }
+  Future<void> pickImageProfileEdit(ImageSource source) async {
+    final pickedFile = await picker.pickImage(source: source);
+    if (pickedFile != null) {
+      imageFileProfileEdite = File(pickedFile.path);
+    } // إغلاق الـ BottomSheet بعد الاختيار
     notifyListeners();
   }
 
@@ -1133,6 +1116,24 @@ class Control extends ChangeNotifier {
       await launchUrl(uri);
     } else {
       print('error');
+    }
+  }
+
+  Copy(BuildContext context, String textToCopy) {
+    Clipboard.setData(ClipboardData(text: textToCopy)).then((_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('تم نسخ النص إلى الحافظة')),
+      );
+    });
+  }
+
+  void WhatsApp() async {
+    final String phone = '966547871106';
+    final String message = Uri.encodeComponent('مرحباً، أريد المساعدة.');
+    final Uri url = Uri.parse('https://wa.me/$phone?text=$message');
+
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      debugPrint('❌ تعذر فتح واتساب');
     }
   }
 }

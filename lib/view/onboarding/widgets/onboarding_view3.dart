@@ -48,8 +48,7 @@ class OnboardingView3 extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-    "${langLocal.langLocal['skip']!['${val.languagebox.get("language")}']}",
-
+                          "${langLocal.langLocal['skip']!['${val.languagebox.get("language")}']}",
                           style: TextStyle(
                             color: ColorsApp().colorbody,
                             fontSize: 12,
@@ -63,33 +62,33 @@ class OnboardingView3 extends StatelessWidget {
               ),
             ),
           ),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2,
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.asset(
-                        Assets.imagesImagesOnboardingBackground3,
-                        fit: BoxFit.fill,
+          Expanded(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 2,
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: Image.asset(
+                          Assets.imagesImagesOnboardingBackground3,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: 300,
-                child: Image.asset(Assets.imagesOnboarding3),
-              ),
-            ],
+                SizedBox(
+                  width: 300,
+                  child: Image.asset(Assets.imagesOnboarding3),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 32),
           Text(
             "${langLocal.langLocal['onBoardingTitle3']!['${val.languagebox.get("language")}']}",
-
             textAlign: TextAlign.center,
             style: TextStyle(color: ColorsApp().colorbody, fontSize: 32),
           ),
@@ -102,7 +101,7 @@ class OnboardingView3 extends StatelessWidget {
               style: TextStyle(color: ColorsApp().colorbody, fontSize: 22),
             ),
           ),
-          const Spacer(),
+          // const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
