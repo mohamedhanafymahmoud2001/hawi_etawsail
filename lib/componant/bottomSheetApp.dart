@@ -29,18 +29,10 @@ class BottomSheetApp {
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(right: 10, top: 30),
+                          margin: EdgeInsets.only(right: 10, top: 30, left: 10),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Text(
-                                "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
-                                style: TextStyle(
-                                    fontFamily: "Cairo", fontSize: 17),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
                               CircleAvatar(
                                 backgroundColor: colorsApp.colorgreen1,
                                 child: Icon(
@@ -48,7 +40,15 @@ class BottomSheetApp {
                                   color: colorsApp.colorbody,
                                   size: 16,
                                 ),
-                              )
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
+                                style: TextStyle(
+                                    fontFamily: "Cairo", fontSize: 17),
+                              ),
                             ],
                           ),
                         ),
@@ -84,19 +84,19 @@ class BottomSheetApp {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             child: ListTile(
-                                              trailing: Image.asset(
+                                              leading: Image.asset(
                                                   "assets/images/oldaddress.png"),
                                               title: Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.end,
+                                                    MainAxisAlignment.start,
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Expanded(
                                                     child: Container(
                                                       child: Text(
                                                         textAlign:
-                                                            TextAlign.end,
+                                                            TextAlign.start,
                                                         "${val.addressSender['data'][i]['city_sender']}-${val.addressSender['data'][i]['neighborhood_sender']}-${val.addressSender['data'][i]['area_street_sender']}-${val.addressSender['data'][i]['build_number_sender']}",
                                                         style: TextStyle(
                                                             fontFamily:
@@ -106,7 +106,7 @@ class BottomSheetApp {
                                                   ),
                                                 ],
                                               ),
-                                              leading: IconButton(
+                                              trailing: IconButton(
                                                 onPressed: () {
                                                   val.DeleteMyAddress(
                                                       val.addressSender['data']
@@ -204,18 +204,10 @@ class BottomSheetApp {
                                 icon: Icon(Icons.search)),
                             keyboard: TextInputType.number),
                         Container(
-                          margin: EdgeInsets.only(right: 10, top: 30),
+                          margin: EdgeInsets.only(right: 10, top: 30, left: 10),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Text(
-                                "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
-                                style: TextStyle(
-                                    fontFamily: "Cairo", fontSize: 17),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
                               CircleAvatar(
                                 backgroundColor: colorsApp.colorgreen1,
                                 child: Icon(
@@ -223,7 +215,15 @@ class BottomSheetApp {
                                   color: colorsApp.colorbody,
                                   size: 16,
                                 ),
-                              )
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
+                                style: TextStyle(
+                                    fontFamily: "Cairo", fontSize: 17),
+                              ),
                             ],
                           ),
                         ),
@@ -260,21 +260,22 @@ class BottomSheetApp {
                                                     BorderRadius.circular(20)),
                                             child: Column(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.end,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 ListTile(
-                                                  trailing: Image.asset(
+                                                  leading: Image.asset(
                                                       "assets/images/oldaddress.png"),
                                                   title: Row(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.end,
+                                                        MainAxisAlignment.start,
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       Expanded(
                                                         child: Text(
                                                           textAlign:
-                                                              TextAlign.end,
+                                                              TextAlign.start,
                                                           "${val.addressReciver['data'][i]['city_receiver']}-${val.addressReciver['data'][i]['neighborhood_receiver']}-${val.addressReciver['data'][i]['area_street_receiver']}-${val.addressReciver['data'][i]['build_number_receiver']}",
                                                           style: TextStyle(
                                                               fontFamily:
@@ -283,7 +284,7 @@ class BottomSheetApp {
                                                       ),
                                                     ],
                                                   ),
-                                                  leading: IconButton(
+                                                  trailing: IconButton(
                                                     onPressed: () {
                                                       val.DeleteReciverAddress(
                                                           val.addressReciver[
@@ -326,7 +327,7 @@ class BottomSheetApp {
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.only(
-                                                          right: 30),
+                                                          right: 30, left: 30),
                                                   child: Text(
                                                     "${langLocal.langLocal['recipient']!['${val.languagebox.get("language")}']} :${val.addressReciver['data'][i]['name_receiver']}",
                                                     style: TextStyle(
@@ -337,6 +338,7 @@ class BottomSheetApp {
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.only(
+                                                          left: 30,
                                                           right: 30,
                                                           bottom: 20),
                                                   child: Text(

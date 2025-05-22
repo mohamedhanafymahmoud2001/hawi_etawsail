@@ -67,49 +67,52 @@ class DetailsOrder1 extends StatelessWidget {
                 keyboard: TextInputType.text,
                 line: 4,
               ),
-              MaterialButton(
-                onPressed: () {
+              InkWell(
+                onTap: () {
                   // val.uploadImageProdect();
                   bottomSheetApp.showPickerOptions(context);
                 },
-                child: DottedBorder(
-                  borderType: BorderType.RRect,
-                  radius: Radius.circular(10),
-                  dashPattern: [6, 3], // طول الخط والمسافة بين الخطوط
-                  color: colorsApp.colorborder,
-                  strokeWidth: 2,
-                  child: Container(
-                    height: 220,
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        val.imageFileProdect == null
-                            ? Container(
-                                margin: EdgeInsets.only(top: 30),
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    Image.asset("assets/images/image1.png"),
-                                    Container(
-                                        margin: EdgeInsets.only(bottom: 20),
-                                        child: Image.asset(
-                                            "assets/images/image2.png")),
-                                  ],
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  child: DottedBorder(
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(10),
+                    dashPattern: [6, 3], // طول الخط والمسافة بين الخطوط
+                    color: colorsApp.colorborder,
+                    strokeWidth: 2,
+                    child: Container(
+                      height: 220,
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          val.imageFileProdect == null
+                              ? Container(
+                                  margin: EdgeInsets.only(top: 30),
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Image.asset("assets/images/image1.png"),
+                                      Container(
+                                          margin: EdgeInsets.only(bottom: 20),
+                                          child: Image.asset(
+                                              "assets/images/image2.png")),
+                                    ],
+                                  ),
+                                )
+                              : Container(
+                                  height: 150,
+                                  child: Image.file(val.imageFileProdect!),
                                 ),
-                              )
-                            : Container(
-                                height: 150,
-                                child: Image.file(val.imageFileProdect!),
-                              ),
-                        Expanded(child: Container()),
-                        Container(
-                          margin: EdgeInsets.only(bottom: 30),
-                          child: Text(
-                            "${langLocal.langLocal['upload_product_image']!['${val.languagebox.get("language")}']}",
-                            style: TextStyle(fontWeight: FontWeight.w500),
-                          ),
-                        )
-                      ],
+                          Expanded(child: Container()),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 30),
+                            child: Text(
+                              "${langLocal.langLocal['upload_product_image']!['${val.languagebox.get("language")}']}",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -139,12 +142,12 @@ class DetailsOrder1 extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MaterialButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       val.choseTypeCover("cover");
                     },
                     child: Container(
-                      width: 130,
+                      // width: 130,
                       padding: EdgeInsets.only(
                           top: 15, bottom: 15, right: 15, left: 30),
                       decoration: BoxDecoration(
@@ -152,7 +155,7 @@ class DetailsOrder1 extends StatelessWidget {
                               width: val.typeCover == "cover" ? 1 : 0.3),
                           borderRadius: BorderRadius.circular(20)),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}",
@@ -180,15 +183,17 @@ class DetailsOrder1 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // SizedBox(width: 30,),
-                  MaterialButton(
-                    onPressed: () {
+                  SizedBox(
+                    width: 10,
+                  ),
+                  InkWell(
+                    onTap: () {
                       val.choseTypeCover("unCover");
                     },
                     child: Container(
-                      width: 130,
+                      // width: 130,
                       padding: EdgeInsets.only(
-                          top: 15, bottom: 15, right: 5, left: 0),
+                          top: 15, bottom: 15, right: 15, left: 15),
                       decoration: BoxDecoration(
                           border: Border.all(
                               width: val.typeCover == "unCover" ? 1 : 0.3),
@@ -240,8 +245,8 @@ class DetailsOrder1 extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MaterialButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       val.choseTypeBreak("break");
                     },
                     child: Container(
@@ -281,9 +286,11 @@ class DetailsOrder1 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // SizedBox(width: 30,),
-                  MaterialButton(
-                    onPressed: () {
+                  SizedBox(
+                    width: 10,
+                  ),
+                  InkWell(
+                    onTap: () {
                       val.choseTypeBreak("notBreak");
                     },
                     child: Container(

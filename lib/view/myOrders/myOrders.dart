@@ -49,8 +49,7 @@ class _MyOrders extends State<MyOrders> {
                             margin: EdgeInsets.only(right: 20),
                             child: Text(
                               textAlign: TextAlign.center,
-
-                                "${langLocal.langLocal['my_orders']!['${val.languagebox.get("language")}']}",
+                              "${langLocal.langLocal['my_orders']!['${val.languagebox.get("language")}']}",
                               style: TextStyle(
                                   fontFamily: "Cairo",
                                   color: colorsApp.colorbody,
@@ -86,16 +85,18 @@ class _MyOrders extends State<MyOrders> {
                               ? colorsApp.colorgreen2
                               : colorsApp.colorgreen1,
                           borderRadius: BorderRadius.circular(50)),
-                      child: MaterialButton(
-                        onPressed: () {
+                      child: InkWell(
+                        onTap: () {
                           val.SwitchOrderType("recive");
                           val.OrderReciver();
                         },
-                        child: Text(
-                          "${langLocal.langLocal['receivedOrders']!['${val.languagebox.get("language")}']}",
-
-                          style: TextStyle(
-                              fontFamily: "Cairo", color: colorsApp.colorbody),
+                        child: Center(
+                          child: Text(
+                            "${langLocal.langLocal['receivedOrders']!['${val.languagebox.get("language")}']}",
+                            style: TextStyle(
+                                fontFamily: "Cairo",
+                                color: colorsApp.colorbody),
+                          ),
                         ),
                       ),
                     ),
@@ -107,16 +108,18 @@ class _MyOrders extends State<MyOrders> {
                               ? colorsApp.colorgreen2
                               : colorsApp.colorgreen1,
                           borderRadius: BorderRadius.circular(50)),
-                      child: MaterialButton(
-                        onPressed: () {
+                      child: InkWell(
+                        onTap: () {
                           val.OrderSender();
                           val.SwitchOrderType("send");
                         },
-                        child: Text(
-                          "${langLocal.langLocal['sentOrders']!['${val.languagebox.get("language")}']}",
-
-                          style: TextStyle(
-                              fontFamily: "Cairo", color: colorsApp.colorbody),
+                        child: Center(
+                          child: Text(
+                            "${langLocal.langLocal['sentOrders']!['${val.languagebox.get("language")}']}",
+                            style: TextStyle(
+                                fontFamily: "Cairo",
+                                color: colorsApp.colorbody),
+                          ),
                         ),
                       ),
                     ),

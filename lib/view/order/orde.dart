@@ -120,8 +120,8 @@ class _Order extends State<Order> {
                     ),
                     val.orderscreen == "mylocation" ||
                             val.orderscreen == "reciverlocation"
-                        ? MaterialButton(
-                            onPressed: () {
+                        ? InkWell(
+                            onTap: () {
                               val.orderscreen == "mylocation"
                                   ? val.AddressSender()
                                   : val.AddressReciver();

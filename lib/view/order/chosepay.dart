@@ -115,8 +115,8 @@ class ChosePay extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MaterialButton(
-                onPressed: () {
+              InkWell(
+                onTap: () {
                   val.choseTypePay("credit");
                 },
                 child: Container(
@@ -130,6 +130,7 @@ class ChosePay extends StatelessWidget {
                           : Border.all(width: 0.5),
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Row(
                       //   children: [
@@ -153,8 +154,11 @@ class ChosePay extends StatelessWidget {
                   ),
                 ),
               ),
-              MaterialButton(
-                onPressed: () {
+              SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () {
                   val.choseTypePay("wallet");
                   print("walet");
                 },
@@ -169,6 +173,7 @@ class ChosePay extends StatelessWidget {
                           : Border.all(width: 0.5),
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Row(
                       //   children: [

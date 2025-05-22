@@ -15,25 +15,25 @@ class DetailsLocations extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(right: 10, top: 30),
+              margin: EdgeInsets.only(right: 10, top: 30, left: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  CircleAvatar(
+                    backgroundColor: colorsApp.colorgreen1,
+                    child: Icon(
+                      Icons.pin_drop_outlined,
+                      color: colorsApp.colorbody,
+                      size: 16,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
                   Text(
                     "${langLocal.langLocal['departure_point_details']!['${val.languagebox.get("language")}']}",
                     style: TextStyle(fontFamily: "Cairo", fontSize: 17),
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: colorsApp.colorgreen1,
-                    child: Icon(
-                      Icons.pin_drop_outlined,
-                      color: colorsApp.colorbody,
-                      size: 16,
-                    ),
-                  )
                 ],
               ),
             ),
@@ -49,85 +49,77 @@ class DetailsLocations extends StatelessWidget {
                 children: [
                   ListTile(
                     //${val.api.cuntry}//
-                    leading: Text(
+                    trailing: Text(
                       "${val.api.cuntry.text}",
                       style: TextStyle(
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
-                    trailing: Text(
-      "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
+                    leading: Text(
+                      "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
                       style: TextStyle(
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
-                  ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.city.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.neighbor.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.street.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.build_number.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.city.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.neighbor.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.street.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.build_number.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ],
               ),
             ),
             Container(
-              margin: EdgeInsets.only(right: 10, top: 30),
+              margin: EdgeInsets.only(right: 10, top: 30, left: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    "${langLocal.langLocal['pickup_point_details']!['${val.languagebox.get("language")}']}",
-
-                    style: TextStyle(fontFamily: "Cairo", fontSize: 17),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
                   CircleAvatar(
                     backgroundColor: colorsApp.colorgreen1,
                     child: Icon(
@@ -135,7 +127,14 @@ class DetailsLocations extends StatelessWidget {
                       color: colorsApp.colorbody,
                       size: 16,
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    "${langLocal.langLocal['pickup_point_details']!['${val.languagebox.get("language")}']}",
+                    style: TextStyle(fontFamily: "Cairo", fontSize: 17),
+                  ),
                 ],
               ),
             ),
@@ -151,78 +150,84 @@ class DetailsLocations extends StatelessWidget {
                 children: [
                   ListTile(
                     //${val.api.cuntry}//
-                    leading: Text(
+                    trailing: Text(
                       "${val.api.cuntry_Re.text}",
                       style: TextStyle(
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
-                    trailing: Text(
+                    leading: Text(
                       "${langLocal.langLocal['country_label']!['${val.languagebox.get("language")}']}",
-
                       style: TextStyle(
                           fontFamily: "Cairo", fontWeight: FontWeight.bold),
                     ),
-                  ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.city_Re.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.neighbor_Re.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.street_Re.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),ListTile(
-                //${val.api.cuntry}//
-                leading: Text(
-                  "${val.api.build_number_Re.text}",
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-                trailing: Text(
-                  "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
-
-                  style: TextStyle(
-                      fontFamily: "Cairo", fontWeight: FontWeight.bold),
-                ),
-              ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.city_Re.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['city_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.neighbor_Re.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['district_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.street_Re.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['street_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    //${val.api.cuntry}//
+                    trailing: Text(
+                      "${val.api.build_number_Re.text}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                    leading: Text(
+                      "${langLocal.langLocal['building_number_label']!['${val.languagebox.get("language")}']}",
+                      style: TextStyle(
+                          fontFamily: "Cairo", fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 30,),
-            ButtonApp(title:  "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
-      func: (){
-              val.SwitchOrderScreen("details");
-            }),SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
+            ButtonApp(
+                title:
+                    "${langLocal.langLocal['ok']!['${val.languagebox.get("language")}']}",
+                func: () {
+                  val.SwitchOrderScreen("details");
+                }),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       );

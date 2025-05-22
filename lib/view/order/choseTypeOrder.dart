@@ -28,15 +28,16 @@ class ChoseTypeOrder extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MaterialButton(
-                    onPressed: () {
+                  InkWell(
+                    splashColor: Colors.white.withOpacity(0.0),
+                    onTap: () {
                       val.choseTypeOrder("outside");
                     },
                     child: Container(
                       width: 150,
                       height: 120,
                       margin: EdgeInsets.symmetric(vertical: 5),
-                      padding: EdgeInsets.only(bottom: 10, left: 10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           border: val.typeOrder == "outside"
                               ? Border.all(width: 1.5)
@@ -61,6 +62,7 @@ class ChoseTypeOrder extends StatelessWidget {
                               height: 35,
                               child: Image.asset("assets/images/type1.png")),
                           Text(
+                            textAlign: TextAlign.center,
                             "${langLocal.langLocal['delivery_outside_city']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                           )
@@ -68,15 +70,19 @@ class ChoseTypeOrder extends StatelessWidget {
                       ),
                     ),
                   ),
-                  MaterialButton(
-                    onPressed: () {
+                  SizedBox(
+                    width: 10,
+                  ),
+                  InkWell(
+                    splashColor: Colors.white.withOpacity(0.0),
+                    onTap: () {
                       val.choseTypeOrder("inside");
                     },
                     child: Container(
                       width: 150,
                       height: 120,
                       margin: EdgeInsets.symmetric(vertical: 5),
-                      padding: EdgeInsets.only(bottom: 10, left: 10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           border: val.typeOrder == "inside"
                               ? Border.all(width: 1.5)
@@ -100,6 +106,7 @@ class ChoseTypeOrder extends StatelessWidget {
                               height: 35,
                               child: Image.asset("assets/images/type2.png")),
                           Text(
+                            textAlign: TextAlign.center,
                             "${langLocal.langLocal['delivery_within_city']!['${val.languagebox.get("language")}']}",
                             style: TextStyle(fontSize: 14, fontFamily: "Cairo"),
                           )

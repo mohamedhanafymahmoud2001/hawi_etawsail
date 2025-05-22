@@ -7,7 +7,6 @@ import 'package:hawy_altawsil/componant/dialogApp.dart';
 import 'package:hawy_altawsil/componant/nodata.dart';
 import 'package:hawy_altawsil/prov/prov.dart';
 import 'package:hawy_altawsil/view/myOrders/detailsOrder/containerdetails.dart';
-import 'package:hawy_altawsil/view/myOrders/detailsOrder/detailsItem.dart';
 import 'package:provider/provider.dart';
 
 import '../../../constant.dart';

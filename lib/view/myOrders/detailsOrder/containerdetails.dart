@@ -156,11 +156,10 @@ class ContainerDelete extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  MaterialButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       val.SwitchDetailsContainer("details");
                     },
-                    padding: EdgeInsets.all(0),
                     child: CircleAvatar(
                       radius: 15,
                       backgroundColor: colorsApp.colorgreen2,
@@ -236,11 +235,10 @@ class ContainerRate extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  MaterialButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       val.SwitchDetailsContainer("details");
                     },
-                    padding: EdgeInsets.all(0),
                     child: CircleAvatar(
                       radius: 15,
                       backgroundColor: colorsApp.colorgreen2,

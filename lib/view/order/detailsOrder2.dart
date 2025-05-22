@@ -35,9 +35,10 @@ class DetailsOrder2 extends StatelessWidget {
               color: colorsApp.colorborder.withOpacity(0.4),
               padding: EdgeInsets.all(10),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text( "${langLocal.langLocal['productDescription']!['${val.languagebox.get("language")}']}",
+                  Text(
+                    "${langLocal.langLocal['productDescription']!['${val.languagebox.get("language")}']}",
                   ),
                   Text(
                     textAlign: TextAlign.end,
@@ -56,14 +57,18 @@ class DetailsOrder2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    textAlign: TextAlign.end,
-                    val.typeCover == "cover" ? "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}" : "${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
-                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                    "${langLocal.langLocal['packaging']!['${val.languagebox.get("language")}']}",
                   ),
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text("${langLocal.langLocal['packaging']!['${val.languagebox.get("language")}']}",),
+                  Text(
+                    textAlign: TextAlign.end,
+                    val.typeCover == "cover"
+                        ? "${langLocal.langLocal['packaged']!['${val.languagebox.get("language")}']}"
+                        : "${langLocal.langLocal['notPackaged']!['${val.languagebox.get("language")}']}",
+                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                  ),
                 ],
               ),
             ),
@@ -76,14 +81,18 @@ class DetailsOrder2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    textAlign: TextAlign.end,
-                    val.typeBreak == "break" ? "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}" : "${langLocal.langLocal['notFragile']!['${val.languagebox.get("language")}']}",
-                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                    "${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",
                   ),
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text( "${langLocal.langLocal['fragility']!['${val.languagebox.get("language")}']}",),
+                  Text(
+                    textAlign: TextAlign.end,
+                    val.typeBreak == "break"
+                        ? "${langLocal.langLocal['fragile']!['${val.languagebox.get("language")}']}"
+                        : "${langLocal.langLocal['notFragile']!['${val.languagebox.get("language")}']}",
+                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                  ),
                 ],
               ),
             ),
@@ -95,15 +104,17 @@ class DetailsOrder2 extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  Text(
+                    "${langLocal.langLocal['packageWeight']!['${val.languagebox.get("language")}']}",
+                  ),
+                  Expanded(
+                    child: SizedBox(),
+                  ),
                   Text(
                     textAlign: TextAlign.end,
                     "كجم ${val.api.whait.text} ",
                     style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
                   ),
-                  Expanded(
-                    child: SizedBox(),
-                  ),
-                  Text( "${langLocal.langLocal['packageWeight']!['${val.languagebox.get("language")}']}",),
                 ],
               ),
             ),
@@ -116,14 +127,16 @@ class DetailsOrder2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    textAlign: TextAlign.end,
-                    "${val.api.nameRe.text}",
-                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                    "${langLocal.langLocal['recipientName']!['${val.languagebox.get("language")}']}",
                   ),
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text( "${langLocal.langLocal['recipientName']!['${val.languagebox.get("language")}']}",),
+                  Text(
+                    textAlign: TextAlign.end,
+                    "${val.api.nameRe.text}",
+                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                  ),
                 ],
               ),
             ),
@@ -136,21 +149,24 @@ class DetailsOrder2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    textAlign: TextAlign.end,
-                    "${val.api.phoneRe.text}",
-                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                    "${langLocal.langLocal['recipientPhone']!['${val.languagebox.get("language")}']}",
                   ),
                   Expanded(
                     child: SizedBox(),
                   ),
-                  Text( "${langLocal.langLocal['recipientPhone']!['${val.languagebox.get("language")}']}",),
+                  Text(
+                    textAlign: TextAlign.end,
+                    "${val.api.phoneRe.text}",
+                    style: TextStyle(fontSize: 11, fontFamily: "Cairo"),
+                  ),
                 ],
               ),
             ),
             Container(
                 margin: EdgeInsets.all(30),
                 child: ButtonApp(
-                    title: "${langLocal.langLocal['done']!['${val.languagebox.get("language")}']}",
+                    title:
+                        "${langLocal.langLocal['done']!['${val.languagebox.get("language")}']}",
                     func: () {
                       val.Order();
                       dialogApp.checkdialog(context, () {
